@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./chosen/chosen.min.css" />
+    <link rel="stylesheet" href="./css/datepicker.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Master Bus</title>
 </head>
@@ -30,7 +31,7 @@
     </div>
     <div class="container">
         <div class="tabs-content">
-            <div class="tabBusMaster">
+            <div class="tabBusMaster" style="display:none;">
                 <form name="frmBusMaster" id="frmBusMaster" action="">
                     <div class="bus-master-form">
                         <div class="form-wrap-left">
@@ -249,10 +250,400 @@
                 </form>
             </div>
             <div class="tabBusInfo" style="display: none;">
-                tabBusInfo
+                <div class="bus-info-container">
+                    <div class="bus-info-form">
+                        <form action="">
+                            <div class="bus-info-inputs">
+                                <label class="mstBusNoLabel">Master Bus Number</label>
+                                <!-- inputs 1st row -->
+                                <div class="bus-info-input-row">
+                                    <div class="bus-info-input-wrap busnum">
+                                        <div class="bus-info-input-box">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
+                                                class="bgColor1 txtCenter" value="GJ" readonly="readonly">
+                                        </div>
+                                        <div class="input-seperator">-</div>
+                                        <div class="bus-info-input-box">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
+                                                class="bgColor1 txtCenter" value="15" readonly="readonly">
+                                        </div>
+                                        <div class="input-seperator">-</div>
+                                        <div class="bus-info-input-box">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
+                                                class="bgColor1 txtCenter" value="PA" readonly="readonly">
+                                        </div>
+                                        <div class="input-seperator">-</div>
+                                        <div class="bus-info-input-box">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
+                                                class="bgColor1 txtCenter" value="3077" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="bus-info-input-wrap">
+                                        <div class="bus-info-select-box inputProprietor">
+                                            <select class="chosen" name="proprietor" id="proprietor">
+                                                <option value="">Proprietor 1 </option>
+                                                <option value="">Proprietor 2</option>
+                                                <option value="">Proprietor 3</option>
+                                            </select>
+                                            <label class="form-label">Select Proprietor</label>
+                                        </div>
+                                    </div>
+                                    <div class="bus-info-input-wrap">
+                                        &nbsp;
+                                    </div>
+                                    <div class="bus-info-input-wrap">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <!-- inputs 2nd row -->
+                                <div class="bus-info-input-row">
+                                    <div class="bus-info-input-wrap">
+                                        <input type="text" name="chassisNumber" id="chassisNumber" value="">
+                                        <label class="txtInputLabel">Chassis Number</label>
+                                    </div>
+                                    <div class="bus-info-input-wrap">
+                                        <input type="text" name="busMobileNumber" id="busMobileNumber" value="">
+                                        <label class="txtInputLabel">Bus Mobile Number</label>
+                                    </div>
+                                    <div class="bus-info-input-wrap">
+                                        <input type="text" name="expiryAlertNumber" id="expiryAlertNumber" value="">
+                                        <label class="txtInputLabel">Expiry Alert Number</label>
+                                    </div>
+                                    <div class="bus-info-input-wrap">
+                                        <input type="text" name="managerNumber" id="managerNumber" value="">
+                                        <label class="txtInputLabel">Manager Number</label>
+                                    </div>
+                                </div>
+                                <!-- inputs 3rd row -->
+                                <div class="bus-info-input-row">
+                                    <div class="bus-info-input-wrap">
+                                        <input type="text" name="engineNumber" id="engineNumber" value="">
+                                        <label class="txtInputLabel">Engine Number</label>
+                                    </div>
+                                    <div class="bus-info-input-wrap">
+                                        <input type="text" name="panNumber" id="panNumber" value="">
+                                        <label class="txtInputLabel">PAN Number</label>
+                                    </div>
+                                    <div class="bus-info-input-wrap">
+                                        <input type="text" name="gstNumber" id="gstNumber" value="">
+                                        <label class="txtInputLabel">GST Identification Number</label>
+                                    </div>
+                                    <div class="bus-info-input-wrap">
+                                        <input type="text" name="modelYear" id="modelYear" value="">
+                                        <label class="txtInputLabel">Model Year</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="bus-document-header">
+                    <div class="bus-document-header-wrap">
+                        <div class="bus-document-header-row">
+                            <div class="bus-document-header-col bus-document-header-col1">
+                                Document Name
+                            </div>
+                            <div class="bus-document-header-col bus-document-header-col2">
+                                From Date
+                            </div>
+                            <div class="bus-document-header-col bus-document-header-col3">
+                                To Date
+                            </div>
+                            <div class="bus-document-header-col bus-document-header-col4">
+                                Upload Document Name
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bus-document-body">
+                    <form name="" id="">
+                        <div class="bus-document-body-wrap">
+                            <!-- row 1 -->
+                            <div class="bus-document-row">
+                                <div class="bus-document-col bus-document-col1">
+                                    <div class="doc-title"> 1. Registration Certificate</div>
+                                </div>
+                                <div class="bus-document-col bus-document-col2 ">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col bus-document-col3">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col bus-document-col4">
+                                    <div class="bus-doc-file-input-wrap">
+                                        <div class="text">
+                                            <input type="file" name="" id="fileBrowse-1" class="fileBrowse">
+                                            <input type="text" name="" id="txtBrowse-1" class="txtBrowse"
+                                                readonly="readonly">
+                                        </div>
+                                        <div class="btn">
+                                            <button type="button" id="btnBrowse-1" class="btnBrowse"
+                                                onclick="showBrowseDialog(this)">Browse</button>
+                                        </div>
+                                        <div class="icon">
+                                            <div class="pdf-file"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 2 -->
+                            <div class="bus-document-row">
+                                <div class="bus-document-col  bus-document-col1">
+                                    <div class="doc-title uploaded">2. Insurance Policy</div>
+                                </div>
+                                <div class="bus-document-col  bus-document-col2">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col  bus-document-col3">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col bus-document-col4">
+                                    <div class="bus-doc-file-input-wrap">
+                                        <div class="text">
+                                            <input type="file" name="" id="fileBrowse-2" class="fileBrowse">
+                                            <input type="text" name="" id="txtBrowse-2" class="txtBrowse"
+                                                readonly="readonly">
+                                        </div>
+                                        <div class="btn">
+                                            <button type="button" id="btnBrowse-2" class="btnBrowse"
+                                                onclick="showBrowseDialog(this)">Browse</button>
+                                        </div>
+                                        <div class="icon">
+                                            <div class="pdf-file"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 3 -->
+                            <div class="bus-document-row">
+                                <div class="bus-document-col  bus-document-col1">
+                                    <div class="doc-title uploaded">3. Fitness Certificate</div>
+                                </div>
+                                <div class="bus-document-col  bus-document-col2">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col  bus-document-col3">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col bus-document-col4">
+                                    <div class="bus-doc-file-input-wrap">
+                                        <div class="text">
+                                            <input type="file" name="" id="fileBrowse-3" class="fileBrowse">
+                                            <input type="text" name="" id="txtBrowse-3" class="txtBrowse"
+                                                readonly="readonly">
+                                        </div>
+                                        <div class="btn">
+                                            <button type="button" id="btnBrowse-3" class="btnBrowse"
+                                                onclick="showBrowseDialog(this)">Browse</button>
+                                        </div>
+                                        <div class="icon">
+                                            <div class="pdf-file"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 4 -->
+                            <div class="bus-document-row">
+                                <div class="bus-document-col  bus-document-col1">
+                                    <div class="doc-title"> 4. Vehicle Permit</div>
+                                </div>
+                                <div class="bus-document-col  bus-document-col2">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col  bus-document-col3">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col bus-document-col4">
+                                    <div class="bus-doc-file-input-wrap">
+                                        <div class="text">
+                                            <input type="file" name="" id="fileBrowse-4" class="fileBrowse">
+                                            <input type="text" name="" id="txtBrowse-4" class="txtBrowse"
+                                                readonly="readonly">
+                                        </div>
+                                        <div class="btn">
+                                            <button type="button" id="btnBrowse-4" class="btnBrowse"
+                                                onclick="showBrowseDialog(this)">Browse</button>
+                                        </div>
+                                        <div class="icon">
+                                            <div class="pdf-file"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 5 -->
+                            <div class="bus-document-row">
+                                <div class="bus-document-col  bus-document-col1">
+                                    <div class="doc-title"> 5. Authorization Certificate</div>
+                                </div>
+                                <div class="bus-document-col  bus-document-col2">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col  bus-document-col3">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col bus-document-col4">
+                                    <div class="bus-doc-file-input-wrap">
+                                        <div class="text">
+                                            <input type="file" name="" id="fileBrowse-5" class="fileBrowse">
+                                            <input type="text" name="" id="txtBrowse-5" class="txtBrowse"
+                                                readonly="readonly">
+                                        </div>
+                                        <div class="btn">
+                                            <button type="button" id="btnBrowse-5" class="btnBrowse"
+                                                onclick="showBrowseDialog(this)">Browse</button>
+                                        </div>
+                                        <div class="icon">
+                                            <div class="pdf-file1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 6 -->
+                            <div class="bus-document-row">
+                                <div class="bus-document-col  bus-document-col1">
+                                    <div class="doc-title">6. Pollution Under Control...</div>
+                                </div>
+                                <div class="bus-document-col  bus-document-col2">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col  bus-document-col3">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col bus-document-col4">
+                                    <div class="bus-doc-file-input-wrap">
+                                        <div class="text">
+                                            <input type="file" name="" id="fileBrowse-6" class="fileBrowse">
+                                            <input type="text" name="" id="txtBrowse-6" class="txtBrowse"
+                                                readonly="readonly">
+                                        </div>
+                                        <div class="btn">
+                                            <button type="button" id="btnBrowse-6" class="btnBrowse"
+                                                onclick="showBrowseDialog(this)">Browse</button>
+                                        </div>
+                                        <div class="icon">
+                                            <div class="pdf-file"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 7 -->
+                            <div class="bus-document-row">
+                                <div class="bus-document-col  bus-document-col1">
+                                    <div class="doc-title">7. NOC Certificate</div>
+                                </div>
+                                <div class="bus-document-col  bus-document-col2">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col  bus-document-col3">
+                                    <input type="text" class="datepicker" name="" id="">
+                                    <label></label>
+                                </div>
+                                <div class="bus-document-col bus-document-col4">
+                                    <div class="bus-doc-file-input-wrap">
+                                        <div class="text">
+                                            <input type="file" name="" id="fileBrowse-7" class="fileBrowse">
+                                            <input type="text" name="" id="txtBrowse-7" class="txtBrowse"
+                                                readonly="readonly">
+                                        </div>
+                                        <div class="btn">
+                                            <button type="button" id="btnBrowse-7" class="btnBrowse"
+                                                onclick="showBrowseDialog(this)">Browse</button>
+                                        </div>
+                                        <div class="icon">
+                                            <div class="pdf-file"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- row 8 -->
+                            <div class="bus-document-row">
+                                <div class="bus-document-col  bus-document-col1">
+                                    &nbsp;
+                                </div>
+                                <div class="bus-document-col  bus-document-col2">
+                                    &nbsp;
+                                </div>
+                                <div class="bus-document-col  bus-document-col3">
+                                    &nbsp;
+                                </div>
+                                <div class="bus-document-col  bus-document-col4">
+                                    <button type="button" class="btnUpload">Upload</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="tabGPS" style="display: none;">
-                tabGPS
+            <div class="tabGPS" style="display: none1;">
+                <div class="gps-container">
+                    <div class="gps-form">
+                        <form name="" id="" action="">
+                            <div class="gps-inputs">
+                                <label class="mstBusNoLabel">Master Bus Number</label>
+
+                                <!-- inputs 1st row -->
+                                <div class="bus-info-input-row">
+                                    <div class="bus-info-input-wrap busnum">
+                                        <div class="bus-info-input-box">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
+                                                class="bgColor1 txtCenter" value="GJ" readonly="readonly">
+                                        </div>
+                                        <div class="input-seperator">-</div>
+                                        <div class="bus-info-input-box">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
+                                                class="bgColor1 txtCenter" value="15" readonly="readonly">
+                                        </div>
+                                        <div class="input-seperator">-</div>
+                                        <div class="bus-info-input-box">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
+                                                class="bgColor1 txtCenter" value="PA" readonly="readonly">
+                                        </div>
+                                        <div class="input-seperator">-</div>
+                                        <div class="bus-info-input-box">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
+                                                class="bgColor1 txtCenter" value="3077" readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="bus-info-input-wrap">
+                                        <button type="button" class="btnEnableGPS">
+                                            <div>
+                                                <div>
+
+                                                </div>
+                                                <div>
+                                                    Enable GPS Tracking
+                                                </div>
+                                            </div>
+                                            
+                                        </button>
+                                    </div>
+                                    <div class="bus-info-input-wrap">
+                                       2 &nbsp;
+                                    </div>
+                                    <div class="bus-info-input-wrap">
+                                        3&nbsp;
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="tabBusAmenities" style="display: none;">
                 tabBusAmenities
@@ -265,9 +656,9 @@
             </div>
         </div>
     </div>
-
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./chosen/chosen.jquery.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
     <script src="./js/common.js"></script>
 </body>
 

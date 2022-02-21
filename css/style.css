@@ -59,12 +59,13 @@ textarea {
   font-weight: bold;
   letter-spacing: 0.8px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .header-wrap-left .completed {
   position: relative;
   padding-right: 20px;
-  top: -1px;
+  top: 1px;
   left: 0px;
 }
 
@@ -119,7 +120,6 @@ textarea {
 
 .tabs-content {
   width: 100%;
-  padding: 5px;
 }
 
 /* Custome Radio Button CSS Start*/
@@ -208,6 +208,7 @@ textarea {
 .bus-master-form {
   max-width: 900px;
   display: flex;
+  margin: 0 auto;
 }
 
 .form-wrap-left {
@@ -266,7 +267,8 @@ textarea {
   padding: 0 2px;
 }
 
-.inputFocus {
+.input-box.inputFocus,
+.bus-info-select-box.inputFocus {
   border: 2px solid #00aeef;
 }
 .labelFocus {
@@ -400,7 +402,8 @@ textarea {
   font-weight: 500;
 }
 
-.input-wrap input:focus {
+.input-wrap input:focus,
+.bus-info-input-wrap input:focus {
   border: solid 2px #00aeef;
 }
 
@@ -432,4 +435,355 @@ textarea {
 }
 .txtMstBusNumber .egLabel {
   bottom: 5px;
+}
+
+/* Bus Info CSS */
+.bus-info-container {
+  padding: 20px 13% 20px 13%;
+}
+
+.bus-info-form {
+  max-width: 1010px;
+  margin: 0 auto;
+  /* background: lightgoldenrodyellow; */
+}
+
+.bus-info-inputs {
+  /* border: solid 1px red; */
+}
+
+.mstBusNoLabel {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #666666;
+  margin: 5px;
+}
+
+.bus-info-input-row {
+  width: 100%;
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.bus-info-input-wrap {
+  width: 25%;
+  display: flex;
+  margin: 7px 5px 7px 5px;
+  position: relative;
+}
+
+.bus-info-input-box {
+  width: 48px;
+}
+
+.bus-info-input-wrap input {
+  padding: 10px 10px 10px 10px;
+  border-radius: 3px;
+  width: 100%;
+  height: 32px;
+  border: solid 1px #a6a6a6;
+  color: #444444;
+  font-weight: 600;
+  letter-spacing: 0.03rem;
+  font-size: 13px;
+}
+
+.bus-info-input-wrap.busnum input {
+  padding: 10px 2px 10px 2px;
+}
+
+.bgColor1 {
+  background: #f2fafe;
+}
+
+.bus-info-select-box {
+  padding: 1px 0px 1px 0px;
+  border: solid 1px #a6a6a6;
+  border-radius: 5px;
+  position: relative;
+}
+
+.inputProprietor {
+  width: 100%;
+}
+
+.txtCenter {
+  text-align: center;
+}
+
+.inputProprietor .chosen-container-single .chosen-single {
+  height: 28px;
+  padding: 4px 0px 0px 8px;
+}
+
+.inputProprietor .chosen-container-single .chosen-single div b {
+  top: 10px;
+}
+
+.inputProprietor
+  .chosen-container-active
+  .chosen-with-drop
+  .chosen-single
+  div
+  b {
+  top: 8px;
+}
+
+.inputProprietor .chosen-container-single .chosen-single span {
+  font-size: 12px;
+}
+
+.bus-info-input-wrap .txtInputLabel {
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  color: #444444;
+  font-size: 12px;
+  transition: 0.3s ease;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.bus-info-input-wrap .txtInputActiveLabel {
+  color: #00aeef;
+  background: #fff;
+  padding: 0 4px;
+  font-size: 12px;
+  top: -6px;
+  left: 5px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  padding: 0 2px;
+}
+
+.bus-info-input-wrap .txtInputActiveLabel.filled {
+  color: #777;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.bus-info-select-box .form-label {
+  font-size: 11px;
+}
+
+.bus-info-select-box .labelFocus {
+  font-size: 12px;
+}
+
+.bus-document-header {
+  border: solid 1px #e5e5e5;
+  padding: 12px 13% 12px 13%;
+  background: #f2fafe;
+  font-weight: 600;
+}
+
+.bus-document-body-wrap {
+  max-width: 1010px;
+  margin: 0 auto;
+}
+
+.bus-document-header-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bus-document-header-col {
+  padding-left: 5px;
+}
+
+.bus-document-header-col1 {
+  width: 25%;
+}
+.bus-document-header-col2 {
+  width: 23%;
+}
+.bus-document-header-col3 {
+  width: 23%;
+}
+
+.bus-document-header-col4 {
+  width: 29%;
+}
+
+.bus-document-body {
+  border: solid 1px #e5e5e5;
+  padding: 12px 13% 12px 13%;
+}
+
+.bus-document-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+
+.bus-document-col {
+  padding-left: 5px;
+}
+
+.bus-document-col1 {
+  width: 25%;
+}
+
+.bus-document-col2 {
+  width: 23%;
+}
+
+.bus-document-col3 {
+  width: 23%;
+}
+
+.bus-document-col4 {
+  width: 29%;
+}
+
+.bus-doc-file-input-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.bus-doc-file-input-wrap .text {
+  width: 62%;
+}
+
+.bus-doc-file-input-wrap .btn {
+  width: 28%;
+}
+
+.bus-doc-file-input-wrap .icon {
+  width: 10%;
+}
+
+.bus-document-body input {
+  padding: 6px 10px 6px 10px;
+  border-radius: 5px;
+  width: 99%;
+  height: 35px;
+  border: solid 1px #cccccc;
+
+  font-weight: 500;
+  letter-spacing: 0.03rem;
+  font-size: 13px;
+  position: relative;
+  font-style: italic;
+  color: #8e8e8e;
+}
+
+.doc-title {
+  background: #f2fafe;
+  padding: 6px 10px 6px 10px;
+  height: 35px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  width: 99%;
+}
+
+.doc-title.uploaded {
+  color: #0086ff;
+  font-weight: 600;
+}
+
+.bus-document-body label {
+  position: relative;
+}
+
+.datepicker + label::before {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: url(../images/cal.svg) no-repeat;
+  background-size: 100% 100%;
+  left: -25px;
+  top: -3px;
+}
+
+.customeBrowse {
+  display: flex;
+}
+
+.bus-document-body .btnBrowse {
+  border: solid 1px #ff5200;
+  background: #ffffff;
+  color: #ff5200;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 70px;
+  margin-left: 7px;
+  cursor: pointer;
+  padding: 9px 10px 9px 10px;
+}
+
+.bus-document-body .fileBrowse {
+  display: none;
+}
+
+.bus-document-body .btnUpload {
+  background: #ff5200;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 13px 10px 13px 10px;
+  outline: none;
+  border: none;
+  width: 100%;
+  font-weight: bold;
+}
+
+.bus-document-body .btnUpload:hover {
+  opacity: 0.9;
+}
+
+.pdf-file {
+  background: url(../images/pdf.png) no-repeat;
+  width: 85%;
+  height: 28px;
+  margin: 4px 0px 3px 3px;
+}
+
+/* CSS for GPS tab start*/
+.gps-container {
+  padding: 20px 13% 20px 13%;
+}
+
+.gps-form {
+  max-width: 1010px;
+  margin: 0 auto;
+  background: lightgoldenrodyellow;
+}
+
+.gps-inputs {
+  border: solid 1px red;
+}
+
+.btnEnableGPS {
+  position: relative;
+  padding: 5px 5px 5px 5px;
+  font-weight: bold;
+  color: #9d9d9d;
+  background: #f6f6f6;
+  border-radius: 15px;
+  margin: 0px;
+  width: 220px;
+  cursor: pointer;
+  border: solid 1px #dfdfdf;
+  font-size: 12px;
+}
+
+.btnEnableGPS::before {
+  content: "";
+  position: absolute;
+  background: url(../images/save.svg) no-repeat;
+  background-size: 100% 100%;
+  width: 20px;
+  height: 20px;
+  left: 15px;
+  top: 6px;
 }

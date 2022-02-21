@@ -57,26 +57,66 @@ $(document).ready(function () {
         }
     });
 
-    $("input:radio[name='rdoBusNumber']").on("click",function(){
-        if($(this).val()=="1"){
+    $("input:radio[name='rdoBusNumber']").on("click", function () {
+        if ($(this).val() == "1") {
             $(".tabBusMaster .selBusNumber").show();
             $(".tabBusMaster .txtBusNumber").hide();
-        }else{
+        } else {
             $(".tabBusMaster .selBusNumber").hide();
             $(".tabBusMaster .txtBusNumber").show();
             $(".tabBusMaster #txtBusNumber").focus();
         }
     });
 
-    $("input:radio[name='rdoMstBusNumber']").on("click",function(){
-        if($(this).val()=="1"){
+    $("input:radio[name='rdoMstBusNumber']").on("click", function () {
+        if ($(this).val() == "1") {
             $(".tabBusMaster .selMstBusNumber").show();
             $(".tabBusMaster .txtMstBusNumber").hide();
-        }else{
+        } else {
             $(".tabBusMaster .selMstBusNumber").hide();
             $(".tabBusMaster .txtMstBusNumber").show();
             $(".tabBusMaster #txtMstBusNumber1").focus();
         }
     });
 
+
+    //for active textbox
+    $(".bus-info-input-wrap input[type='text']").on("focus", function (event) {
+        $(event.target).addClass("inputFocus");
+        $(event.target).siblings("label").addClass("txtInputActiveLabel");
+        $(event.target).siblings("label").removeClass("filled");
+    });
+
+    //for inactive textbox
+    $(".bus-info-input-wrap input[type='text']").on("blur", function (event) {
+        $(event.target).removeClass("inputFocus");
+        if ($(event.target).val() == "" || $(event.target).val() == null) {
+            $(event.target).siblings("label").removeClass("txtInputActiveLabel");
+        } else {
+            $(event.target).siblings("label").addClass("filled");
+        }
+    });
+
+
+    $(".datepicker").datepicker({
+        numberOfMonths: 1, //show 2 months
+        dayNamesMin: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], //day names
+        firstDay: 1, //start with monday,
+        minDate: "0d",
+        maxDate: "90d",
+        dateFormat: "d-M-yy",
+        onSelect: function (date, evnt) { },
+    });
 });
+
+
+//this function called from Bus Info Tab, for select bus document file
+function showBrowseDialog(obj) {
+    var browseBtnNo = $(obj).attr("id").replace("btnBrowse-", "");
+    $("#fileBrowse-" + browseBtnNo).trigger("click");
+
+    $("#fileBrowse-" + browseBtnNo).unbind().bind("change", function () {
+        var fileName = $(this)[0].files[0].name;
+        $("#txtBrowse-" + browseBtnNo).val(fileName);
+    });
+}
