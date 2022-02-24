@@ -12,8 +12,8 @@ $(document).ready(function () {
     $(".tabs-list .tab").on("click", function () {
         var tabId = $(this).attr("id");
         //for manage active tab
-        $(".tabs-list .tab").removeClass("active");
-        $(this).addClass("active");
+        $(".tabs-list .tab").removeClass("active-tab");
+        $(this).addClass("active-tab");
 
         //for mange active tab content area
         $(".tabs-content > div").hide();
@@ -98,15 +98,119 @@ $(document).ready(function () {
     });
 
 
-    $(".datepicker").datepicker({
-        numberOfMonths: 1, //show 2 months
-        dayNamesMin: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], //day names
-        firstDay: 1, //start with monday,
-        minDate: "0d",
-        maxDate: "90d",
-        dateFormat: "d-M-yy",
-        onSelect: function (date, evnt) { },
+    $(".datepicker").datetimepicker(
+        { format: "DD-MM-YYYY", useCurrent: true, debug: false, }
+    );
+
+    $("#btnToggleGPS").on("click", function () {
+
+        if ($(this).hasClass("btnDisableGPS")) {
+            $(this).removeClass("btnDisableGPS");
+            $("button[class='btnGPSWorking']").hide();
+            $("button[class='btnGPSNotWorking']").show();
+        } else {
+            // $(this).addClass("btnDisableGPS");
+            // $("button[class='btnGPSWorking']").show();
+            // $("button[class='btnGPSNotWorking']").hide();
+            $(".information-popup-wrapper").show();
+        }
+
+    })
+
+
+    //for active textbox
+    $(".gps-input-wrap input[type='text']").on("focus", function (event) {
+        $(event.target).addClass("inputFocus");
+        $(event.target).siblings("label").addClass("txtInputActiveLabel");
+        $(event.target).siblings("label").removeClass("filled");
     });
+
+    //for inactive textbox
+    $(".gps-input-wrap input[type='text']").on("blur", function (event) {
+        $(event.target).removeClass("inputFocus");
+        if ($(event.target).val() == "" || $(event.target).val() == null) {
+            $(event.target).siblings("label").removeClass("txtInputActiveLabel");
+        } else {
+            $(event.target).siblings("label").addClass("filled");
+        }
+    });
+
+    //Associate Bus Number/Enter New Data on option click
+    $("input:radio[name='rdoGPSFor']").on("click", function () {
+        if ($(this).val() == "1") {
+            $(".tabGPS .associate-bus-no").show();
+            $(".tabGPS .new-data").hide();
+        } else {
+            $(".tabGPS .associate-bus-no").hide();
+            $(".tabGPS .new-data").show();
+        }
+    });
+
+    //for active textbox
+    $(".otp-input-wrap input[type='text']").on("focus", function (event) {
+        $(event.target).addClass("inputFocus");
+        $(event.target).siblings("label").addClass("txtInputActiveLabel");
+        $(event.target).siblings("label").removeClass("filled");
+    });
+
+    //for inactive textbox
+    $(".otp-input-wrap input[type='text']").on("blur", function (event) {
+        $(event.target).removeClass("inputFocus");
+        if ($(event.target).val() == "" || $(event.target).val() == null) {
+            $(event.target).siblings("label").removeClass("txtInputActiveLabel");
+        } else {
+            $(event.target).siblings("label").addClass("filled");
+        }
+    });
+
+    //for bus amenities type select handle
+    $(".tabAmeType").on("click", function () {
+        $(".tabAmeType").removeClass("active-ame-type");
+        $(this).find("input").prop("checked", true);
+        $(this).addClass("active-ame-type");
+
+        if ($("input[name='ameType']:checked").val() == 1) {
+            $(".tabBusAmenities .ame-at-bus").show();
+            $(".tabBusAmenities .ame-in-bus").hide();
+        } else {
+            $(".tabBusAmenities .ame-at-bus").hide();
+            $(".tabBusAmenities .ame-in-bus").show();
+        }
+    });
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $(".general-ame-list-wrap #atbus-ame-checkall").on('click', function () {
+        if ($(this).is(":checked")) {
+            $(".general-ame-list-wrap input[type='checkbox']").prop("checked", true);
+            $(".general-ame-list-wrap #checkAll").text("Uncheck All");
+        } else {
+            $(".general-ame-list-wrap input[type='checkbox']").prop("checked", false);
+            $(".general-ame-list-wrap #checkAll").text("Check All");
+        } 
+    });
+
+
+    $(".covid-ame-list-wrap #atbus-ame-checkall").on('click', function () {
+        if ($(this).is(":checked")) {
+            $(".covid-ame-list-wrap input[type='checkbox']").prop("checked", true);
+            $(".covid-ame-list-wrap #checkAll").text("Uncheck All");
+        } else {
+            $(".covid-ame-list-wrap input[type='checkbox']").prop("checked", false);
+            $(".covid-ame-list-wrap #checkAll").text("Check All");
+        } 
+    });
+
+    $(".ame-in-bus-wrap #inbus-ame-checkall").on('click', function () {
+        if ($(this).is(":checked")) {
+            $(".ame-in-bus-wrap input[type='checkbox']").prop("checked", true);
+            $(".ame-in-bus-wrap #checkAll").text("Uncheck All");
+        } else {
+            $(".ame-in-bus-wrap input[type='checkbox']").prop("checked", false);
+            $(".ame-in-bus-wrap #checkAll").text("Check All");
+        } 
+    });
+
 });
 
 
@@ -120,3 +224,46 @@ function showBrowseDialog(obj) {
         $("#txtBrowse-" + browseBtnNo).val(fileName);
     });
 }
+
+function closeInfoPopup(e) {
+    if (e.target.className === 'information-popup-wrapper') {
+        $('.information-popup-wrapper').hide();
+    }
+}
+
+function hideInfoPopup(e) {
+    e.stopPropagation();
+    $('.information-popup-wrapper').hide();
+}
+
+
+function closeOtpPopup(e) {
+    if (e.target.className === 'otp-popup-wrapper') {
+        $('.otp-popup-wrapper').hide();
+    }
+}
+
+
+function hideOtpPopup(e) {
+    e.stopPropagation();
+    $('.otp-popup-wrapper').hide();
+}
+
+function gpsContinue() {
+    $(".information-popup-wrapper").hide();
+    $(".otp-popup-wrapper").show();
+    $("#otp").focus();
+}
+
+function submitOTP() {
+    if ($("#otp").val() == "") {
+        alert("Please enter OTP !");
+    } else {
+        $("#btnToggleGPS").addClass("btnDisableGPS");
+        $("button[class='btnGPSWorking']").show();
+        $("button[class='btnGPSNotWorking']").hide();
+        $('.otp-popup-wrapper').hide();
+    }
+}
+
+

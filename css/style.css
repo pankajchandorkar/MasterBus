@@ -77,7 +77,7 @@ textarea {
   height: 15px;
 }
 
-.active {
+.active-tab {
   border-bottom: solid 6px #ffffff;
 }
 
@@ -114,7 +114,7 @@ textarea {
   opacity: 0.9;
 }
 
-.container {
+.page-container {
   width: 100%;
 }
 
@@ -145,6 +145,8 @@ textarea {
   letter-spacing: 0.03rem;
   font-weight: bold;
   color: #202020;
+  display: inline;
+  margin-bottom: 0;
 }
 
 .custome_radio:not(:checked) + label:before {
@@ -193,6 +195,11 @@ textarea {
   opacity: 1;
   -webkit-transform: scale(1);
   transform: scale(1);
+}
+
+.custome_radio + label:after,
+.custome_radio + label:before {
+  box-sizing: unset;
 }
 
 .active_custome_radio {
@@ -268,7 +275,8 @@ textarea {
 }
 
 .input-box.inputFocus,
-.bus-info-select-box.inputFocus {
+.bus-info-select-box.inputFocus,
+.gps-select-box.inputFocus {
   border: 2px solid #00aeef;
 }
 .labelFocus {
@@ -403,7 +411,9 @@ textarea {
 }
 
 .input-wrap input:focus,
-.bus-info-input-wrap input:focus {
+.bus-info-input-wrap input:focus,
+.gps-input-wrap input:focus,
+.otp-input-wrap input:focus {
   border: solid 2px #00aeef;
 }
 
@@ -426,11 +436,11 @@ textarea {
 }
 
 .input-seperator {
-  width: 16px;
+  width: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 27px;
+  font-size: 22px;
   color: #cccccc;
 }
 .txtMstBusNumber .egLabel {
@@ -462,7 +472,6 @@ textarea {
 .bus-info-input-row {
   width: 100%;
   display: flex;
-
   justify-content: space-between;
 }
 
@@ -506,6 +515,7 @@ textarea {
 
 .inputProprietor {
   width: 100%;
+  height: 32px;
 }
 
 .txtCenter {
@@ -592,7 +602,7 @@ textarea {
 }
 
 .bus-document-header-col {
-  padding-left: 5px;
+  padding-left: 10px;
 }
 
 .bus-document-header-col1 {
@@ -647,16 +657,16 @@ textarea {
   justify-content: space-evenly;
 }
 
-.bus-doc-file-input-wrap .text {
-  width: 62%;
+.bus-doc-file-input-wrap .div-text {
+  width: calc(100% - 107px);
 }
 
-.bus-doc-file-input-wrap .btn {
-  width: 28%;
+.bus-doc-file-input-wrap .div-btn {
+  width: 80px;
 }
 
-.bus-doc-file-input-wrap .icon {
-  width: 10%;
+.bus-doc-file-input-wrap .div-icon {
+  width: 27px;
 }
 
 .bus-document-body input {
@@ -701,7 +711,7 @@ textarea {
   background: url(../images/cal.svg) no-repeat;
   background-size: 100% 100%;
   left: -25px;
-  top: -3px;
+  top: -8px;
 }
 
 .customeBrowse {
@@ -743,9 +753,14 @@ textarea {
 
 .pdf-file {
   background: url(../images/pdf.png) no-repeat;
-  width: 85%;
+  width: 21px;
   height: 28px;
   margin: 4px 0px 3px 3px;
+}
+
+.bus-document-row .date {
+  position: relative;
+  display: table;
 }
 
 /* CSS for GPS tab start*/
@@ -756,34 +771,974 @@ textarea {
 .gps-form {
   max-width: 1010px;
   margin: 0 auto;
-  background: lightgoldenrodyellow;
+  /* background: lightgoldenrodyellow; */
 }
 
 .gps-inputs {
-  border: solid 1px red;
+  border: none;
+}
+
+.gps-input-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.gps-input-wrap {
+  width: 25%;
+  display: flex;
+  margin: 7px 5px 7px 5px;
+  position: relative;
+}
+
+.gps-input-box {
+  width: 48px;
+}
+
+.gps-input-wrap input {
+  padding: 10px 10px 10px 10px;
+  border-radius: 3px;
+  width: 100%;
+  height: 32px;
+  border: solid 1px #a6a6a6;
+  color: #444444;
+  font-weight: 600;
+  letter-spacing: 0.03rem;
+  font-size: 13px;
+}
+
+.gps-input-wrap.busnum input {
+  padding: 10px 2px 10px 2px;
 }
 
 .btnEnableGPS {
   position: relative;
-  padding: 5px 5px 5px 5px;
+  padding: 0px 0px 0px 0px;
   font-weight: bold;
-  color: #9d9d9d;
-  background: #f6f6f6;
+
+  background: #ffffff;
   border-radius: 15px;
-  margin: 0px;
-  width: 220px;
+  margin: 0px 7px 0 0;
+  width: 187px;
   cursor: pointer;
-  border: solid 1px #dfdfdf;
+  border: solid 1px #ff5200;
   font-size: 12px;
 }
 
-.btnEnableGPS::before {
-  content: "";
+.btnInnerWraper {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  margin: 3px 0px;
+  width: 100%;
+}
+
+.btnLeftWrap {
+  width: 22%;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.btnRightWrap {
+  width: 78%;
+  display: flex;
+  align-items: center;
+  color: #ff5200;
+  letter-spacing: 0.5px;
+}
+
+.svg-setting {
+  fill: #ff5200;
+  width: 19px;
+  height: 19px;
+}
+
+.btnDisableGPS {
+  background: #f6f6f6;
+  border: solid 1px #dfdfdf;
+}
+
+.btnDisableGPS .svg-setting {
+  fill: #acacac;
+}
+
+.btnDisableGPS .btnRightWrap {
+  color: #acacac;
+}
+
+.gps-status {
+  justify-content: end;
+  margin: 7px 5px 0px 5px;
+}
+
+.btnGPSWorking {
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  font-weight: bold;
+  background: #1db24b;
+  border-radius: 20px;
+  margin: 0px;
+  width: 150px;
+  cursor: pointer;
+  border: none;
+  font-size: 13px;
+}
+
+.btnGPSWorkingWrap {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 0px;
+  width: 100%;
+  padding: 0px 0 0px 0;
+}
+
+.btnGPSWorkingIcon {
+  width: 28%;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.btnGPSWorkingText {
+  width: 72%;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.svgGpsWorking {
+  fill: #ffffff;
+  width: 23px;
+  height: 23px;
+}
+
+/* GPS Not Working */
+.btnGPSNotWorking {
+  position: relative;
+  padding: 0px 0px 0px 0px;
+  font-weight: bold;
+  background: #ff516a;
+  border-radius: 20px;
+  margin: 0px;
+  width: 180px;
+  cursor: pointer;
+  border: none;
+  font-size: 13px;
+}
+
+.btnGPSNotWorkingWrap {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 0px;
+  width: 100%;
+  padding: 0px 0 0px 0;
+}
+
+.btnGPSNotWorkingIcon {
+  width: 26%;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+}
+
+.btnGPSNotWorkingText {
+  width: 74%;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+.svgGpsNotWorking {
+  fill: #ffffff;
+  width: 23px;
+  height: 23px;
+}
+
+.tabGPS .custome_radio:checked + label:before {
+  top: 0px;
+}
+
+.tabGPS .custome_radio:checked + label:after,
+.tabGPS .custome_radio:not(:checked) + label:after {
+  top: 5px;
+}
+
+.tabGPS .custome_radio:not(:checked) + label:before {
+  top: 0px;
+}
+
+.rdo-gps-for {
+  width: 100%;
+  padding-left: 3px;
+  margin-top: 15px;
+}
+
+.gps-select-box {
+  padding: 1px 0px 1px 0px;
+  border: solid 1px #a6a6a6;
+  border-radius: 5px;
+  position: relative;
+}
+
+.selGPSVendor {
+  width: 100%;
+  height: 38px;
+}
+
+.for-associate-busno {
+  width: 100%;
+}
+
+.gps-input-wrap.for-associate-busno input {
+  height: 38px;
+  border-radius: 5px;
+}
+
+.for-associate-busno .txtInputLabel {
+  left: 15px;
+  top: 11px;
+}
+
+.for-associate-busno .txtInputActiveLabel {
+  top: -5px;
+  left: 5px;
+}
+
+.for-associate-busno .chosen-container-single .chosen-single {
+  padding: 7px 0px 0px 17px;
+}
+
+.for-associate-busno .chosen-container-single .chosen-drop {
+  margin-top: -3px;
+}
+
+.gps-input-wrap .txtInputActiveLabel.filled {
+  color: #777;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.gps-select-box .form-label {
+  font-size: 11px;
+}
+
+.lblHeading {
+  font-weight: 600;
+  color: #000000;
+  margin: 7px 5px 5px 5px;
+}
+
+.rdo-mnt-comm-type {
+  width: 100%;
+  padding-left: 3px;
+}
+
+.gps-input-wrap .fees-amt {
+  width: 60px;
+  position: relative;
+  top: -5px;
+  left: -10px;
+  padding: 10px 5px 10px 5px;
+  font-weight: 500;
+}
+
+.btnSaveCommercial {
+  position: relative;
+  padding: 12px 0px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+  background: #ff5200;
+  border: none;
+  border-radius: 5px;
+  margin: 0;
+  width: 188px;
+  cursor: pointer;
+  top: -11px;
+}
+
+.btnSaveCommercial:hover {
+  opacity: 0.9;
+}
+
+.gps-result {
+  border: solid 1px #f3f3f3;
+  width: 100%;
+  box-shadow: 0px 2px 5px #ccc;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.gps-result-header {
+  background: #e5f3ff;
+  height: 35px;
+}
+
+.gps-result-data-row {
+  display: flex;
+  width: 100%;
+  font-weight: 600;
+  font-size: 12px;
+  color: #000000;
+}
+.gps-result-data-col {
+  padding: 9px 8px 7px 8px;
+}
+
+.gps-result-data-col.col1 {
+  width: 25%;
+}
+
+.gps-result-data-col.col2 {
+  width: 25%;
+}
+
+.gps-result-data-col.col3 {
+  width: 25%;
+}
+
+.gps-result-data-col.col4 {
+  width: 25%;
+}
+
+.gps-brd-right {
+  border-right: solid 1px #d9d9d9;
+}
+
+.gps-result-body .gps-result-data-row {
+  color: #575757;
+}
+
+.gps-result-body .gps-result-data-row:nth-child(odd) {
+  background: #ffffff;
+}
+
+.gps-result-body .gps-result-data-row:nth-child(even) {
+  background: #f7fbff;
+}
+
+.for-associate-busno .chosen-container-single .chosen-single {
+  padding: 7px 0px 0px 17px;
+}
+
+.for-associate-busno .chosen-container-single .chosen-drop {
+  margin-top: -3px;
+}
+
+.for-new-data {
+  width: 50%;
+}
+
+.gps-input-wrap.for-new-data input {
+  height: 38px;
+  border-radius: 5px;
+}
+
+.for-new-data .txtInputLabel {
+  left: 15px;
+  top: 11px;
+}
+
+.for-new-data .txtInputActiveLabel {
+  top: -5px;
+  left: 5px;
+}
+
+.for-new-data .chosen-container-single .chosen-single {
+  padding: 7px 0px 0px 17px;
+}
+
+.for-new-data .chosen-container-single .chosen-drop {
+  margin-top: -3px;
+}
+
+.gps-input-wrap.vendor-block {
+  width: 100%;
+  border-bottom: solid 1px #e5e5e5;
+  padding-bottom: 35px;
+}
+
+.vendor-data {
+  width: 100%;
+  border-radius: 5px;
+  padding: 0 10px;
+  box-shadow: 0px 2px 5px #ccc;
+}
+.vendor-data-header {
+  height: 33px;
+}
+
+.vendor-data-row {
+  display: flex;
+  width: 100%;
+  font-weight: 600;
+  font-size: 12px;
+  color: #000000;
+}
+
+.vendor-data-col {
+  padding: 9px 8px 7px 8px;
+}
+
+.vendor-data-col.col1 {
+  width: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.vendor-data-col.col2 {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.vendor-data-col.col3 {
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.vendor-data-list .vendor-data-row:nth-child(even) {
+  background: #ffffff;
+}
+
+.vendor-data-list .vendor-data-row:nth-child(odd) {
+  background: #f7fbff;
+}
+
+.vendor-data input {
+  padding: 5px 10px 5px 10px;
+  height: 30px;
+}
+
+/* associate vendor data */
+
+.associate-vendor-data {
+  width: 100%;
+  border-radius: 5px;
+  padding: 0 10px;
+  box-shadow: 0px 2px 5px #ccc;
+}
+
+.associate-vendor-data-list{
+  overflow: auto;
+  width:900px;
+}
+
+.associate-vendor-data-row {
+  display: flex;
+  width: 100%;
+  font-weight: 600;
+  font-size: 12px;
+  color: #444444;
+}
+
+.associate-vendor-data-col {
+  padding: 9px 8px 7px 8px;
+  float: left;
+}
+
+.associate-vendor-data-col.col1 {
+  width: 160px;
+  display: flex;
+  align-items: center;
+}
+
+.associate-vendor-data-col.col2 {
+  width: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.associate-vendor-data-col.col3 {
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.associate-vendor-data .custome_radio:checked + label,
+.associate-vendor-data .custome_radio:not(:checked) + label {
+  color: #444444;
+  padding-left: 25px;
+}
+
+/* information popup css */
+.information-popup-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.information-popup-content {
+  position: fixed;
+  width: 400px;
+  height: 140px;
+  z-index: 1001;
+  top: 200px;
+  /* left: calc(25%); */
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 30%);
+}
+
+.information-popup-header {
+  background: #0086ff;
+  width: 100%;
+  padding: 10px 10px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.information-popup-close {
   position: absolute;
-  background: url(../images/save.svg) no-repeat;
-  background-size: 100% 100%;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20px;
   height: 20px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.information-popup-body {
+  background: #ffffff;
+  width: 100%;
+  padding: 10px;
+}
+
+.information-popup-body .message {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 20px;
+}
+
+.information-popup-body .buttons {
+  padding-top: 10px;
+  display: flex;
+  justify-content: end;
+}
+
+.information-popup-body .buttons .btnContinue {
+  background: #ffffff;
+  margin-right: 10px;
+  padding: 8px 10px;
+  border: solid 1px #ff5200;
+  border-radius: 5px;
+  color: #ff5200;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.information-popup-body .buttons .btnContinue:hover {
+  box-shadow: 3px 3px 5px #cccccc;
+}
+
+.information-popup-body .buttons .btnCancel {
+  background: #ff5200;
+  margin-right: 10px;
+  padding: 8px 17px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.information-popup-body .buttons .btnCancel:hover {
+  box-shadow: 3px 3px 5px #cccccc;
+}
+
+/* otp popup css */
+.otp-popup-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.otp-popup-content {
+  position: fixed;
+  width: 325px;
+  height: 220px;
+  z-index: 1001;
+  top: 200px;
+  /* left: calc(25%); */
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 30%);
+}
+
+.otp-popup-header {
+  background: #0086ff;
+  width: 100%;
+  padding: 10px 10px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.otp-popup-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.otp-popup-body {
+  background: #ffffff;
+  width: 100%;
+  padding: 10px;
+}
+
+.otp-input-wrap {
+  width: 100%;
+  margin: 7px 5px 7px 5px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.otp-input-wrap input {
+  padding: 10px 10px 10px 10px;
+  border-radius: 3px;
+  width: 100%;
+  height: 37px;
+  border: solid 1px #a6a6a6;
+  color: #444444;
+  font-weight: 600;
+  letter-spacing: 0.03rem;
+  font-size: 13px;
+}
+
+.otp-popup-body .txtInputLabel {
   left: 15px;
-  top: 6px;
+  top: 10px;
+}
+
+.otp-popup-body .txtInputActiveLabel {
+  color: #00aeef;
+  background: #fff;
+  padding: 0 4px;
+  font-size: 12px;
+  top: -6px;
+  left: 5px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  padding: 0 2px;
+}
+
+.otp-popup-body .txtInputActiveLabel.filled {
+  color: #777;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.otp-label {
+  color: #666666;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.btnSubmitOtp {
+  background: #ff5200;
+  padding: 10px 17px;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.btnSubmitOtp:hover {
+  opacity: 0.9;
+}
+
+.resend-otp {
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+
+.otp-resend {
+  color: #0086ff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Bus Amenities CSS */
+.bus-amenities-container {
+  padding: 20px 13% 20px 13%;
+}
+
+.bus-amenities-form {
+  max-width: 850px;
+  margin: 0 auto;
+  /* background: lightgoldenrodyellow; */
+}
+.bus-amenities-inputs {
+  border: none;
+}
+
+.bus-ame-input-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bus-ame-input-wrap {
+  width: 25%;
+  display: flex;
+  margin: 7px 5px 7px 5px;
+  position: relative;
+}
+
+.bus-ame-input-box {
+  width: 48px;
+}
+
+.bus-ame-input-wrap input {
+  padding: 10px 10px 10px 10px;
+  border-radius: 3px;
+  width: 100%;
+  height: 32px;
+  border: solid 1px #a6a6a6;
+  color: #444444;
+  font-weight: 600;
+  letter-spacing: 0.03rem;
+  font-size: 13px;
+}
+
+.bus-ame-input-wrap.busnum {
+  width: 100%;
+}
+
+.bus-ame-input-wrap.busnum input {
+  padding: 10px 2px 10px 2px;
+}
+
+.tab-ame-type-wrap {
+  border-bottom: solid 1px #e5e5e5;
+  width: 100%;
+  padding-bottom: 6px;
+}
+
+.general-ame-list-wrap {
+  border-bottom: solid 1px #e5e5e5;
+  width: 100%;
+  padding-bottom: 15px;
+}
+
+.covid-ame-list-wrap {
+  width: 100%;
+  padding-bottom: 15px;
+  border-bottom: none;
+}
+
+.ame-in-bus-wrap {
+  width: 100%;
+}
+
+.tabAmeType {
+  background: #ffffff;
+  text-transform: uppercase;
+  color: #000000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.tabAmeType.active-ame-type {
+  background: #0086ff;
+  color: #ffffff;
+}
+
+.tabAmeType input {
+  padding: 0px;
+  width: auto;
+  height: auto;
+  visibility: hidden;
+  margin: 0;
+  position: absolute;
+  top: 12px;
+  left: 25px;
+}
+
+.brdBtm {
+  border-bottom: solid 1px #e5e5e5;
+  width: 100%;
+  padding-bottom: 6px;
+}
+
+.amenities-list-wrap {
+  width: 100%;
+}
+.amenities-item {
+  width: 210px;
+  margin-bottom: 7px;
+  float: left;
+}
+
+.amenities-item-wrap {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.amenities-item-left-wrap {
+  width: 12%;
+}
+
+.amenities-item-right-wrap {
+  width: 98%;
+}
+
+.amenities-item .amenities-checkbox {
+  height: 17px;
+  width: 17px;
+}
+
+.amenities-title {
+  background: #f2fafe;
+  width: 90%;
+  padding: 8px 5px;
+  border-radius: 5px;
+  color: #202020;
+  font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.bus-ame-input-row .covid-ame {
+  margin-bottom: 0;
+}
+
+.covid-ame-heading {
+  color: #080808;
+  margin-bottom: 0;
+}
+
+.ex-mark {
+  background: url(/images/info.svg) 100% no-repeat;
+  background-size: 100% 100%;
+  width: 25px;
+  height: 15px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip-inner {
+  max-width: 500px;
+  padding: 10px;
+}
+
+.inbus-ame-item {
+  width: 280px;
+  margin-bottom: 7px;
+  float: left;
+}
+
+.inbus-ame-item-wrap {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.inbus-ame-item-left-wrap {
+  width: 9%;
+}
+
+.inbus-ame-item-center-wrap {
+  width: 61%;
+}
+
+.inbus-ame-item-right-wrap {
+  width: 40%;
+  padding-right: 8px;
+}
+
+.inbus-ame-item .amenities-checkbox {
+  height: 17px;
+  width: 17px;
+}
+
+.inbus-ame-item .amenities-title {
+  background: #f2fafe;
+  width: 95%;
+  padding: 8px 5px;
+  border-radius: 5px;
+  color: #202020;
+  font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.inbus-ame-bus-type-select {
+  padding: 1px 0px 1px 0px;
+  border: solid 1px #a6a6a6;
+  border-radius: 5px;
+  position: relative;
+  width: 88px;
+}
+
+.inbus-ame-type .chosen-container-single .chosen-single {
+  height: 35px;
+  padding: 6px 0px 0px 9px;
+}
+
+.inbus-ame-type .chosen-container-single .chosen-single div b {
+  top: 13px;
+}
+
+.inbus-ame-type .chosen-container-active.chosen-with-drop .chosen-single div b {
+  top: 10px;
+}
+
+.inbus-ame-type .chosen-container-single .chosen-drop {
+  padding: 3px;
+  margin-top: 2px;
 }

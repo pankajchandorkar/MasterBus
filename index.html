@@ -6,7 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./chosen/chosen.min.css" />
-    <link rel="stylesheet" href="./css/datepicker.css" />
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="./css/style.css" />
     <title>Master Bus</title>
 </head>
@@ -16,7 +21,7 @@
         <div class="header-wrap">
             <div class="header-wrap-left">
                 <ul class="tabs-list">
-                    <li id="tabBusMaster" class="tab active"><span class="completed"></span>1. Bus Master</li>
+                    <li id="tabBusMaster" class="tab active-tab"><span class="completed"></span>1. Bus Master</li>
                     <li id="tabBusInfo" class="tab"><span class="completed"></span>2. Bus Info</li>
                     <li id="tabGPS" class="tab">3. GPS</li>
                     <li id="tabBusAmenities" class="tab">4. Bus Amenities</li>
@@ -29,10 +34,10 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="page-container">
         <div class="tabs-content">
             <div class="tabBusMaster" style="display:none;">
-                <form name="frmBusMaster" id="frmBusMaster" action="">
+                <form name="frmBusMaster" id="frmBusMaster" action="" autocomplete="off">
                     <div class="bus-master-form">
                         <div class="form-wrap-left">
                             <!-- Select Bus Number -->
@@ -252,7 +257,7 @@
             <div class="tabBusInfo" style="display: none;">
                 <div class="bus-info-container">
                     <div class="bus-info-form">
-                        <form action="">
+                        <form action="" autocomplete="off">
                             <div class="bus-info-inputs">
                                 <label class="mstBusNoLabel">Master Bus Number</label>
                                 <!-- inputs 1st row -->
@@ -356,33 +361,33 @@
                     </div>
                 </div>
                 <div class="bus-document-body">
-                    <form name="" id="">
+                    <form name="" id="" autocomplete="off">
                         <div class="bus-document-body-wrap">
                             <!-- row 1 -->
                             <div class="bus-document-row">
                                 <div class="bus-document-col bus-document-col1">
                                     <div class="doc-title"> 1. Registration Certificate</div>
                                 </div>
-                                <div class="bus-document-col bus-document-col2 ">
+                                <div class="bus-document-col bus-document-col2 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
-                                <div class="bus-document-col bus-document-col3">
+                                <div class="bus-document-col bus-document-col3 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
                                 <div class="bus-document-col bus-document-col4">
                                     <div class="bus-doc-file-input-wrap">
-                                        <div class="text">
+                                        <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-1" class="fileBrowse">
                                             <input type="text" name="" id="txtBrowse-1" class="txtBrowse"
                                                 readonly="readonly">
                                         </div>
-                                        <div class="btn">
+                                        <div class="div-btn">
                                             <button type="button" id="btnBrowse-1" class="btnBrowse"
                                                 onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
-                                        <div class="icon">
+                                        <div class="div-icon">
                                             <div class="pdf-file"></div>
                                         </div>
                                     </div>
@@ -393,26 +398,26 @@
                                 <div class="bus-document-col  bus-document-col1">
                                     <div class="doc-title uploaded">2. Insurance Policy</div>
                                 </div>
-                                <div class="bus-document-col  bus-document-col2">
+                                <div class="bus-document-col  bus-document-col2 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
-                                <div class="bus-document-col  bus-document-col3">
+                                <div class="bus-document-col  bus-document-col3 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
                                 <div class="bus-document-col bus-document-col4">
                                     <div class="bus-doc-file-input-wrap">
-                                        <div class="text">
+                                        <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-2" class="fileBrowse">
                                             <input type="text" name="" id="txtBrowse-2" class="txtBrowse"
                                                 readonly="readonly">
                                         </div>
-                                        <div class="btn">
+                                        <div class="div-btn">
                                             <button type="button" id="btnBrowse-2" class="btnBrowse"
                                                 onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
-                                        <div class="icon">
+                                        <div class="div-icon">
                                             <div class="pdf-file"></div>
                                         </div>
                                     </div>
@@ -423,26 +428,26 @@
                                 <div class="bus-document-col  bus-document-col1">
                                     <div class="doc-title uploaded">3. Fitness Certificate</div>
                                 </div>
-                                <div class="bus-document-col  bus-document-col2">
+                                <div class="bus-document-col  bus-document-col2 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
-                                <div class="bus-document-col  bus-document-col3">
+                                <div class="bus-document-col  bus-document-col3 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
                                 <div class="bus-document-col bus-document-col4">
                                     <div class="bus-doc-file-input-wrap">
-                                        <div class="text">
+                                        <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-3" class="fileBrowse">
                                             <input type="text" name="" id="txtBrowse-3" class="txtBrowse"
                                                 readonly="readonly">
                                         </div>
-                                        <div class="btn">
+                                        <div class="div-btn">
                                             <button type="button" id="btnBrowse-3" class="btnBrowse"
                                                 onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
-                                        <div class="icon">
+                                        <div class="div-icon">
                                             <div class="pdf-file"></div>
                                         </div>
                                     </div>
@@ -453,26 +458,26 @@
                                 <div class="bus-document-col  bus-document-col1">
                                     <div class="doc-title"> 4. Vehicle Permit</div>
                                 </div>
-                                <div class="bus-document-col  bus-document-col2">
+                                <div class="bus-document-col  bus-document-col2 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
-                                <div class="bus-document-col  bus-document-col3">
+                                <div class="bus-document-col  bus-document-col3 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
                                 <div class="bus-document-col bus-document-col4">
                                     <div class="bus-doc-file-input-wrap">
-                                        <div class="text">
+                                        <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-4" class="fileBrowse">
                                             <input type="text" name="" id="txtBrowse-4" class="txtBrowse"
                                                 readonly="readonly">
                                         </div>
-                                        <div class="btn">
+                                        <div class="div-btn">
                                             <button type="button" id="btnBrowse-4" class="btnBrowse"
                                                 onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
-                                        <div class="icon">
+                                        <div class="div-icon">
                                             <div class="pdf-file"></div>
                                         </div>
                                     </div>
@@ -483,26 +488,26 @@
                                 <div class="bus-document-col  bus-document-col1">
                                     <div class="doc-title"> 5. Authorization Certificate</div>
                                 </div>
-                                <div class="bus-document-col  bus-document-col2">
+                                <div class="bus-document-col  bus-document-col2 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
-                                <div class="bus-document-col  bus-document-col3">
+                                <div class="bus-document-col  bus-document-col3 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
                                 <div class="bus-document-col bus-document-col4">
                                     <div class="bus-doc-file-input-wrap">
-                                        <div class="text">
+                                        <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-5" class="fileBrowse">
                                             <input type="text" name="" id="txtBrowse-5" class="txtBrowse"
                                                 readonly="readonly">
                                         </div>
-                                        <div class="btn">
+                                        <div class="div-btn">
                                             <button type="button" id="btnBrowse-5" class="btnBrowse"
                                                 onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
-                                        <div class="icon">
+                                        <div class="div-icon">
                                             <div class="pdf-file1"></div>
                                         </div>
                                     </div>
@@ -513,26 +518,26 @@
                                 <div class="bus-document-col  bus-document-col1">
                                     <div class="doc-title">6. Pollution Under Control...</div>
                                 </div>
-                                <div class="bus-document-col  bus-document-col2">
+                                <div class="bus-document-col  bus-document-col2 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
-                                <div class="bus-document-col  bus-document-col3">
+                                <div class="bus-document-col  bus-document-col3 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
                                 <div class="bus-document-col bus-document-col4">
                                     <div class="bus-doc-file-input-wrap">
-                                        <div class="text">
+                                        <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-6" class="fileBrowse">
                                             <input type="text" name="" id="txtBrowse-6" class="txtBrowse"
                                                 readonly="readonly">
                                         </div>
-                                        <div class="btn">
+                                        <div class="div-btn">
                                             <button type="button" id="btnBrowse-6" class="btnBrowse"
                                                 onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
-                                        <div class="icon">
+                                        <div class="div-icon">
                                             <div class="pdf-file"></div>
                                         </div>
                                     </div>
@@ -543,26 +548,26 @@
                                 <div class="bus-document-col  bus-document-col1">
                                     <div class="doc-title">7. NOC Certificate</div>
                                 </div>
-                                <div class="bus-document-col  bus-document-col2">
+                                <div class="bus-document-col  bus-document-col2 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
-                                <div class="bus-document-col  bus-document-col3">
+                                <div class="bus-document-col  bus-document-col3 date">
                                     <input type="text" class="datepicker" name="" id="">
                                     <label></label>
                                 </div>
                                 <div class="bus-document-col bus-document-col4">
                                     <div class="bus-doc-file-input-wrap">
-                                        <div class="text">
+                                        <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-7" class="fileBrowse">
                                             <input type="text" name="" id="txtBrowse-7" class="txtBrowse"
                                                 readonly="readonly">
                                         </div>
-                                        <div class="btn">
+                                        <div class="div-btn">
                                             <button type="button" id="btnBrowse-7" class="btnBrowse"
                                                 onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
-                                        <div class="icon">
+                                        <div class="div-icon">
                                             <div class="pdf-file"></div>
                                         </div>
                                     </div>
@@ -590,63 +595,1169 @@
             <div class="tabGPS" style="display: none1;">
                 <div class="gps-container">
                     <div class="gps-form">
-                        <form name="" id="" action="">
+                        <form name="" id="" action="" autocomplete="off">
                             <div class="gps-inputs">
                                 <label class="mstBusNoLabel">Master Bus Number</label>
-
-                                <!-- inputs 1st row -->
-                                <div class="bus-info-input-row">
-                                    <div class="bus-info-input-wrap busnum">
-                                        <div class="bus-info-input-box">
+                                <!-- inputs row -->
+                                <div class="gps-input-row">
+                                    <div class="gps-input-wrap busnum">
+                                        <div class="gps-input-box">
                                             <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
                                                 class="bgColor1 txtCenter" value="GJ" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
-                                        <div class="bus-info-input-box">
+                                        <div class="gps-input-box">
                                             <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
                                                 class="bgColor1 txtCenter" value="15" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
-                                        <div class="bus-info-input-box">
+                                        <div class="gps-input-box">
                                             <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
                                                 class="bgColor1 txtCenter" value="PA" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
-                                        <div class="bus-info-input-box">
+                                        <div class="gps-input-box">
                                             <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
                                                 class="bgColor1 txtCenter" value="3077" readonly="readonly">
                                         </div>
                                     </div>
-                                    <div class="bus-info-input-wrap">
-                                        <button type="button" class="btnEnableGPS">
-                                            <div>
-                                                <div>
-
-                                                </div>
-                                                <div>
-                                                    Enable GPS Tracking
-                                                </div>
-                                            </div>
-                                            
+                                    <div class="gps-input-wrap" style="width:75%;">
+                                        <button id="btnToggleGPS" type="button" class="btnEnableGPS">
+                                            <ul class="btnInnerWraper">
+                                                <li class="btnLeftWrap">
+                                                    <svg class="svg-setting" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;"
+                                                        xml:space="preserve">
+                                                        <path d="M17.6,11c0-0.3,0.1-0.6,0.1-1c0-0.3,0-0.7-0.1-1l2.2-1.6c0.2-0.1,0.2-0.4,0.1-0.6l-2.1-3.5c-0.1-0.2-0.4-0.3-0.6-0.2l-2.6,1
+	c-0.5-0.4-1.1-0.7-1.7-1l-0.4-2.6c0-0.3-0.3-0.4-0.5-0.4H7.9C7.7,0,7.5,0.2,7.4,0.4L7.1,3.1c-0.6,0.3-1.2,0.6-1.7,1l-2.6-1
+	C2.5,3,2.3,3.1,2.1,3.3l-2,3.5C0,7,0,7.2,0.2,7.4L2.4,9c-0.1,0.3-0.1,0.7-0.1,1s0,0.7,0.1,1l-2.2,1.6c-0.2,0.1-0.2,0.4-0.1,0.6
+	l2.1,3.5c0.1,0.2,0.4,0.3,0.6,0.2l2.6-1c0.5,0.4,1.1,0.7,1.7,1l0.4,2.6C7.5,19.8,7.7,20,7.9,20h4.1c0.3,0,0.5-0.2,0.5-0.4l0.4-2.6
+	c0.6-0.3,1.2-0.6,1.7-1l2.6,1c0.2,0.1,0.5,0,0.6-0.2l2.1-3.5c0.1-0.2,0.1-0.5-0.1-0.6L17.6,11z M10,13.8c-2.1,0-3.9-1.7-3.9-3.8
+	S7.9,6.3,10,6.3s3.9,1.7,3.9,3.8S12.1,13.8,10,13.8z" />
+                                                    </svg>
+                                                </li>
+                                                <li class="btnRightWrap">Enable GPS Tracking</li>
+                                            </ul>
+                                        </button>
+                                        <!-- GPS Working -->
+                                        <button type="button" class="btnGPSWorking" style="display:none;">
+                                            <ul class="btnGPSWorkingWrap">
+                                                <li class="btnGPSWorkingIcon">
+                                                    <svg class="svgGpsWorking" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 12 18" style="enable-background:new 0 0 12 18;"
+                                                        xml:space="preserve">
+                                                        <path d="M6,0C2.7,0,0,2.8,0,6.3C0,11,6,18,6,18s6-7,6-11.7C12,2.8,9.3,0,6,0z M6,8.6c-1.2,0-2.1-1-2.1-2.3s1-2.3,2.1-2.3
+	s2.1,1,2.1,2.3S7.2,8.6,6,8.6z" />
+                                                    </svg>
+                                                </li>
+                                                <li class="btnGPSWorkingText">GPS Working</li>
+                                            </ul>
+                                        </button>
+                                        <!-- GPS Not Working -->
+                                        <button type="button" class="btnGPSNotWorking">
+                                            <ul class="btnGPSNotWorkingWrap">
+                                                <li class="btnGPSNotWorkingIcon">
+                                                    <svg class="svgGpsNotWorking" xmlns="http://www.w3.org/2000/svg"
+                                                        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                        viewBox="0 0 16 18" style="enable-background:new 0 0 16 18;"
+                                                        xml:space="preserve">
+                                                        <path d="M8.9,4.1c1.2,0,2.2,1,2.2,2.3c0,0.7-0.3,1.3-0.7,1.7l3.2,3.3c0.9-1.7,1.5-3.4,1.5-4.9c0-3.5-2.8-6.3-6.2-6.3
+	C7.1,0,5.5,0.7,4.4,1.9l2.8,2.9C7.7,4.3,8.2,4.1,8.9,4.1z M12.8,12.7L8.7,8.5L8.6,8.4L1.1,0.9L0,2l2.8,2.9C2.7,5.4,2.7,5.8,2.7,6.3
+	C2.7,11,8.9,18,8.9,18s1.5-1.7,3-3.9l3,3L16,16C16,16,12.8,12.7,12.8,12.7z" />
+                                                    </svg>
+                                                </li>
+                                                <li class="btnGPSNotWorkingText">GPS Not Working</li>
+                                            </ul>
                                         </button>
                                     </div>
-                                    <div class="bus-info-input-wrap">
-                                       2 &nbsp;
+                                </div>
+                                <!-- inputs row -->
+                                <div class="gps-input-row">
+                                    <div class="gps-input-wrap rdo-gps-for">
+                                        <input class="custome_radio" type="radio" name="rdoGPSFor" id="rdoGPSFor-1"
+                                            value="1" checked="checked">
+                                        <label for="rdoGPSFor-1">Associate Bus Number</label>
+                                        <input class="custome_radio" type="radio" name="rdoGPSFor" id="rdoGPSFor-2"
+                                            value="2">
+                                        <label for="rdoGPSFor-2">Enter New Data</label>
                                     </div>
-                                    <div class="bus-info-input-wrap">
-                                        3&nbsp;
+                                </div>
+                                <!-- inputs row -->
+                                <div class="gps-input-row associate-bus-no">
+                                    <!-- <div class="gps-input-wrap for-associate-busno">
+                                        <div class="associate-vendor-data">
+
+                                            <div class="associate-vendor-data-list">
+
+                                                
+                                                <div class="associate-vendor-data-row">
+                                                    <div class="associate-vendor-data-col col1 gps-brd-right">
+                                                        <input class="custome_radio" type="radio" name="rdoGPSFor"
+                                                            id="rdoGPSFor-1" value="1" checked="checked">
+                                                        <label for="rdoGPSFor-1">GJ-15-PA-3077</label>
+                                                    </div>
+                                                    <div class="associate-vendor-data-col col2 gps-brd-right">
+                                                       Mantis Technologies Pvt Ltd
+                                                    </div>
+                                                    <div class="associate-vendor-data-col col3">
+                                                        Key1
+                                                    </div>
+                                                    <div class="associate-vendor-data-col col3">
+                                                        Key2
+                                                    </div>
+                                                    <div class="associate-vendor-data-col col3">
+                                                        Key3
+                                                    </div>
+                                                    <div class="associate-vendor-data-col col3">
+                                                        Key4
+                                                    </div>
+                                                    <div class="associate-vendor-data-col col3">
+                                                        Key5
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                    </div> -->
+                                </div>
+                                <!-- inputs row -->
+                                <div class="gps-input-row new-data" style="display:none;">
+                                    <div class="gps-input-wrap for-new-data">
+                                        <div class="gps-select-box selGPSVendor">
+                                            <select class="chosen" name="gpsBusNumber" id="gpsBusNumber">
+                                                <option value="">GJ-15-PA-3077</option>
+                                                <option value="">GJ-15-PA-3078</option>
+                                                <option value="">GJ-15-PA-3017</option>
+                                            </select>
+                                            <label class="form-label">Bus Number</label>
+                                        </div>
+                                    </div>
+                                    <div class="gps-input-wrap for-new-data">
+                                        <input type="text" name="" id="" value="">
+                                        <label class="txtInputLabel">Bus Mileage/ Km</label>
+                                    </div>
+                                </div>
+                                <!-- inputs row -->
+                                <div class="gps-input-row new-data" style="display:none;">
+                                    <div class="gps-input-wrap for-new-data">
+                                        <div class="gps-select-box selGPSVendor">
+                                            <select class="chosen" name="gpsVendor" id="gpsVendor">
+                                                <option value="">Mantis 1</option>
+                                                <option value="">Mantis 2</option>
+                                                <option value="">Mantis 3</option>
+                                            </select>
+                                            <label class="form-label">GPS Vendor</label>
+                                        </div>
+                                    </div>
+                                    <div class="gps-input-wrap for-new-data">
+                                        &nbsp;
+                                    </div>
+                                </div>
+                                <!-- inputs row -->
+                                <div class="gps-input-row new-data" style="display:none;">
+                                    <div class="gps-input-wrap vendor-block">
+                                        <div class="vendor-data">
+                                            <div class="vendor-data-header">
+                                                <div class="vendor-data-row">
+                                                    <div class="vendor-data-col col1 gps-brd-right">
+                                                        Sr.No.
+                                                    </div>
+                                                    <div class="vendor-data-col col2 gps-brd-right">
+                                                        Key
+                                                    </div>
+                                                    <div class="vendor-data-col col3">
+                                                        Value
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="vendor-data-list">
+                                                <div class="vendor-data-row">
+                                                    <div class="vendor-data-col col1 gps-brd-right">
+                                                        01
+                                                    </div>
+                                                    <div class="vendor-data-col col2 gps-brd-right">
+                                                        Auth Code
+                                                    </div>
+                                                    <div class="vendor-data-col col3">
+                                                        <input type="text" name="" id="" placeholder="Enter Value Here">
+                                                    </div>
+                                                </div>
+                                                <div class="vendor-data-row">
+                                                    <div class="vendor-data-col col1 gps-brd-right">
+                                                        02
+                                                    </div>
+                                                    <div class="vendor-data-col col2 gps-brd-right">
+                                                        Vehicle ID
+                                                    </div>
+                                                    <div class="vendor-data-col col3">
+                                                        <input type="text" name="" id="" placeholder="Enter Value Here">
+                                                    </div>
+                                                </div>
+                                                <div class="vendor-data-row">
+                                                    <div class="vendor-data-col col1 gps-brd-right">
+                                                        03
+                                                    </div>
+                                                    <div class="vendor-data-col col2 gps-brd-right">
+                                                        User ID
+                                                    </div>
+                                                    <div class="vendor-data-col col3">
+                                                        <input type="text" name="" id="" placeholder="Enter Value Here">
+                                                    </div>
+                                                </div>
+                                                <div class="vendor-data-row">
+                                                    <div class="vendor-data-col col1 gps-brd-right">
+                                                        04
+                                                    </div>
+                                                    <div class="vendor-data-col col2 gps-brd-right">
+                                                        Param 4
+                                                    </div>
+                                                    <div class="vendor-data-col col3">
+                                                        <input type="text" name="" id="" placeholder="Enter Value Here">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <label class="lblHeading">Monthly Commercial + GST</label>
+                                <!-- inputs row -->
+                                <div class="gps-input-row">
+                                    <div class="gps-input-wrap rdo-mnt-comm-type">
+                                        <input class="custome_radio" type="radio" name="rdoMntCommType"
+                                            id="rdoMntCommType-1" value="1" checked="checked">
+                                        <label for="rdoMntCommType-1">Mantis Monthly Fees + GST (Rs)</label>
+                                        <div style="padding-right:5px;">
+                                            <input type="text" name="" id="" class="fees-amt">
+                                        </div>
+                                        <input class="custome_radio" type="radio" name="rdoMntCommType"
+                                            id="rdoMntCommType-2" value="2">
+                                        <label for="rdoMntCommType-2">Free Of Charge (FOC)</label>
+                                        <button type="button" class="btnSaveCommercial">
+                                            Save Commercial
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- gps result list -->
+                                <div class="gps-input-row">
+
+                                    <div class="gps-result">
+                                        <div class="gps-result-header">
+                                            <div class="gps-result-data-row">
+                                                <div class="gps-result-data-col col1 gps-brd-right">
+                                                    Date
+                                                </div>
+                                                <div class="gps-result-data-col col2 gps-brd-right">
+                                                    Total Response
+                                                </div>
+                                                <div class="gps-result-data-col col3 gps-brd-right">
+                                                    Success
+                                                </div>
+                                                <div class="gps-result-data-col col4">
+                                                    Fail
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="gps-result-body">
+                                            <div class="gps-result-data-row">
+                                                <div class="gps-result-data-col col1 gps-brd-right">
+                                                    20/012021
+                                                </div>
+                                                <div class="gps-result-data-col col2 gps-brd-right">
+                                                    18
+                                                </div>
+                                                <div class="gps-result-data-col col3 gps-brd-right">
+                                                    18 - 100.00%
+                                                </div>
+                                                <div class="gps-result-data-col col4">
+                                                    0 - 0.00%
+                                                </div>
+                                            </div>
+                                            <div class="gps-result-data-row">
+                                                <div class="gps-result-data-col col1 gps-brd-right">
+                                                    20/012021
+                                                </div>
+                                                <div class="gps-result-data-col col2 gps-brd-right">
+                                                    18
+                                                </div>
+                                                <div class="gps-result-data-col col3 gps-brd-right">
+                                                    18 - 100.00%
+                                                </div>
+                                                <div class="gps-result-data-col col4">
+                                                    0 - 0.00%
+                                                </div>
+                                            </div>
+                                            <div class="gps-result-data-row">
+                                                <div class="gps-result-data-col col1 gps-brd-right">
+                                                    20/012021
+                                                </div>
+                                                <div class="gps-result-data-col col2 gps-brd-right">
+                                                    18
+                                                </div>
+                                                <div class="gps-result-data-col col3 gps-brd-right">
+                                                    18 - 100.00%
+                                                </div>
+                                                <div class="gps-result-data-col col4">
+                                                    0 - 0.00%
+                                                </div>
+                                            </div>
+                                            <div class="gps-result-data-row">
+                                                <div class="gps-result-data-col col1 gps-brd-right">
+                                                    20/012021
+                                                </div>
+                                                <div class="gps-result-data-col col2 gps-brd-right">
+                                                    18
+                                                </div>
+                                                <div class="gps-result-data-col col3 gps-brd-right">
+                                                    18 - 100.00%
+                                                </div>
+                                                <div class="gps-result-data-col col4">
+                                                    0 - 0.00%
+                                                </div>
+                                            </div>
+                                            <div class="gps-result-data-row">
+                                                <div class="gps-result-data-col col1 gps-brd-right">
+                                                    20/012021
+                                                </div>
+                                                <div class="gps-result-data-col col2 gps-brd-right">
+                                                    18
+                                                </div>
+                                                <div class="gps-result-data-col col3 gps-brd-right">
+                                                    18 - 100.00%
+                                                </div>
+                                                <div class="gps-result-data-col col4">
+                                                    0 - 0.00%
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                    </div>
+                    </form>
+                </div>
 
-
-
-                        </form>
+                <!-- information popup -->
+                <div class="information-popup-wrapper" style="display: none;" onclick="closeInfoPopup(event);">
+                    <div class="information-popup-content">
+                        <div class="information-popup-header">
+                            Information
+                            <div class="information-popup-close" onclick="hideInfoPopup(event);">
+                                <svg fill="#ffffff" width="20" height="20" viewBox="0 0 18 18">
+                                    <path
+                                        d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="information-popup-body">
+                            <div class="message">
+                                GPS configured at minimum rental. If you reduce further, an OTP will be send to
+                                9901851265
+                                for verification.
+                            </div>
+                            <div class="buttons">
+                                <button type="button" class="btnContinue" onclick="gpsContinue(event)">Continue</button>
+                                <button type="button" class="btnCancel" onclick="hideInfoPopup(event);">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- OTP popup -->
+                <div class="otp-popup-wrapper" style="display: none;" onclick="closeOtpPopup(event);">
+                    <div class="otp-popup-content">
+                        <div class="otp-popup-header">
+                            Submit OTP
+                            <div class="otp-popup-close" onclick="hideOtpPopup(event);">
+                                <svg fill="#ffffff" width="20" height="20" viewBox="0 0 18 18">
+                                    <path
+                                        d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="otp-popup-body">
+                            <div class="otp-input-wrap">
+                                <input type="text" name="" id="otp" value="" class="">
+                                <label class="txtInputLabel">Enter OTP</label>
+                            </div>
+                            <div class="otp-input-wrap">
+                                <label class="otp-label">OTP has been sent to 9901851265</label>
+                            </div>
+                            <div class="otp-input-wrap">
+                                <button type="button" class="btnSubmitOtp" onclick="submitOTP()">Submit OTP</button>
+                            </div>
+                            <div class="otp-input-wrap resend-otp">
+                                <label class="otp-label">Not Received Yet ? <span
+                                        class="otp-resend">Resend</span></label>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="tabBusAmenities" style="display: none;">
-                tabBusAmenities
+                <div class="bus-amenities-container">
+                    <div class="bus-amenities-form">
+                        <form action="" autocomplete="off">
+                            <div class="bus-amenities-inputs">
+                                <label class="mstBusNoLabel">Master Bus Number</label>
+                                <!-- inputs row -->
+                                <div class="bus-ame-input-row">
+                                    <div class="bus-ame-input-wrap busnum">
+                                        <div class="bus-ame-input-box">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
+                                                class="bgColor1 txtCenter" value="GJ" readonly="readonly">
+                                        </div>
+                                        <div class="input-seperator">-</div>
+                                        <div class="bus-ame-input-box">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
+                                                class="bgColor1 txtCenter" value="15" readonly="readonly">
+                                        </div>
+                                        <div class="input-seperator">-</div>
+                                        <div class="bus-ame-input-box">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
+                                                class="bgColor1 txtCenter" value="PA" readonly="readonly">
+                                        </div>
+                                        <div class="input-seperator">-</div>
+                                        <div class="bus-ame-input-box">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
+                                                class="bgColor1 txtCenter" value="3077" readonly="readonly">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- inputs row -->
+                                <div class="bus-ame-input-row ">
+                                    <div class="bus-ame-input-wrap tab-ame-type-wrap">
+                                        <button type="button" class="tabAmeType active-ame-type">
+                                            At Bus
+                                            <input type="radio" name="ameType" id="ameType-1" value="1"
+                                                checked="checked">
+                                        </button>
+                                        <button type="button" class="tabAmeType">
+                                            In Bus
+                                            <input type="radio" name="ameType" id="ameType-2" value="2">
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="ame-at-bus">
+
+                                    <!-- inputs row -->
+                                    <div class="bus-ame-input-row">
+                                        <div class="bus-ame-input-wrap general-ame-list-wrap">
+                                            <div class="amenities-list-wrap">
+
+                                                <!-- check all amenities -->
+                                                <div style="display:flex;">
+                                                    <div class="amenities-item">
+                                                        <div class="amenities-item-wrap">
+                                                            <div class="amenities-item-left-wrap">
+                                                                <input class="amenities-checkbox" type="checkbox"
+                                                                    name="" id="atbus-ame-checkall">
+                                                            </div>
+                                                            <div class="amenities-item-right-wrap">
+                                                                <div class="amenities-title"><span id="checkAll">Check
+                                                                        All</span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Water Bottle</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Wifi</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Toilet</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Snacks</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Meal</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="" checked="checked">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Emergency Exit</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">First Aid Box</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Central TV</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Heater</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Fire Extiguisher</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">CCTV</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Hammer</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- inputs row -->
+                                    <div class="bus-ame-input-row">
+                                        <div class="bus-ame-input-wrap covid-ame">
+                                            <label class="covid-ame-heading">COVID Amenities</label>
+                                        </div>
+                                    </div>
+                                    <!-- inputs row -->
+                                    <div class="bus-ame-input-row">
+                                        <div class="bus-ame-input-wrap covid-ame-list-wrap">
+                                            <div class="amenities-list-wrap">
+
+                                                <!-- check all amenities -->
+                                                <div style="display:flex;">
+                                                    <div class="amenities-item">
+                                                        <div class="amenities-item-wrap">
+                                                            <div class="amenities-item-left-wrap">
+                                                                <input class="amenities-checkbox" type="checkbox"
+                                                                    name="" id="atbus-ame-checkall">
+                                                            </div>
+                                                            <div class="amenities-item-right-wrap">
+                                                                <div class="amenities-title"><span id="checkAll">Check
+                                                                        All</span></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Fumigation <span
+                                                                    class="ex-mark" data-toggle="tooltip"
+                                                                    data-placement="top"
+                                                                    title="Tooltip Text Will Be Here"></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Bus Crew Covid Tested <span
+                                                                    class="ex-mark" data-toggle="tooltip"
+                                                                    data-placement="top"
+                                                                    title="Tooltip Text Will Be Here"></span> </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Bus Crew Mask</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Hand Sanitizer</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Filtration <span
+                                                                    class="ex-mark" data-toggle="tooltip"
+                                                                    data-placement="top"
+                                                                    title="Tooltip Text Will Be Here"></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="" checked="checked">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Passenger Face Mask</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="" checked="checked">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Bus Sanitization </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Social Distancing</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Bipolar Ionisation <span
+                                                                    class="ex-mark" data-toggle="tooltip"
+                                                                    data-placement="top"
+                                                                    title="Tooltip Text Will Be Here"></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Social Distancing</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="amenities-item">
+                                                    <div class="amenities-item-wrap">
+                                                        <div class="amenities-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="amenities-item-right-wrap">
+                                                            <div class="amenities-title">Thermal Screening</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- amenities in bus section -->
+                                <div class="ame-in-bus" style="display:none;">
+                                    <!-- inputs row -->
+                                    <div class="bus-ame-input-row">
+                                        <div class="bus-ame-input-wrap ame-in-bus-wrap">
+                                            <div class="amenities-list-wrap">
+
+                                                <!-- check all amenities -->
+                                                <div style="display:flex;">
+
+
+                                                    <div class="inbus-ame-item">
+                                                        <div class="inbus-ame-item-wrap">
+                                                            <div class="inbus-ame-item-left-wrap">
+                                                                <input class="amenities-checkbox" type="checkbox"
+                                                                    name="" id="inbus-ame-checkall">
+                                                            </div>
+                                                            <div class="inbus-ame-item-center-wrap">
+                                                                <div class="amenities-title"><span id="checkAll">Check
+                                                                        All</span></div>
+                                                            </div>
+                                                            <div class="inbus-ame-item-right-wrap">
+                                                                &nbsp;
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Water Bottle Holder</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Vomiting Bag</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Blanket</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Extra Leg Space</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Novel</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Water Bottle Holder</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Meal</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Pillow</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Fan</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Facial Tissues</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Newspaper</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Reading Light</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Charging Point</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Snacks</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- amenities option -->
+                                                <div class="inbus-ame-item">
+                                                    <div class="inbus-ame-item-wrap">
+                                                        <div class="inbus-ame-item-left-wrap">
+                                                            <input class="amenities-checkbox" type="checkbox" name=""
+                                                                id="">
+                                                        </div>
+                                                        <div class="inbus-ame-item-center-wrap">
+                                                            <div class="amenities-title">Personal TV</div>
+                                                        </div>
+                                                        <div class="inbus-ame-item-right-wrap">
+                                                            <div class="inbus-ame-bus-type-select inbus-ame-type">
+                                                                <select class="chosen" name="busType" id="busType">
+                                                                    <option value="">Seater</option>
+                                                                    <option value="">Sleeper</option>
+                                                                    <option value="">Both</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- amenities option end-->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="tabBusPicture" style="display: none;">
                 tabBusPicture
@@ -656,9 +1767,16 @@
             </div>
         </div>
     </div>
-    <script src="./js/jquery-3.6.0.min.js"></script>
+    <!-- <script src="./js/jquery-3.6.0.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="./chosen/chosen.jquery.min.js"></script>
-    <script src="./js/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js">
+    </script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js">
+        </script>
     <script src="./js/common.js"></script>
 </body>
 
