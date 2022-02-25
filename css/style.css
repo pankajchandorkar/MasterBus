@@ -13,6 +13,7 @@ body {
   font-size: 12px;
   background: #ffffff;
   letter-spacing: 0.03rem;
+  line-height: 1;
 }
 
 textarea {
@@ -50,6 +51,7 @@ textarea {
 
 .header-wrap-left .tabs-list {
   display: flex;
+  margin: 0px;
 }
 
 .header-wrap-left .tab {
@@ -1076,11 +1078,16 @@ textarea {
   width: 100%;
   box-shadow: 0px 2px 5px #ccc;
   border-radius: 5px 5px 0px 0px;
+  margin: 7px 5px 7px 5px;
 }
 
 .gps-result-header {
   background: #e5f3ff;
   height: 35px;
+}
+
+.gps-result-header .gps-result-data-col {
+  padding: 12px 8px 12px 8px;
 }
 
 .gps-result-data-row {
@@ -1170,11 +1177,15 @@ textarea {
 .vendor-data {
   width: 100%;
   border-radius: 5px;
-  padding: 0 10px;
+  padding: 0;
   box-shadow: 0px 2px 5px #ccc;
 }
 .vendor-data-header {
-  height: 33px;
+  height: 34px;
+}
+
+.vendor-data-header .vendor-data-col {
+  padding: 11px 8px 11px 8px;
 }
 
 .vendor-data-row {
@@ -1225,50 +1236,75 @@ textarea {
 .associate-vendor-data {
   width: 100%;
   border-radius: 5px;
-  padding: 0 10px;
+  padding: 0px;
   box-shadow: 0px 2px 5px #ccc;
 }
 
-.associate-vendor-data-list{
+.associate-vendor-data-list {
   overflow: auto;
-  width:900px;
+  width: 987px;
+  height: 150px;
 }
 
 .associate-vendor-data-row {
   display: flex;
-  width: 100%;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 12px;
   color: #444444;
+  width: 1130px;
 }
 
 .associate-vendor-data-col {
   padding: 9px 8px 7px 8px;
-  float: left;
+  display: flex;
+  align-items: center;
 }
 
 .associate-vendor-data-col.col1 {
   width: 160px;
-  display: flex;
-  align-items: center;
 }
 
 .associate-vendor-data-col.col2 {
   width: 220px;
-  display: flex;
-  align-items: center;
 }
 
 .associate-vendor-data-col.col3 {
-  width: 100px;
-  display: flex;
-  align-items: center;
+  width: 150px;
 }
 
 .associate-vendor-data .custome_radio:checked + label,
 .associate-vendor-data .custome_radio:not(:checked) + label {
   color: #444444;
   padding-left: 25px;
+}
+
+.associate-vendor-data-list .associate-vendor-data-row:nth-child(odd) {
+  background: #ffffff;
+}
+
+.associate-vendor-data-list .associate-vendor-data-row:nth-child(even) {
+  background: #f7fbff;
+}
+
+/* width */
+.associate-vendor-data ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+.associate-vendor-data ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.associate-vendor-data ::-webkit-scrollbar-thumb {
+  background: #cccccc;
+}
+
+/* Handle on hover */
+.associate-vendor-data ::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /* information popup css */
@@ -1428,7 +1464,7 @@ textarea {
 
 .otp-input-wrap {
   width: 100%;
-  margin: 7px 5px 7px 5px;
+  margin: 7px 0px 7px 0px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -1641,7 +1677,7 @@ textarea {
 .amenities-title {
   background: #f2fafe;
   width: 90%;
-  padding: 8px 5px;
+  padding: 8px 10px;
   border-radius: 5px;
   color: #202020;
   font-weight: 600;
@@ -1649,6 +1685,7 @@ textarea {
   display: flex;
   align-items: center;
   white-space: nowrap;
+  line-height: 1.428;
 }
 
 .bus-ame-input-row .covid-ame {
@@ -1661,7 +1698,7 @@ textarea {
 }
 
 .ex-mark {
-  background: url(/images/info.svg) 100% no-repeat;
+  background: url(../images/info.svg) 100% no-repeat;
   background-size: 100% 100%;
   width: 25px;
   height: 15px;
@@ -1707,7 +1744,7 @@ textarea {
 .inbus-ame-item .amenities-title {
   background: #f2fafe;
   width: 95%;
-  padding: 8px 5px;
+  padding: 8px 10px;
   border-radius: 5px;
   color: #202020;
   font-weight: 600;
@@ -1726,12 +1763,18 @@ textarea {
 }
 
 .inbus-ame-type .chosen-container-single .chosen-single {
-  height: 35px;
-  padding: 6px 0px 0px 9px;
+  height: 27px;
+  padding: 2px 0px 0px 9px;
+}
+
+.inbus-ame-type .chosen-container-single .chosen-single span {
+  font-weight: 500;
+  font-size: 12px;
 }
 
 .inbus-ame-type .chosen-container-single .chosen-single div b {
-  top: 13px;
+  top: 10px;
+  right: 5px;
 }
 
 .inbus-ame-type .chosen-container-active.chosen-with-drop .chosen-single div b {

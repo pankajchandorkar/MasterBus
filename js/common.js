@@ -102,20 +102,11 @@ $(document).ready(function () {
         { format: "DD-MM-YYYY", useCurrent: true, debug: false, }
     );
 
-    $("#btnToggleGPS").on("click", function () {
 
-        if ($(this).hasClass("btnDisableGPS")) {
-            $(this).removeClass("btnDisableGPS");
-            $("button[class='btnGPSWorking']").hide();
-            $("button[class='btnGPSNotWorking']").show();
-        } else {
-            // $(this).addClass("btnDisableGPS");
-            // $("button[class='btnGPSWorking']").show();
-            // $("button[class='btnGPSNotWorking']").hide();
-            $(".information-popup-wrapper").show();
-        }
-
-    })
+    //save commercial button click
+    $("#btnSaveCommercial").on("click", function () {
+        $(".information-popup-wrapper").show();
+    });
 
 
     //for active textbox
@@ -145,6 +136,7 @@ $(document).ready(function () {
             $(".tabGPS .new-data").show();
         }
     });
+
 
     //for active textbox
     $(".otp-input-wrap input[type='text']").on("focus", function (event) {
@@ -187,7 +179,7 @@ $(document).ready(function () {
         } else {
             $(".general-ame-list-wrap input[type='checkbox']").prop("checked", false);
             $(".general-ame-list-wrap #checkAll").text("Check All");
-        } 
+        }
     });
 
 
@@ -198,7 +190,7 @@ $(document).ready(function () {
         } else {
             $(".covid-ame-list-wrap input[type='checkbox']").prop("checked", false);
             $(".covid-ame-list-wrap #checkAll").text("Check All");
-        } 
+        }
     });
 
     $(".ame-in-bus-wrap #inbus-ame-checkall").on('click', function () {
@@ -208,8 +200,12 @@ $(document).ready(function () {
         } else {
             $(".ame-in-bus-wrap input[type='checkbox']").prop("checked", false);
             $(".ame-in-bus-wrap #checkAll").text("Check All");
-        } 
+        }
     });
+
+
+
+   
 
 });
 
