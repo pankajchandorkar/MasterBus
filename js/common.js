@@ -204,10 +204,52 @@ $(document).ready(function () {
     });
 
 
+    // Submit form data via Ajax
+    $("#busPictures").on('submit', function (e) {
+        e.preventDefault();
 
-   
+        var fileInputNo = $("#fileUploadFor").val();
 
+        $.ajax({
+            xhr: function () {
+                var xhr = new window.XMLHttpRequest();
+                xhr.upload.addEventListener("progress", function (evt) {
+                    if (evt.lengthComputable) {
+                        var percentComplete = ((evt.loaded / evt.total) * 100);
+                        $("#picture-block-" + fileInputNo + " .progress-bar-box .probar-loading").css("width", percentComplete + "%");
+                    }
+                }, false);
+                return xhr;
+            },
+            type: 'POST',
+            url: 'ajaxupload.php',
+            data: new FormData(this),
+            dataType: 'json',
+            contentType: false,
+            cache: false,
+            processData: false,
+            beforeSend: function () {
+                $("#picture-block-" + fileInputNo + " .browse-link").hide();
+                $("#picture-block-" + fileInputNo + " .progress-bar-box").show();
+                $("#picture-block-" + fileInputNo + " .progress-bar-box .probar-loading").css("width", "0%");
+            },
+            success: function (response) {
+                if (response.status == 1) {
+                    $('#busPictures')[0].reset();
+                    $("#picture-block-" + fileInputNo + " .image-box").hide();
+                    $("#picture-block-" + fileInputNo + " .uploaded-img").show();
+                    $("#picture-block-" + fileInputNo + " .uploaded-img img").attr("src", response.imgPath);
+                } else {
+                    $(".bus-picture-error-popup-wrapper").show();
+                    $(".bus-picture-error-popup-wrapper #fileName").text(response.filename);
+                    $("#picture-block-" + fileInputNo + " .browse-link").show();
+                    $("#picture-block-" + fileInputNo + " .progress-bar-box").hide();
+                }
+            }
+        });
+    });
 });
+
 
 
 //this function called from Bus Info Tab, for select bus document file
@@ -262,4 +304,36 @@ function submitOTP() {
     }
 }
 
+function closeBusPictureErrorPopup(e) {
+    e.stopPropagation();
+    $('.bus-picture-error-popup-wrapper').hide();
+}
+
+function showBusPictureSelectDailog(obj) {
+    var fileInputNo = $(obj).parents(".bus-picture-block").attr("id").replace("picture-block-", "");
+    $("#busPicture" + fileInputNo).trigger("click");
+
+    $("#busPicture" + fileInputNo).unbind().bind("change", function () {
+        $("#fileUploadFor").val(fileInputNo);
+        $("#btnUploadPhoto").submit();
+    });
+}
+
+function editBusPicture(obj) {
+    var fileInputNo = $(obj).parents(".bus-picture-block").attr("id").replace("picture-block-", "");
+    $("#picture-block-" + fileInputNo + " .image-box").show();
+    $("#picture-block-" + fileInputNo + " .uploaded-img").hide();
+    $("#picture-block-" + fileInputNo + " .browse-link").show();
+    $("#picture-block-" + fileInputNo + " .progress-bar-box").hide();
+    $("#picture-block-" + fileInputNo + " .progress-bar-box .probar-loading").css("width", "0%");
+}
+
+function deleteBusPicture(obj) {
+    var fileInputNo = $(obj).parents(".bus-picture-block").attr("id").replace("picture-block-", "");
+    $("#picture-block-" + fileInputNo + " .image-box").show();
+    $("#picture-block-" + fileInputNo + " .uploaded-img").hide();
+    $("#picture-block-" + fileInputNo + " .browse-link").show();
+    $("#picture-block-" + fileInputNo + " .progress-bar-box").hide();
+    $("#picture-block-" + fileInputNo + " .progress-bar-box .probar-loading").css("width", "0%");
+}
 

@@ -983,6 +983,7 @@ textarea {
   width: 100%;
   padding-left: 3px;
   margin-top: 15px;
+  position: relative;
 }
 
 .gps-select-box {
@@ -1054,8 +1055,8 @@ textarea {
   font-weight: 500;
 }
 
-.btnSaveCommercial {
-  position: relative;
+.btnSaveGPS {
+  position: absolute;
   padding: 12px 0px;
   text-transform: uppercase;
   font-weight: bold;
@@ -1067,9 +1068,10 @@ textarea {
   width: 188px;
   cursor: pointer;
   top: -11px;
+  right: 350px;
 }
 
-.btnSaveCommercial:hover {
+.btnSaveGPS:hover {
   opacity: 0.9;
 }
 
@@ -1879,7 +1881,11 @@ textarea {
 }
 
 .add-image {
-  padding: 15% 35% 5% 38%;
+  padding: 30px 0px 10px 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-icon {
@@ -1919,7 +1925,7 @@ textarea {
 }
 
 .probar-loading {
-  width: 57%;
+  width: 0%;
   background: #0086ff;
   border-radius: 10px 10px 10px 10px;
   height: 14px;
@@ -1992,4 +1998,84 @@ textarea {
   position: absolute;
   top: 4px;
   left: 1px;
+}
+
+/* bus picture upload error popup css */
+.bus-picture-error-popup-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.bus-picture-error-popup-content {
+  position: fixed;
+  width: 373px;
+  height: 190px;
+  z-index: 1001;
+  top: 200px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 30%);
+}
+
+.bus-picture-error-popup-header {
+  background: #0086ff;
+  width: 100%;
+  padding: 10px 10px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 9px 9px 0px 0px;
+}
+
+.bus-picture-error-popup-body {
+  background: #ffffff;
+  width: 100%;
+  padding: 10px 24px 0px 24px;
+}
+
+.bus-picture-error-popup-content .error-msg {
+  color: #ff5200;
+  line-height: 22px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.btnUpload {
+  background: #ff5200;
+  padding: 12px 12px;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btnUpload:hover {
+  opacity: 0.9;
+}
+
+.bus-picture-error-popup-content .note-msg {
+  font-size: 11px;
+  font-style: italic;
+  margin-top: 15px;
+  letter-spacing: 0.2px;
+}
+
+
+.bus-pictures-form .fileBrowse {
+  display: none;
 }

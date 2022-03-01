@@ -36,7 +36,7 @@
     </div>
     <div class="page-container">
         <div class="tabs-content">
-            <div class="tabBusMaster" style="display:none;">
+            <div class="tabBusMaster">
                 <form name="frmBusMaster" id="frmBusMaster" action="" autocomplete="off">
                     <div class="bus-master-form">
                         <div class="form-wrap-left">
@@ -678,10 +678,13 @@
                                     <div class="gps-input-wrap rdo-gps-for">
                                         <input class="custome_radio" type="radio" name="rdoGPSFor" id="rdoGPSFor-1"
                                             value="1" checked="checked">
-                                        <label for="rdoGPSFor-1">Associate Bus Number</label>
+                                        <label for="rdoGPSFor-1">Select Existing Bus Number For GPS Data</label>
                                         <input class="custome_radio" type="radio" name="rdoGPSFor" id="rdoGPSFor-2"
                                             value="2">
-                                        <label for="rdoGPSFor-2">Enter New Data</label>
+                                        <label for="rdoGPSFor-2">Enter New GPS Data</label>
+                                        <button type="button" id="btnSaveConfig" class="btnSaveGPS">
+                                            Save GPS Configuration
+                                        </button>
                                     </div>
                                 </div>
                                 <!-- inputs row -->
@@ -745,7 +748,7 @@
                                                 <div class="associate-vendor-data-row">
                                                     <div class="associate-vendor-data-col col1 gps-brd-right">
                                                         <input class="custome_radio" type="radio" name="rdoGPSAssBusNo"
-                                                            id="rdoGPSAssBusNo-3" value="3" >
+                                                            id="rdoGPSAssBusNo-3" value="3">
                                                         <label for="rdoGPSAssBusNo-3">GJ-15-PA-3077</label>
                                                     </div>
                                                     <div class="associate-vendor-data-col col2 gps-brd-right">
@@ -771,7 +774,7 @@
                                                 <div class="associate-vendor-data-row">
                                                     <div class="associate-vendor-data-col col1 gps-brd-right">
                                                         <input class="custome_radio" type="radio" name="rdoGPSAssBusNo"
-                                                            id="rdoGPSAssBusNo-4" value="4" >
+                                                            id="rdoGPSAssBusNo-4" value="4">
                                                         <label for="rdoGPSAssBusNo-4">GJ-15-PA-3077</label>
                                                     </div>
                                                     <div class="associate-vendor-data-col col2 gps-brd-right">
@@ -797,7 +800,7 @@
                                                 <div class="associate-vendor-data-row">
                                                     <div class="associate-vendor-data-col col1 gps-brd-right">
                                                         <input class="custome_radio" type="radio" name="rdoGPSAssBusNo"
-                                                            id="rdoGPSAssBusNo-5" value="5" >
+                                                            id="rdoGPSAssBusNo-5" value="5">
                                                         <label for="rdoGPSAssBusNo-5">GJ-15-PA-3077</label>
                                                     </div>
                                                     <div class="associate-vendor-data-col col2 gps-brd-right">
@@ -938,8 +941,8 @@
                                         <input class="custome_radio" type="radio" name="rdoMntCommType"
                                             id="rdoMntCommType-2" value="2">
                                         <label for="rdoMntCommType-2">Free Of Charge (FOC)</label>
-                                        <button type="button" id="btnSaveCommercial" class="btnSaveCommercial">
-                                            Save Commercial
+                                        <button type="button" id="btnSaveCommercial" class="btnSaveGPS">
+                                            Save GPS Commercial
                                         </button>
                                     </div>
                                 </div>
@@ -1801,10 +1804,11 @@
                     </div>
                 </div>
             </div>
-            <div class="tabBusPicture" style="display: none1;">
+            <div class="tabBusPicture" style="display: none;">
                 <div class="bus-pictures-container">
                     <div class="bus-pictures-form">
-                        <form action="" autocomplete="off">
+                        <form method="post" name="busPictures" id="busPictures" autocomplete="off"
+                            enctype="multipart/form-data">
                             <div class="bus-pictures-inputs">
                                 <label class="mstBusNoLabel">Master Bus Number</label>
                                 <div class="bus-number-input-row">
@@ -1836,8 +1840,9 @@
                                     </div>
                                 </div>
                                 <div class="bus-pictures-wrapper">
+                                    <!--  Row Start-->
                                     <div class="bus-pictures-row">
-                                        <div class="bus-picture-block">
+                                        <div class="bus-picture-block" id="picture-block-1">
                                             <div class="image-box" style="display:none;">
                                                 <div class="add-image">
                                                     <div class="image-icon"></div>
@@ -1871,40 +1876,18 @@
                                                 Outside Front
                                             </div>
                                         </div>
-                                        <div class="bus-picture-block">
+                                        <div class="bus-picture-block" id="picture-block-2">
                                             <div class="image-box">
                                                 <div class="add-image">
                                                     <div class="image-icon"></div>
                                                 </div>
                                                 <div class="browse-box">
                                                     <div class="browse-link">
-                                                        Browse
+                                                        <a href="javascript:void(0);"
+                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
                                                     </div>
-                                                </div>
-                                                <div class="progress-bar-box">
-                                                    <div class="probar">
-                                                        <div class="probar-loading">
-                                                            &nbsp;
-                                                        </div>
-                                                    </div>
-                                                    <div class="close-icon">
-                                                        &nbsp;
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="heading">
-                                                Outside Back
-                                            </div>
-                                        </div>
-                                        <div class="bus-picture-block">
-                                            <div class="image-box">
-                                                <div class="add-image">
-                                                    <div class="image-icon"></div>
-                                                </div>
-                                                <div class="browse-box">
-                                                    <div class="browse-link">
-                                                        Browse
-                                                    </div>
+                                                    <input type="file" name="busPicture2" id="busPicture2"
+                                                        class="fileBrowse">
                                                 </div>
                                                 <div class="progress-bar-box" style="display:none;">
                                                     <div class="probar">
@@ -1917,106 +1900,33 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="heading">
-                                                Outside Right
-                                            </div>
-                                        </div>
-                                        <div class="bus-picture-block">
-                                            <div class="image-box">
-                                                <div class="add-image">
-                                                    <div class="image-icon"></div>
-                                                </div>
-                                                <div class="browse-box">
-                                                    <div class="browse-link">
-                                                        Browse
-                                                    </div>
-                                                </div>
-                                                <div class="progress-bar-box" style="display:none;">
-                                                    <div class="probar">
-                                                        <div class="probar-loading">
-                                                            &nbsp;
-                                                        </div>
-                                                    </div>
-                                                    <div class="close-icon">
-                                                        &nbsp;
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="heading">
-                                                Outside Left
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="bus-pictures-row">
-                                        <div class="bus-picture-block">
-                                            <div class="image-box" style="display:none;">
-                                                <div class="add-image">
-                                                    <div class="image-icon"></div>
-                                                </div>
-                                                <div class="browse-box">
-                                                    <div class="browse-link">
-                                                        Browse
-                                                    </div>
-                                                </div>
-                                                <div class="progress-bar-box">
-                                                    <div class="probar">
-                                                        <div class="probar-loading">
-                                                            &nbsp;
-                                                        </div>
-                                                    </div>
-                                                    <div class="close-icon">
-                                                        &nbsp;
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="uploaded-img">
+                                            <div class="uploaded-img" style="display:none;">
                                                 <div class="action-wrapper">
                                                     <ul>
-                                                        <li><a href="#" class="del-icon"></a></li>
-                                                        <li><a href="#" class="edit-icon"></a></li>
+                                                        <li><a href="#" class="del-icon"
+                                                                onclick="deleteBusPicture(this)"></a></li>
+                                                        <li><a href="#" class="edit-icon"
+                                                                onclick="editBusPicture(this)"></a></li>
                                                     </ul>
                                                 </div>
                                                 <img src="./images/outside-front.jpg" alt="Outside Front">
                                             </div>
                                             <div class="heading">
-                                                Outside Front
-                                            </div>
-                                        </div>
-                                        <div class="bus-picture-block">
-                                            <div class="image-box">
-                                                <div class="add-image">
-                                                    <div class="image-icon"></div>
-                                                </div>
-                                                <div class="browse-box">
-                                                    <div class="browse-link">
-                                                        Browse
-                                                    </div>
-                                                </div>
-                                                <div class="progress-bar-box">
-                                                    <div class="probar">
-                                                        <div class="probar-loading">
-                                                            &nbsp;
-                                                        </div>
-                                                    </div>
-                                                    <div class="close-icon">
-                                                        &nbsp;
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="heading">
                                                 Outside Back
                                             </div>
                                         </div>
-                                        <div class="bus-picture-block">
+                                        <div class="bus-picture-block" id="picture-block-3">
                                             <div class="image-box">
                                                 <div class="add-image">
                                                     <div class="image-icon"></div>
                                                 </div>
                                                 <div class="browse-box">
                                                     <div class="browse-link">
-                                                        Browse
+                                                        <a href="javascript:void(0);"
+                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
                                                     </div>
+                                                    <input type="file" name="busPicture3" id="busPicture3"
+                                                        class="fileBrowse">
                                                 </div>
                                                 <div class="progress-bar-box" style="display:none;">
                                                     <div class="probar">
@@ -2028,20 +1938,35 @@
                                                         &nbsp;
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="uploaded-img" style="display:none;">
+                                                <div class="action-wrapper">
+                                                    <ul>
+                                                        <li><a href="#" class="del-icon"
+                                                                onclick="deleteBusPicture(this)"></a></li>
+                                                        <li><a href="#" class="edit-icon"
+                                                                onclick="editBusPicture(this)"></a></li>
+                                                    </ul>
+                                                </div>
+                                                <img src="./images/outside-front.jpg" alt="Outside Front">
                                             </div>
                                             <div class="heading">
                                                 Outside Right
                                             </div>
                                         </div>
-                                        <div class="bus-picture-block">
+
+                                        <div class="bus-picture-block" id="picture-block-4">
                                             <div class="image-box">
                                                 <div class="add-image">
                                                     <div class="image-icon"></div>
                                                 </div>
                                                 <div class="browse-box">
                                                     <div class="browse-link">
-                                                        Browse
+                                                        <a href="javascript:void(0);"
+                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
                                                     </div>
+                                                    <input type="file" name="busPicture4" id="busPicture4"
+                                                        class="fileBrowse">
                                                 </div>
                                                 <div class="progress-bar-box" style="display:none;">
                                                     <div class="probar">
@@ -2053,24 +1978,192 @@
                                                         &nbsp;
                                                     </div>
                                                 </div>
+                                            </div>
+                                            <div class="uploaded-img" style="display:none;">
+                                                <div class="action-wrapper">
+                                                    <ul>
+                                                        <li><a href="#" class="del-icon"
+                                                                onclick="deleteBusPicture(this)"></a></li>
+                                                        <li><a href="#" class="edit-icon"
+                                                                onclick="editBusPicture(this)"></a></li>
+                                                    </ul>
+                                                </div>
+                                                <img src="./images/outside-front.jpg" alt="Outside Front">
                                             </div>
                                             <div class="heading">
                                                 Outside Left
                                             </div>
                                         </div>
                                     </div>
-
-                                    
+                                    <!--  Row Start-->
+                                    <div class="bus-pictures-row">
+                                        <div class="bus-picture-block" id="picture-block-5">
+                                            <div class="image-box">
+                                                <div class="add-image">
+                                                    <div class="image-icon"></div>
+                                                </div>
+                                                <div class="browse-box">
+                                                    <div class="browse-link">
+                                                        <a href="javascript:void(0);"
+                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
+                                                    </div>
+                                                    <input type="file" name="busPicture5" id="busPicture5"
+                                                        class="fileBrowse">
+                                                </div>
+                                                <div class="progress-bar-box" style="display:none;">
+                                                    <div class="probar">
+                                                        <div class="probar-loading">
+                                                            &nbsp;
+                                                        </div>
+                                                    </div>
+                                                    <div class="close-icon">
+                                                        &nbsp;
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="uploaded-img" style="display:none;">
+                                                <div class="action-wrapper">
+                                                    <ul>
+                                                        <li><a href="#" class="del-icon"
+                                                                onclick="deleteBusPicture(this)"></a></li>
+                                                        <li><a href="#" class="edit-icon"
+                                                                onclick="editBusPicture(this)"></a></li>
+                                                    </ul>
+                                                </div>
+                                                <img src="./images/outside-front.jpg" alt="Outside Front">
+                                            </div>
+                                            <div class="heading">
+                                                Inside Lower Left
+                                            </div>
+                                        </div>
+                                        <div class="bus-picture-block" id="picture-block-6">
+                                            <div class="image-box">
+                                                <div class="add-image">
+                                                    <div class="image-icon"></div>
+                                                </div>
+                                                <div class="browse-box">
+                                                    <div class="browse-link">
+                                                        <a href="javascript:void(0);"
+                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
+                                                    </div>
+                                                    <input type="file" name="busPicture6" id="busPicture6"
+                                                        class="fileBrowse">
+                                                </div>
+                                                <div class="progress-bar-box" style="display:none;">
+                                                    <div class="probar">
+                                                        <div class="probar-loading">
+                                                            &nbsp;
+                                                        </div>
+                                                    </div>
+                                                    <div class="close-icon">
+                                                        &nbsp;
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="uploaded-img" style="display:none;">
+                                                <div class="action-wrapper">
+                                                    <ul>
+                                                        <li><a href="#" class="del-icon"
+                                                                onclick="deleteBusPicture(this)"></a></li>
+                                                        <li><a href="#" class="edit-icon"
+                                                                onclick="editBusPicture(this)"></a></li>
+                                                    </ul>
+                                                </div>
+                                                <img src="./images/outside-front.jpg" alt="Outside Front">
+                                            </div>
+                                            <div class="heading">
+                                                Inside Upper Left
+                                            </div>
+                                        </div>
+                                        <div class="bus-picture-block" id="picture-block-7">
+                                            <div class="image-box">
+                                                <div class="add-image">
+                                                    <div class="image-icon"></div>
+                                                </div>
+                                                <div class="browse-box">
+                                                    <div class="browse-link">
+                                                        <a href="javascript:void(0);"
+                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
+                                                    </div>
+                                                    <input type="file" name="busPicture7" id="busPicture7"
+                                                        class="fileBrowse">
+                                                </div>
+                                                <div class="progress-bar-box" style="display:none;">
+                                                    <div class="probar">
+                                                        <div class="probar-loading">
+                                                            &nbsp;
+                                                        </div>
+                                                    </div>
+                                                    <div class="close-icon">
+                                                        &nbsp;
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="uploaded-img" style="display:none;">
+                                                <div class="action-wrapper">
+                                                    <ul>
+                                                        <li><a href="#" class="del-icon"
+                                                                onclick="deleteBusPicture(this)"></a></li>
+                                                        <li><a href="#" class="edit-icon"
+                                                                onclick="editBusPicture(this)"></a></li>
+                                                    </ul>
+                                                </div>
+                                                <img src="./images/outside-front.jpg" alt="Outside Front">
+                                            </div>
+                                            <div class="heading">
+                                                Inside Lower Right
+                                            </div>
+                                        </div>
+                                        <div class="bus-picture-block" id="picture-block-8">
+                                            <div class="image-box">
+                                                <div class="add-image">
+                                                    <div class="image-icon"></div>
+                                                </div>
+                                                <div class="browse-box">
+                                                    <div class="browse-link">
+                                                        <a href="javascript:void(0);"
+                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
+                                                    </div>
+                                                    <input type="file" name="busPicture8" id="busPicture8"
+                                                        class="fileBrowse">
+                                                </div>
+                                                <div class="progress-bar-box" style="display:none;">
+                                                    <div class="probar">
+                                                        <div class="probar-loading">
+                                                            &nbsp;
+                                                        </div>
+                                                    </div>
+                                                    <div class="close-icon">
+                                                        &nbsp;
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="uploaded-img" style="display:none;">
+                                                <div class="action-wrapper">
+                                                    <ul>
+                                                        <li><a href="#" class="del-icon"
+                                                                onclick="deleteBusPicture(this)"></a></li>
+                                                        <li><a href="#" class="edit-icon"
+                                                                onclick="editBusPicture(this)"></a></li>
+                                                    </ul>
+                                                </div>
+                                                <img src="./images/outside-front.jpg" alt="Outside Front">
+                                            </div>
+                                            <div class="heading">
+                                                Inside Upeer Right
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-
-
                             </div>
+                            <input type="hidden" value="" id="fileUploadFor">
+                            <input type="submit" value="Upload Photo" id="btnUploadPhoto" style="display:none;">
                         </form>
                     </div>
                 </div>
             </div>
             <div class="tabBusCommercial" style="display: none;">
-                tabBusCommercial
+                Bus Commercial Content Will Be Here...
             </div>
         </div>
     </div>
@@ -2131,6 +2224,21 @@
                 <div class="otp-input-wrap resend-otp">
                     <label class="otp-label">Not Received Yet ? <span class="otp-resend">Resend</span></label>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bus Picture Upload Error Popup -->
+    <div class="bus-picture-error-popup-wrapper" style="display: none;">
+        <div class="bus-picture-error-popup-content">
+            <div class="bus-picture-error-popup-header">
+                Upload Error
+            </div>
+            <div class="bus-picture-error-popup-body">
+                <label class="error-msg">File <span id="fileName"></span> could not be uploaded. Please try uploading it
+                    again.</label>
+                <button type="button" class="btnUpload" onclick="closeBusPictureErrorPopup(event)">Upload Again</button>
+                <label class="note-msg">Accepted formats are jpg. Maximum size allowed is 100 MB</label>
             </div>
         </div>
     </div>
