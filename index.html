@@ -12,6 +12,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css"
         rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
     <link rel="stylesheet" href="./css/style.css" />
     <title>Master Bus</title>
 </head>
@@ -21,7 +23,11 @@
         <div class="header-wrap">
             <div class="header-wrap-left">
                 <ul class="tabs-list">
-                    <li id="tabBusMaster" class="tab active-tab"><span class="completed"></span>1. Bus Master</li>
+
+                    <li id="tabVehicleList" class="tab active-tab">Vehicle List</li>
+                    <li id="tabVehicleGPSList" class="tab">Vehicle GPS List</li>
+
+                    <li id="tabBusMaster" class="tab"><span class="completed"></span>1. Bus Master</li>
                     <li id="tabBusInfo" class="tab"><span class="completed"></span>2. Bus Info</li>
                     <li id="tabGPS" class="tab">3. GPS</li>
                     <li id="tabBusAmenities" class="tab">4. Bus Amenities</li>
@@ -30,13 +36,66 @@
                 </ul>
             </div>
             <div class="header-wrap-right">
-                <button class="btnSave" type="button">SAVE</button>
+                <button class="btnSave" type="button" style="display:none;">SAVE</button>
             </div>
         </div>
     </div>
     <div class="page-container">
         <div class="tabs-content">
-            <div class="tabBusMaster">
+
+            <div class="tabVehicleList">
+
+                <div class="vehicleListContainer">
+                    <!-- status drop down added for filter data -->
+                    <div class="custome_filter">
+                        <div class="vehicle-status-filter input-box">
+                            <select class="chosen" name="vehicleStatus" id="vehicleStatus">
+                                <option value="Active">Active</option>
+                                <option value="Inactive">Inactive</option>
+                                <option value="">Show All</option>
+                            </select>
+                            <!-- <label class="form-label">Filter By Status</label> -->
+                        </div>
+                        <div class="vline"></div>
+                    </div>
+                    <!-- new button added for create new vehicle master record -->
+                    <div class="button_new">
+                        <button class="btnNew" onClick="newVehicleRecord()">New</button>
+                    </div>
+                    <!-- table vehicle list -->
+                    <table id="vehicle_list" class="display">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Bus No</th>
+                                <th>Master Bus No</th>
+                                <th>Coach Type</th>
+                                <th>Bus Type</th>
+                                <th>Bus Usage</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="tabVehicleGPSList" style="display: none;">
+                <div class="vehicleGpsListContainer">
+                    <!-- table vehicle gps list -->
+                    <table id="vehicle_gps_list" class="display">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Master Bus No</th>
+                                <th>GPS Vendor</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+
+            <div class="tabBusMaster" style="display: none;">
                 <form name="frmBusMaster" id="frmBusMaster" action="" autocomplete="off">
                     <div class="bus-master-form">
                         <div class="form-wrap-left">
@@ -269,7 +328,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="input-wrap">
                                 <div class="input-wrap-lr" style="justify-content: space-between">
                                     <div class="input-wrap-25" style="width:49%;">
@@ -282,8 +340,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                         <div class="form-wrap-right">
                             <div class="seatChartBox">
@@ -2292,6 +2348,9 @@
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js">
         </script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
     <script src="./js/common.js"></script>
 </body>
 

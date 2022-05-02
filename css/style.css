@@ -2075,12 +2075,9 @@ textarea {
   letter-spacing: 0.2px;
 }
 
-
 .bus-pictures-form .fileBrowse {
   display: none;
 }
-
-
 
 .input-wrap .heading-wrap {
   display: flex;
@@ -2146,4 +2143,386 @@ textarea {
 .input-wrap-25 .txtInputActiveLabel.filled {
   color: #777;
   font-weight: 500;
+}
+
+/* css for vehicle tab */
+
+.vehicleListContainer {
+  padding: 15px 80px 20px 80px;
+  height: 565px;
+}
+
+table.dataTable.stripe tbody tr.odd,
+table.dataTable.display tbody tr.odd {
+  background-color: #f5faff;
+}
+
+table.dataTable thead th,
+table.dataTable thead td {
+  padding: 14px 10px;
+  border-bottom: 1px solid transparent;
+  font-weight: 600;
+  font-size: 13px;
+  border-right: solid 1px #dcdcdc;
+}
+
+table.dataTable thead th:last-child {
+  border-right: solid 1px transparent;
+}
+
+table.dataTable tbody th,
+table.dataTable tbody td {
+  padding: 12px 10px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #717171;
+}
+
+table.dataTable.display tbody td {
+  border-right: 1px solid #dcdcdc;
+}
+
+table.dataTable.display tbody td {
+  border-top: 1px solid transparent;
+}
+
+table.dataTable thead .sorting {
+  background-image: none;
+}
+
+table.dataTable thead .sorting_asc {
+  background-image: none !important;
+}
+
+table.dataTable.display tbody tr.odd > .sorting_1,
+table.dataTable.display tbody tr.odd > .sorting_2 {
+  background-color: #f5faff;
+}
+
+table.dataTable.display tbody tr.even > .sorting_1,
+table.dataTable.display tbody tr.even > .sorting_2 {
+  background-color: #ffffff;
+}
+
+table.dataTable.display tbody tr.odd:hover {
+  background-color: #f5faff;
+}
+
+table.dataTable.display tbody tr.even:hover {
+  background-color: #ffffff;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  position: relative;
+  padding: 12px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+  background: none;
+  border: solid 1px transparent;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+  position: absolute;
+  right: 84px;
+  padding: 7px 10px;
+}
+
+.dataTables_wrapper .dataTables_info {
+  position: absolute;
+  right: 218px;
+  padding: 15px 10px 14px 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dataTables_wrapper .dataTables_filter {
+  position: absolute;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.dataTables_wrapper .dataTables_filter label {
+  margin-bottom: 0;
+  position: relative;
+}
+
+.dataTables_wrapper .dataTables_filter label::before {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: url(../chosen/search.svg) no-repeat 100%;
+  left: 12px;
+  top: 12px;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 10px 10px 10px 30px;
+  background-color: transparent;
+  margin-left: 3px;
+  height: 38px;
+  color: #444444;
+  font-weight: 600;
+  letter-spacing: 0.03rem;
+  font-size: 13px;
+}
+
+.dataTables_wrapper .dataTables_filter .vehicle-status-filter {
+  width: 190px;
+  text-align: left;
+}
+
+.dataTables_wrapper .dataTables_filter .vehicle-status-filter .form-label {
+  position: absolute;
+}
+
+.dataTables_wrapper
+  .dataTables_filter
+  .vehicle-status-filter
+  .form-label::before {
+  content: none;
+}
+
+.dataTables_wrapper
+  .dataTables_filter
+  .vehicle-status-filter
+  .chosen-container-single
+  .chosen-single {
+  height: 34px;
+  padding: 6px 0px 0px 17px;
+}
+
+.dataTables_wrapper .dataTables_scroll {
+  top: 55px;
+  position: relative;
+  box-shadow: 3px 3px 3px #e5e5e5, -3px -1px 3px #e5e5ef;
+  border-radius: 10px;
+}
+
+.dataTables_wrapper .edit_link {
+  text-decoration: none;
+  color: #0086ff;
+  font-size: 13px;
+  font-weight: 600;
+  position: relative;
+  padding-left: 18px;
+  white-space: nowrap;
+}
+
+.dataTables_wrapper .edit_icon {
+  position: absolute;
+  background: url(../images/edit_blue.svg) no-repeat;
+  height: 13px;
+  width: 13px;
+  top: 0px;
+  left: 0px;
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+  border-bottom: 1px solid transparent;
+}
+
+
+.first_page_icon {
+  position: absolute;
+  background: url(../images/first.svg) no-repeat;
+  height: 12px;
+  width: 12px;
+  top: 6px;
+  left: 6px;
+}
+
+.prev_page_icon {
+  position: absolute;
+  background: url(../images/prev.svg) no-repeat;
+  height: 12px;
+  width: 12px;
+  top: 6px;
+  left: 6px;
+}
+
+.next_page_icon {
+  position: absolute;
+  background: url(../images/next.svg) no-repeat;
+  height: 12px;
+  width: 12px;
+  top: 6px;
+  left: 6px;
+}
+
+.last_page_icon {
+  position: absolute;
+  background: url(../images/last.svg) no-repeat;
+  height: 12px;
+  width: 12px;
+  top: 6px;
+  left: 6px;
+}
+
+.paginate_button.disabled .first_page_icon {
+  background: url(../images/first_disable.svg) no-repeat;
+}
+
+.paginate_button.disabled .prev_page_icon {
+  background: url(../images/prev_disable.svg) no-repeat;
+}
+
+.paginate_button.disabled .next_page_icon {
+  background: url(../images/next_disable.svg) no-repeat;
+}
+
+.paginate_button.disabled .last_page_icon {
+  background: url(../images/last_disable.svg) no-repeat;
+}
+
+.dom_wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.dom_wrapper .dataTables_length {
+  display: none;
+}
+
+/* width */
+.dataTables_scroll ::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.dataTables_scroll ::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+.dataTables_scroll ::-webkit-scrollbar-thumb {
+  background: #bfbfbf;
+}
+
+/* Handle on hover */
+.dataTables_scroll ::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.button_new {
+  position: absolute;
+  right: 0;
+  padding: 2px 0;
+}
+
+.btnNew {
+  border: solid 1px #ff5200;
+  background: #ffffff;
+  color: #ff5200;
+  font-weight: 600;
+  border-radius: 5px;
+  width: 75px;
+  margin-left: 7px;
+  cursor: pointer;
+  padding: 12px 10px 12px 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btnNew:hover {
+  background: #ff5200;
+  color: #ffffff;
+}
+
+.custome_filter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.vline {
+  height: 36px;
+  border-left: 1px solid #dcdcdc;
+  margin: 0 13px 0px 16px;
+}
+
+/* css for vehicle tab */
+
+.vehicleGpsListContainer {
+  padding: 15px 270px 20px 270px;
+  height: 565px;
+}
+
+.vehicleGpsListContainer .dataTables_wrapper .dataTables_paginate {
+  right: 0px;
+}
+
+.vehicleGpsListContainer .dataTables_wrapper .dataTables_info {
+  right: 135px;
+}
+
+/* for mobile */
+@media (max-width: 768px) {
+  .tabVehicleList {
+    background: aqua;
+  }
+
+  .tabVehicleList .dataTables_wrapper .dataTables_filter {
+    justify-content: center;
+    left: 0;
+    right: 0;
+  }
+
+  .tabVehicleList .dataTables_wrapper .dataTables_info {
+    top: 50px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .tabVehicleList .dataTables_wrapper .dataTables_paginate {
+    top: 44px;
+    left: 0px;
+    right: 0px;
+  }
+
+  .tabVehicleList .button_new {
+    top: 50px;
+  }
+
+  .tabVehicleList .dataTables_wrapper .dataTables_scroll {
+    top: 97px;
+  }
+
+  .vehicleGpsListContainer {
+    padding: 15px 80px 20px 80px;
+  }
+
+  .vehicleGpsListContainer .dataTables_wrapper .dataTables_paginate {
+    right: 0px;
+    margin-top: 0;
+  }
+}
+
+/* for tablet */
+@media (min-width: 768px) {
+  .vehicleGpsListContainer {
+    padding: 15px 80px 20px 80px;
+  }
+}
+
+/* for laptop */
+@media (min-width: 992px) {
+  .vehicleGpsListContainer {
+    padding: 15px 200px 20px 200px;
+  }
+}
+
+/* for desktop */
+@media (min-width: 1200px) {
+  .vehicleGpsListContainer {
+    padding: 15px 270px 20px 270px;
+  }
 }

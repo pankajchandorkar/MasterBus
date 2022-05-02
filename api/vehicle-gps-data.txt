@@ -1,0 +1,304 @@
+
+{
+    "data": [
+        {
+            "id": "1",
+            "sr_no": "",
+            "master_bus_number": "GJ1-LA-1314",
+            "gps_vendor": "Arya Omni Talk",
+            "action": ""
+        },
+        {
+            "id": "2",
+            "sr_no": "",
+            "master_bus_number": "KA 04 HL 4374",
+            "gps_vendor": "Electrosol",
+            "action": ""
+        },
+        {
+            "id": "3",
+            "sr_no": "",
+            "master_bus_number": "KA 20 HK 4371",
+            "gps_vendor": "Arya Omni Talk",
+            "action": ""
+        },
+        {
+            "id": "4",
+            "sr_no": "",
+            "master_bus_number": "KA 05 HG 9815",
+            "gps_vendor": "Intangles V1",
+            "action": ""
+        }
+        ,
+        {
+            "id": "5",
+            "sr_no": "",
+            "master_bus_number": "GJa-LA-1314",
+            "gps_vendor": "TrackMyUnit",
+            "action": ""
+        },
+        {
+            "id": "6",
+            "sr_no": "",
+            "master_bus_number": "KA 05 HG 1398",
+            "gps_vendor": "Saini Travels",
+            "action": ""
+        },
+        {
+            "id": "7",
+            "sr_no": "",
+            "master_bus_number": "GJ-1-AB-1245",
+            "gps_vendor": "Electrosol",
+            "action": ""
+        },
+        {
+            "id": "8",
+            "sr_no": "",
+            "master_bus_number": "GJ1-LA-1314",
+            "gps_vendor": "Mantis - Arya Omni Talk",
+            "action": ""
+        },
+        {
+            "id": "9",
+            "sr_no": "",
+            "master_bus_number": "AA 2222 55555",
+            "gps_vendor": "Intangles V1",
+            "action": ""
+        },
+        {
+            "id": "10",
+            "sr_no": "",
+            "master_bus_number": "MH-24-F-1822",
+            "gps_vendor": "Ary Omni Talk",
+            "action": ""
+        },
+
+
+
+        {
+            "id": "11",
+            "sr_no": "",
+            "master_bus_number": "GJ1-LA-1314",
+            "gps_vendor": "Arya Omni Talk",
+            "action": ""
+        },
+        {
+            "id": "12",
+            "sr_no": "",
+            "master_bus_number": "KA 04 HL 4374",
+            "gps_vendor": "Electrosol",
+            "action": ""
+        },
+        {
+            "id": "13",
+            "sr_no": "",
+            "master_bus_number": "KA 20 HK 4371",
+            "gps_vendor": "Arya Omni Talk",
+            "action": ""
+        },
+        {
+            "id": "14",
+            "sr_no": "",
+            "master_bus_number": "KA 05 HG 9815",
+            "gps_vendor": "Intangles V1",
+            "action": ""
+        }
+        ,
+        {
+            "id": "15",
+            "sr_no": "",
+            "master_bus_number": "GJa-LA-1314",
+            "gps_vendor": "TrackMyUnit",
+            "action": ""
+        },
+        {
+            "id": "16",
+            "sr_no": "",
+            "master_bus_number": "KA 05 HG 1398",
+            "gps_vendor": "Saini Travels",
+            "action": ""
+        },
+        {
+            "id": "17",
+            "sr_no": "",
+            "master_bus_number": "GJ-1-AB-1245",
+            "gps_vendor": "Electrosol",
+            "action": ""
+        },
+        {
+            "id": "18",
+            "sr_no": "",
+            "master_bus_number": "GJ1-LA-1314",
+            "gps_vendor": "Mantis - Arya Omni Talk",
+            "action": ""
+        },
+        {
+            "id": "19",
+            "sr_no": "",
+            "master_bus_number": "AA 2222 55555",
+            "gps_vendor": "Intangles V1",
+            "action": ""
+        },
+        {
+            "id": "20",
+            "sr_no": "",
+            "master_bus_number": "MH-24-F-1822",
+            "gps_vendor": "Ary Omni Talk",
+            "action": ""
+        }
+
+
+        
+,
+
+        {
+            "id": "21",
+            "sr_no": "",
+            "master_bus_number": "GJ1-LA-1314",
+            "gps_vendor": "Arya Omni Talk",
+            "action": ""
+        },
+        {
+            "id": "22",
+            "sr_no": "",
+            "master_bus_number": "KA 04 HL 4374",
+            "gps_vendor": "Electrosol",
+            "action": ""
+        },
+        {
+            "id": "23",
+            "sr_no": "",
+            "master_bus_number": "KA 20 HK 4371",
+            "gps_vendor": "Arya Omni Talk",
+            "action": ""
+        },
+        {
+            "id": "24",
+            "sr_no": "",
+            "master_bus_number": "KA 05 HG 9815",
+            "gps_vendor": "Intangles V1",
+            "action": ""
+        }
+        ,
+        {
+            "id": "25",
+            "sr_no": "",
+            "master_bus_number": "GJa-LA-1314",
+            "gps_vendor": "TrackMyUnit",
+            "action": ""
+        },
+        {
+            "id": "26",
+            "sr_no": "",
+            "master_bus_number": "KA 05 HG 1398",
+            "gps_vendor": "Saini Travels",
+            "action": ""
+        },
+        {
+            "id": "27",
+            "sr_no": "",
+            "master_bus_number": "GJ-1-AB-1245",
+            "gps_vendor": "Electrosol",
+            "action": ""
+        },
+        {
+            "id": "28",
+            "sr_no": "",
+            "master_bus_number": "GJ1-LA-1314",
+            "gps_vendor": "Mantis - Arya Omni Talk",
+            "action": ""
+        },
+        {
+            "id": "29",
+            "sr_no": "",
+            "master_bus_number": "AA 2222 55555",
+            "gps_vendor": "Intangles V1",
+            "action": ""
+        },
+        {
+            "id": "30",
+            "sr_no": "",
+            "master_bus_number": "MH-24-F-1822",
+            "gps_vendor": "Ary Omni Talk",
+            "action": ""
+        }
+
+
+        ,
+
+
+
+        {
+            "id": "31",
+            "sr_no": "",
+            "master_bus_number": "GJ1-LA-1314",
+            "gps_vendor": "Arya Omni Talk",
+            "action": ""
+        },
+        {
+            "id": "32",
+            "sr_no": "",
+            "master_bus_number": "KA 04 HL 4374",
+            "gps_vendor": "Electrosol",
+            "action": ""
+        },
+        {
+            "id": "33",
+            "sr_no": "",
+            "master_bus_number": "KA 20 HK 4371",
+            "gps_vendor": "Arya Omni Talk",
+            "action": ""
+        },
+        {
+            "id": "34",
+            "sr_no": "",
+            "master_bus_number": "KA 05 HG 9815",
+            "gps_vendor": "Intangles V1",
+            "action": ""
+        }
+        ,
+        {
+            "id": "35",
+            "sr_no": "",
+            "master_bus_number": "GJa-LA-1314",
+            "gps_vendor": "TrackMyUnit",
+            "action": ""
+        },
+        {
+            "id": "36",
+            "sr_no": "",
+            "master_bus_number": "KA 05 HG 1398",
+            "gps_vendor": "Saini Travels",
+            "action": ""
+        },
+        {
+            "id": "37",
+            "sr_no": "",
+            "master_bus_number": "GJ-1-AB-1245",
+            "gps_vendor": "Electrosol",
+            "action": ""
+        },
+        {
+            "id": "38",
+            "sr_no": "",
+            "master_bus_number": "GJ1-LA-1314",
+            "gps_vendor": "Mantis - Arya Omni Talk",
+            "action": ""
+        },
+        {
+            "id": "39",
+            "sr_no": "",
+            "master_bus_number": "AA 2222 55555",
+            "gps_vendor": "Intangles V1",
+            "action": ""
+        },
+        {
+            "id": "40",
+            "sr_no": "",
+            "master_bus_number": "MH-24-F-1822",
+            "gps_vendor": "Ary Omni Talk",
+            "action": ""
+        }
+
+    ]
+}

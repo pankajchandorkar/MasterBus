@@ -19,6 +19,19 @@ $(document).ready(function () {
         $(".tabs-content > div").hide();
         $(".tabs-content div[class='" + tabId + "']").show();
 
+        //for hide save button if vehicle tab selected
+        if (tabId == "tabVehicleList") {
+            $(".btnSave").hide();
+            $('#vehicle_list').DataTable().ajax.reload();
+        } else if (tabId == "tabVehicleGPSList") {
+            $(".btnSave").hide();
+            $('#vehicle_gps_list').DataTable().ajax.reload();
+        } else {
+            $(".btnSave").show();
+        }
+
+
+
     });
 
     //for bus usage select handle
@@ -248,6 +261,14 @@ $(document).ready(function () {
             }
         });
     });
+
+
+    //datatable for vehicle master list
+    loadVehicleMasterList();
+
+    //datatable for vehicle gps list
+    loadVehicleGpsList();
+
 });
 
 
@@ -337,3 +358,177 @@ function deleteBusPicture(obj) {
     $("#picture-block-" + fileInputNo + " .progress-bar-box .probar-loading").css("width", "0%");
 }
 
+//for load vechicle master datatable list
+function loadVehicleMasterList() {
+
+    var tableVehicleList = $('#vehicle_list').DataTable({
+        ajax: {
+            url: '/api/vehicle-master-data.txt',
+            dataSrc: 'data'
+        },
+        columns: [
+            { data: 'sr_no' },
+            { data: 'bus_number' },
+            { data: 'master_bus_number' },
+            { data: 'coach_type' },
+            { data: 'bus_type' },
+            { data: 'bus_uses' },
+            { data: 'status' },
+            {
+                data: 'action',
+                render: function (data, type, row, meta) {
+                    return "<a href=\"javascript:void(0)\"  class=\"edit_link\"><span class=\"edit_icon\"></span>Edit</a>"
+                }
+            },
+        ],
+        columnDefs: [
+            { "width": "5%", "targets": 0 },
+            { "width": "12%", "targets": 1 },
+            { "width": "12%", "targets": 2 },
+            { "width": "30%", "targets": 3 },
+            { "width": "15%", "targets": 4 },
+            { "width": "12%", "targets": 5 },
+            { "width": "7%", "targets": 6 },
+            { "width": "7%", "targets": 7 }
+        ],
+        fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+            var index = iDisplayIndexFull + 1;
+            $("td:first", nRow).html(index);
+            return nRow;
+        },
+        paging: true,
+        scrollY: 418,
+        ordering: true,
+        order: [[1, "asc"], [6, "asc"]],
+        searching: true,
+        pagingType: "full",
+        pageLength: 20,
+        sDom: '<"dom_wrapper"flipt>',
+        language: {
+            info: "_START_ - _END_ of _TOTAL_",
+            infoEmpty: "No result found",
+            infoFiltered: "",
+            paginate: {
+                first: '<span class="first_page_icon"></span>',
+                previous: '<span class="prev_page_icon"></span>',
+                next: '<span class="next_page_icon"></span>',
+                last: '<span class="last_page_icon"></span>',
+            },
+            search: "",
+            searchPlaceholder: "Search"
+        }
+
+    });
+
+    //for prepend status drop down
+    $("#vehicle_list_filter.dataTables_filter").prepend($(".custome_filter"));
+    //for append button
+    $(".dataTables_paginate").after($(".button_new"));
+
+    $('#vehicleStatus').on('change', function (e) {
+        //alert($(this).val());
+        tableVehicleList.draw();
+    });
+
+    var statusIndex = 0;
+    $("#vehicle_list th").each(function (i) {
+        if ($(this).text() == "Status") {
+            statusIndex = i; return false;
+        }
+    });
+
+    $.fn.dataTable.ext.search.push(
+        function (settings, data, dataIndex) {
+            if (settings.nTable.id == "vehicle_list") {
+                var selectedItem = $('#vehicleStatus').val();
+                var vStatus = data[statusIndex];
+                if (selectedItem === "" || vStatus.includes(selectedItem)) {
+                    return true;
+                }
+                return false;
+            } else {
+                return true;
+            }
+        }
+    );
+
+    $('#vehicle_list tbody').on('click', '.edit_link', function () {
+        var data_row = tableVehicleList.row($(this).parents('tr')).data();
+        //console.log(data_row);
+        alert("Edit Bus No.: " + data_row.bus_number + " & Id : " + data_row.id);
+    });
+
+    tableVehicleList.draw();
+}
+
+
+function newVehicleRecord() {
+    window.location = "";
+    //$("#tabBusMaster").click();
+}
+
+
+//for load vechicle gps datatable list
+function loadVehicleGpsList() {
+
+    var tableVehicleGpsList = $('#vehicle_gps_list').DataTable({
+        ajax: {
+            url: '/api/vehicle-gps-data.txt',
+            dataSrc: 'data'
+        },
+        columns: [
+            { data: 'sr_no' },
+            { data: 'master_bus_number' },
+            { data: 'gps_vendor' },
+            {
+                data: 'action',
+                render: function (data, type, row, meta) {
+                    return "<a href=\"javascript:void(0)\"  class=\"edit_link\"><span class=\"edit_icon\"></span>Edit</a>"
+                }
+            },
+        ],
+        columnDefs: [
+            { "width": "10%", "targets": 0 },
+            { "width": "25%", "targets": 1 },
+            { "width": "55%", "targets": 2 },
+            { "width": "10%", "targets": 3 },
+        ],
+        fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+            var index = iDisplayIndexFull + 1;
+            $("td:first", nRow).html(index);
+            return nRow;
+        },
+        paging: true,
+        scrollY: 418,
+        ordering: true,
+        order: [[1, "asc"], [2, "asc"]],
+        searching: true,
+        pagingType: "full",
+        pageLength: 20,
+        sDom: '<"dom_wrapper"flipt>',
+        language: {
+            info: "_START_ - _END_ of _TOTAL_",
+            infoEmpty: "No result found",
+            infoFiltered: "",
+            paginate: {
+                first: '<span class="first_page_icon"></span>',
+                previous: '<span class="prev_page_icon"></span>',
+                next: '<span class="next_page_icon"></span>',
+                last: '<span class="last_page_icon"></span>',
+            },
+            search: "",
+            searchPlaceholder: "Search"
+        }
+
+    });
+
+
+    $('#vehicle_gps_list tbody').on('click', '.edit_link', function () {
+        var data_row = tableVehicleGpsList.row($(this).parents('tr')).data();
+        //console.log(data_row);
+        alert("Edit Bus No.: " + data_row.master_bus_number + " & Id : " + data_row.id);
+    });
+
+    tableVehicleGpsList.draw();
+
+}
