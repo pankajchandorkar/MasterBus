@@ -2159,11 +2159,12 @@ table.dataTable.display tbody tr.odd {
 
 table.dataTable thead th,
 table.dataTable thead td {
-  padding: 14px 10px;
-  border-bottom: 1px solid transparent;
+  padding: 15px 10px;
+  border-bottom: 1px solid #dcdcdc;
   font-weight: 600;
   font-size: 13px;
   border-right: solid 1px #dcdcdc;
+  color: #000000;
 }
 
 table.dataTable thead th:last-child {
@@ -2172,7 +2173,7 @@ table.dataTable thead th:last-child {
 
 table.dataTable tbody th,
 table.dataTable tbody td {
-  padding: 12px 10px;
+  padding: 15px 10px;
   font-weight: 600;
   font-size: 13px;
   color: #717171;
@@ -2327,6 +2328,9 @@ table.dataTable.display tbody tr.even:hover {
   border-bottom: 1px solid transparent;
 }
 
+.dataTables_filter input:focus {
+  border: 2px solid #00aeef;
+}
 
 .first_page_icon {
   position: absolute;
@@ -2446,7 +2450,9 @@ table.dataTable.display tbody tr.even:hover {
   margin: 0 13px 0px 16px;
 }
 
-/* css for vehicle tab */
+#vehicle_list_filter .chosen-container-single .chosen-search {
+  display: none;
+}
 
 .vehicleGpsListContainer {
   padding: 15px 270px 20px 270px;
