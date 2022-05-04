@@ -397,7 +397,7 @@ function loadVehicleMasterList() {
             return nRow;
         },
         paging: true,
-        scrollY: 418,
+        scrollY: '70vh',
         ordering: true,
         order: [[1, "asc"], [6, "asc"]],
         searching: true,
@@ -499,7 +499,7 @@ function loadVehicleGpsList() {
             return nRow;
         },
         paging: true,
-        scrollY: 418,
+        scrollY: '70vh',
         ordering: true,
         order: [[1, "asc"], [2, "asc"]],
         searching: true,
