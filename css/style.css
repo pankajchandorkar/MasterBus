@@ -40,51 +40,8 @@ textarea {
   box-shadow: 0px 3px 5px #aaa;
 }
 
-.header-wrap {
-  width: 100%;
-  display: flex;
-}
-
-.header-wrap-left {
-  width: 90%;
-}
-
-.header-wrap-left .tabs-list {
-  display: flex;
-  margin: 0px;
-}
-
-.header-wrap-left .tab {
-  list-style: none;
-  padding: 18px 12px 14px 12px;
-  color: #ffffff;
-  font-weight: bold;
-  letter-spacing: 0.8px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.header-wrap-left .completed {
-  position: relative;
-  padding-right: 20px;
-  top: 1px;
-  left: 0px;
-}
-
-.header-wrap-left .completed::before {
-  content: "";
-  position: absolute;
-  background: url(../images/right.svg) no-repeat;
-  width: 15px;
-  height: 15px;
-}
-
 .active-tab {
   border-bottom: solid 6px #ffffff;
-}
-
-.header-wrap-right {
-  width: 10%;
 }
 
 .btnSave {
@@ -210,9 +167,6 @@ textarea {
 /* Custome Radio Button CSS End*/
 
 /* Bus Master Form CSS */
-.tabBusMaster {
-  padding: 20px 18% 20px 18%;
-}
 
 .bus-master-form {
   max-width: 900px;
@@ -227,16 +181,6 @@ textarea {
 .form-wrap-right {
   width: 50%;
   margin-left: 45px;
-}
-
-.input-wrap {
-  padding: 10px 5px;
-  position: relative;
-}
-
-.selBusNoType {
-  padding-left: 15px;
-  padding-bottom: 3px;
 }
 
 .selBusNumber {
@@ -295,12 +239,6 @@ textarea {
   border: solid 1px #dfdfdf;
 }
 
-.selMstBusNoType {
-  padding-bottom: 3px;
-  padding-left: 15px;
-  margin-top: 5px;
-}
-
 .selMstBusNoType .custome_radio:checked + label,
 .selMstBusNoType .custome_radio:not(:checked) + label {
   padding-right: 13px;
@@ -310,14 +248,9 @@ textarea {
   width: 98%;
 }
 
-.inputCoach {
+.inputCoach,
+.inputBusType {
   width: 100%;
-}
-
-.labelBusUsage {
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #666666;
 }
 
 .busUsageWrap {
@@ -325,16 +258,6 @@ textarea {
   width: 100%;
   justify-content: space-between;
   margin-top: 5px;
-}
-
-.busUsageBox {
-  border: solid 1px #f5f7f9;
-  width: 126px;
-  height: 100px;
-  border-radius: 10px;
-  box-shadow: 0px 1px 2px #ccc;
-  padding-top: 30px;
-  cursor: pointer;
 }
 
 .busUsageIcon {
@@ -357,17 +280,6 @@ textarea {
 
 .activeBusUsage svg {
   fill: #0086ff;
-}
-
-.seatChartBox {
-  border: solid 6px #acacac;
-  width: 395px;
-  height: 467px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #cecece;
-  font-size: 13px;
 }
 
 .input-wrap input {
@@ -426,11 +338,6 @@ textarea {
   left: 10px;
   position: absolute;
   bottom: -7px;
-}
-
-.txtMstBusNumber {
-  display: flex;
-  padding: 5px 5px 20px 5px;
 }
 
 .txtMstBusNumberBox {
@@ -2107,7 +2014,7 @@ textarea {
   padding: 10px;
   border-radius: 5px;
   width: 100%;
-  height: 39px;
+  height: 42px;
   border: solid 1px #a6a6a6;
   color: #444444;
   font-weight: 600;
@@ -2120,10 +2027,10 @@ textarea {
   left: 14px;
   top: 14px;
   color: #444444;
-  font-size: 13px;
+  font-size: 12px;
   transition: 0.3s ease;
   letter-spacing: 0.5px;
-  font-weight: 600;
+  font-weight: 500;
   pointer-events: none;
 }
 
@@ -2396,6 +2303,7 @@ table.dataTable.display tbody tr.even:hover {
 /* width */
 .dataTables_scroll ::-webkit-scrollbar {
   width: 10px;
+  height: 10px;
 }
 
 /* Track */
@@ -2531,4 +2439,770 @@ table.dataTable.display tbody tr.even:hover {
   .vehicleGpsListContainer {
     padding: 15px 270px 20px 270px;
   }
+}
+
+/* CSS new/modified for new design */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.tabs-list {
+  display: flex;
+  margin: 0px;
+}
+
+.tab {
+  list-style: none;
+  padding: 18px 12px 14px 12px;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.completed {
+  position: relative;
+  padding-right: 20px;
+  top: 1px;
+  left: 0px;
+}
+
+.completed::before {
+  content: "";
+  position: absolute;
+  background: url(../images/right.svg) no-repeat;
+  width: 15px;
+  height: 15px;
+}
+
+.tabBusMaster {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  display: flex;
+}
+
+.input-wrap {
+  padding: 10px 0px;
+  position: relative;
+}
+
+.vmBlock1 {
+  width: 33.33%;
+  padding: 24px 10px 8px 20px;
+}
+
+.generalInfo {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: #202020;
+}
+
+.vmBlock1 .form-inputs-wrap {
+  height: 632px;
+  /* overflow: auto; */
+  padding-right: 8px;
+  padding-left: 4px;
+}
+
+.vmBlock2 .form-inputs-wrap {
+  height: 625px;
+  /* overflow: auto; */
+}
+
+.vmBlock2 .chosen-container-single .chosen-drop {
+  padding: 0px;
+  border: 1px solid #0086ff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+
+.vmBlock2 .chosen-container .chosen-results {
+  padding: 0px;
+  max-height: 400px;
+}
+
+.vmBlock2 .chosen-container .chosen-results li.active-result {
+  border-bottom: solid 1px #cccccc;
+  height: 42px;
+}
+
+.vmBlock3 .form-inputs-wrap {
+  height: 624px;
+  /* overflow: auto; */
+}
+
+.inputNotes {
+  position: absolute;
+  bottom: -18px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #666666;
+}
+
+.axleConfiguration {
+  min-height: 350px;
+}
+
+.tabBusMaster .buttonSave {
+  background: #ff5200;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 12px 16px 12px 16px;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 48px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.tabBusMaster .buttonSave:hover {
+  opacity: 0.9;
+}
+
+.tabBusMaster .buttonSave.buttonSaveDisable {
+  color: #888888;
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.tabBusMaster .buttonSave.buttonSaveDisable:hover {
+  opacity: 1;
+}
+
+/* width */
+.form-inputs-wrap::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+}
+
+/* Track */
+.form-inputs-wrap::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/* Handle */
+.form-inputs-wrap::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.form-inputs-wrap::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.cargoCommRow {
+  display: none;
+}
+
+.vmBlock2 {
+  width: 33.33%;
+  padding: 12px 25px 8px 24px;
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.vmBlock2 .tabs-list {
+  height: 40px;
+}
+
+.vmBlock2 .tab {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.3);
+  padding: 12px 0px 12px 0px;
+  margin-right: 24px;
+}
+
+.vmBlock2 .active-tab {
+  border-bottom: 3px solid #0086ff;
+  color: #0086ff;
+}
+
+.chose-image-list {
+  width: 40px;
+  margin-right: 8px;
+}
+
+.chose-image-small {
+  width: 40px;
+  margin-right: 8px;
+}
+
+.input-wrap.usageType {
+  padding: 14px 0px;
+}
+
+.labelTruckType {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #444444;
+}
+
+.truckTypeWrap {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 7px;
+}
+
+.truckTypeBox {
+  border: 1px solid #b6b6b6;
+  width: 123px;
+  height: 84px;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px #ccc;
+  padding: 16px 16px;
+  cursor: pointer;
+}
+
+.truckTypeIcon {
+  text-align: center;
+}
+
+.truckTypeLabel {
+  text-align: center;
+  margin-top: 7px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+}
+
+.truckTypeRadio {
+  opacity: 0;
+}
+
+.activeTruckType {
+  border: solid 2px #00aeef;
+  color: #00aeef;
+  font-weight: 600;
+}
+
+.activeTruckType svg {
+  fill: #0086ff;
+}
+
+.labelRearBodyType {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #444444;
+}
+
+.rearBodyTypeWrap {
+  width: 100%;
+  margin-top: 7px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rearBodyTypeWrap div:nth-child(1) {
+  border-radius: 6px 0px 0px 0px;
+
+  border-width: 1px 0px 0px 1px;
+}
+
+.rearBodyTypeWrap div:nth-child(2) {
+  border-radius: 0px 6px 0px 0px;
+  border-width: 1px 1px 0px 1px;
+}
+
+.rearBodyTypeWrap div:nth-child(3) {
+  border-radius: 0px 0px 0px 6px;
+  border-width: 1px 0px 1px 1px;
+  box-shadow: 0px 1px 2px #ccc;
+}
+
+.rearBodyTypeWrap div:nth-child(4) {
+  border-radius: 0px 0px 6px 0px;
+  border-width: 1px 1px 1px 1px;
+  box-shadow: 0px 1px 2px #ccc;
+}
+
+.rearBodyTypeBox {
+  width: 50%;
+  height: 50px;
+  padding: 18px 0 18px 12px;
+  cursor: pointer;
+  border: 1px solid #b6b6b6;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.rearBodyTypeIcon {
+  text-align: center;
+}
+
+.rearBodyTypeLabel {
+  margin-left: 6px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+}
+
+.rearBodyTypeRadio {
+  opacity: 0;
+  position: absolute;
+  width: 10px !important;
+}
+
+.activeRearBodyType {
+  border: solid 0px #00aeef;
+  color: #00aeef;
+  font-weight: 600;
+  border-width: 1px !important;
+}
+
+.activeRearBodyType svg {
+  fill: #0086ff;
+}
+
+.vmBlock3 {
+  width: 33.33%;
+  padding: 12px 25px 8px 24px;
+}
+
+.vmBlock3 .tabs-list {
+  height: 40px;
+}
+
+.vmBlock3 .tab {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: rgba(0, 0, 0, 0.3);
+  padding: 12px 0px 12px 0px;
+  margin-right: 24px;
+}
+
+.vmBlock3 .active-tab {
+  border-bottom: 3px solid #0086ff;
+  color: #0086ff;
+}
+
+.labelWeightInfo {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #444444;
+  padding-top: 6px;
+}
+
+.labelCargoDim {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #444444;
+  padding-top: 10px;
+}
+
+.labelTyreCode {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #444444;
+  padding-top: 10px;
+}
+
+.labelAxleConfig {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #444444;
+}
+
+.btnConfig {
+  background: #e5f3ff;
+  border: 1px solid #0086ff;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #0086ff;
+  padding: 12px;
+}
+
+.genInfo {
+  padding: 0;
+}
+
+.selBusNoType {
+  padding: 16px 0 19px 0;
+}
+
+.selMstBusNoType {
+  padding: 16px 0 19px 0;
+}
+
+.labelBusUsage {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #444444;
+}
+
+.busUsageBox {
+  border: 1px solid #b6b6b6;
+  width: 123px;
+  height: 74px;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px #ccc;
+  padding: 16px 0;
+  cursor: pointer;
+}
+
+.seatChartBox {
+  width: 100%;
+  height: 625px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #cecece;
+  font-size: 13px;
+  padding-top: 9px;
+}
+.txtMstBusNumber {
+  display: flex;
+  padding: 0px 0px 20px 0px;
+}
+
+
+
+/* error popup box */
+
+.error-popup-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.1);
+  display: flex;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-popup-content {
+  position: fixed;
+  width: 320px;
+  height: 200px;
+  z-index: 1001;
+  top: 200px;
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 15%);
+  border-radius: 10px;
+}
+
+.error-icon {
+  padding: 34px 16px 16px 16px;
+  text-align: center;
+}
+
+.error-message {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #202020;
+  padding: 0px 20px 20px;
+}
+
+.error-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-popup-wrapper .btnOk {
+  background: #ff5200;
+  padding: 12px 12px;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 60px;
+}
+
+.error-popup-wrapper .btnOk:hover {
+  opacity: 0.9;
+}
+
+.tabDisabled{
+  opacity: 0.3;
+  pointer-events:none;
+}
+
+.tableAxle {
+  width: 100%;
+}
+
+.tableAxle th,
+.tableAxle td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.axleColTyre {
+  background-image: url(/images/tyrebox.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 31px;
+  height: 56px;
+}
+
+.axleColAxle {
+  background-image: url(/images/axle.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 60px;
+  height: 20px;
+}
+
+.axleLR {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #444444;
+}
+
+.axleType {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: left !important;
+  letter-spacing: 0.02em;
+  color: #444444;
+}
+
+.axleNo {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: #444444;
+}
+
+.dashLine {
+  opacity: 0.3;
+  border-bottom: 1px dashed #000000;
+  width: 100%;
+  height: 1px;
+  margin: 7px 0;
+}
+
+.tyreAndAxleWrap {
+  height: 310px;
+  overflow: auto;
+  padding-right: 5px;
+}
+
+/* width */
+.tyreAndAxleWrap::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  border-radius: 15px;
+}
+
+/* Track */
+.tyreAndAxleWrap::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 15px;
+}
+
+/* Handle */
+.tyreAndAxleWrap::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+.tyreAndAxleWrap::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.tyreSpareWrap {
+  position: relative;
+  display: flex;
+  border-top: 1px dashed rgb(0, 0, 0, 0.3);
+  padding: 8px 0;
+  width: 400px;
+  overflow: auto;
+}
+
+/* width */
+.tyreSpareWrap::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  border-radius: 15px;
+}
+
+/* Track */
+.tyreSpareWrap::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-radius: 15px;
+}
+
+/* Handle */
+.tyreSpareWrap::-webkit-scrollbar-thumb {
+  background: rgb(0, 0, 0, 0.3);
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+.tyreSpareWrap::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.spareHeading {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: left !important;
+  letter-spacing: 0.02em;
+  color: #444444;
+  padding-right: 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spareTyreWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spareTyre {
+  margin-right: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.spareTyre input {
+  position: absolute;
+  opacity: 0;
+}
+
+.spareTyre input[id^='chkSpareTyre_']+label {
+  background: url("/images/tyrebox.svg") no-repeat 100% 100%;
+  width: 30px;
+  height: 56px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.spareTyre input[id^='chkSpareTyre_']:checked+label {
+  background: url("/images/tyre.svg") no-repeat 100% 100%;
+  width: 30px;
+  height: 56px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.addSpare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+}
+
+.addSpare img {
+  cursor: pointer;
+}
+
+.frontAxleTyre {
+  position: relative;
+}
+
+.frontAxleTyre input {
+  position: absolute;
+  opacity: 0;
+}
+
+.tyreAndAxleWrap input[id^='chkFrontAxleTyre_']+label {
+  background: url("/images/tyrebox.svg") no-repeat 100% 100%;
+  width: 30px;
+  height: 56px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.tyreAndAxleWrap input[id^='chkFrontAxleTyre_']:checked+label {
+  background: url("/images/tyre.svg") no-repeat 100% 100%;
+  width: 30px;
+  height: 56px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.rearAxleTyre {
+  position: relative;
+}
+
+.rearAxleTyre input {
+  position: absolute;
+  opacity: 0;
+}
+
+.tyreAndAxleWrap input[id^='chkRearAxleTyre_']+label {
+  background: url("/images/tyrebox.svg") no-repeat 100% 100%;
+  width: 30px;
+  height: 56px;
+  cursor: pointer;
+  margin: 0;
+}
+
+.tyreAndAxleWrap input[id^='chkRearAxleTyre_']:checked+label {
+  background: url("/images/tyre.svg") no-repeat 100% 100%;
+  width: 30px;
+  height: 56px;
+  cursor: pointer;
+  margin: 0;
 }

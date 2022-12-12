@@ -7,17 +7,16 @@ $(document).ready(function () {
     $('#busNumberStatus').prop('disabled', true).trigger("chosen:updated");
     $('#mstBusNumberStatus').prop('disabled', true).trigger("chosen:updated");
 
-
     //for toggle tabs content
-    $(".tabs-list .tab").on("click", function () {
+    $(".header .tabs-list .tab").on("click", function () {
         var tabId = $(this).attr("id");
         //for manage active tab
-        $(".tabs-list .tab").removeClass("active-tab");
+        $(".header .tabs-list .tab").removeClass("active-tab");
         $(this).addClass("active-tab");
 
         //for mange active tab content area
-        $(".tabs-content > div").hide();
-        $(".tabs-content div[class='" + tabId + "']").show();
+        $(".page-container .tabs-content > div").hide();
+        $(".page-container .tabs-content div[class='" + tabId + "']").show();
 
         //for hide save button if vehicle tab selected
         if (tabId == "tabVehicleList") {
@@ -29,9 +28,6 @@ $(document).ready(function () {
         } else {
             $(".btnSave").show();
         }
-
-
-
     });
 
     //for bus usage select handle
@@ -39,6 +35,69 @@ $(document).ready(function () {
         $(".busUsageBox").find("input").parent("div").removeClass("activeBusUsage");
         $(this).find("input").prop("checked", true);
         $(this).find("input").parent("div").addClass("activeBusUsage");
+
+        var vehicleUsageType = $(this).find("input:checked").val();
+
+        //1 - Bus, 2 - Cargo, 3 - Bus & Cargo
+
+        //for Cargo || (Bus & Cargo)
+        if (vehicleUsageType == 2 || vehicleUsageType == 3) {
+            $(".vmBlock1 .cargoCommRow").show();
+
+            $("#tabDimensionWeight").removeClass("tabDisabled");
+            $(".tabDimensionWeight .form-inputs-wrap").removeClass("tabDisabled");
+
+            $(".vmBlock3 #tabTyreInformation").removeClass("tabDisabled");
+            $(".tabTyreInformation .form-inputs-wrap").removeClass("tabDisabled");
+
+        } else {
+            $(".vmBlock1 .cargoCommRow").hide();
+
+            $(".vmBlock3 #tabTyreInformation").addClass("tabDisabled");
+            $(".tabTyreInformation .form-inputs-wrap").addClass("tabDisabled");
+
+            $("#tabDimensionWeight").addClass("tabDisabled");
+            $(".tabDimensionWeight .form-inputs-wrap").addClass("tabDisabled");
+        }
+
+        //for Bus || (Bus & Cargo)
+        if (vehicleUsageType == 1 || vehicleUsageType == 3) {
+
+            //for enabled
+            $(".vmBlock2 #tabChartLayout").click();
+            $(".vmBlock2 #tabChartLayout").removeClass("tabDisabled");
+            $(".tabChartLayout .seatChartBox").removeClass("tabDisabled");
+
+            //for disabled
+            $("#tabUsageBodyType").addClass("tabDisabled");
+            $(".tabUsageBodyType  .form-inputs-wrap").addClass("tabDisabled");
+
+        } else {
+
+            //for enabled
+            $("#tabUsageBodyType").removeClass("tabDisabled");
+            $(".tabUsageBodyType .form-inputs-wrap").removeClass("tabDisabled");
+            $(".vmBlock2 #tabUsageBodyType").click();
+
+            //for disabled
+            $(".vmBlock2 #tabChartLayout").addClass("tabDisabled");
+            $(".tabChartLayout .seatChartBox").addClass("tabDisabled");
+        }
+    });
+
+
+    //for bus usage select handle
+    $(".truckTypeBox").on("click", function () {
+        $(".truckTypeBox").find("input").parent("div").removeClass("activeTruckType");
+        $(this).find("input").prop("checked", true);
+        $(this).find("input").parent("div").addClass("activeTruckType");
+    });
+
+    //for rear body type select handle
+    $(".rearBodyTypeBox").on("click", function () {
+        $(".rearBodyTypeBox").find("input").parent("div").removeClass("activeRearBodyType");
+        $(this).find("input").prop("checked", true);
+        $(this).find("input").parent("div").addClass("activeRearBodyType");
     });
 
     //for active chosen element
@@ -54,14 +113,14 @@ $(document).ready(function () {
     });
 
     //for active textbox
-    $(".input-wrap input[type='text']").on("focus", function (event) {
+    $(".input-wrap input[type='text'],.input-wrap input[type='number']").on("focus", function (event) {
         $(event.target).addClass("inputFocus");
         $(event.target).siblings("label").addClass("txtInputActiveLabel");
         $(event.target).siblings("label").removeClass("filled");
     });
 
     //for inactive textbox
-    $(".input-wrap input[type='text']").on("blur", function (event) {
+    $(".input-wrap input[type='text'],.input-wrap input[type='number']").on("blur", function (event) {
         $(event.target).removeClass("inputFocus");
         if ($(event.target).val() == "" || $(event.target).val() == null) {
             $(event.target).siblings("label").removeClass("txtInputActiveLabel");
@@ -268,6 +327,39 @@ $(document).ready(function () {
 
     //datatable for vehicle gps list
     loadVehicleGpsList();
+
+
+    //for toggle tabs content
+    $(".vmBlock2 .tabs-list .tab").on("click", function () {
+
+        var tabId = $(this).attr("id");
+
+        //for manage active tab
+        $(".vmBlock2 .tabs-list .tab").removeClass("active-tab");
+        $(this).addClass("active-tab");
+
+        //for mange active tab content area
+        $(".vmBlock2 .tabs-content > div").hide();
+        $(".vmBlock2 .tabs-content div[class^='" + tabId + "']").show();
+
+    });
+
+    //for toggle tabs content
+    $(".vmBlock3 .tabs-list .tab").on("click", function () {
+
+        var tabId = $(this).attr("id");
+
+        //for manage active tab
+        $(".vmBlock3 .tabs-list .tab").removeClass("active-tab");
+        $(this).addClass("active-tab");
+
+        //for mange active tab content area
+        $(".vmBlock3 .tabs-content > div").hide();
+        $(".vmBlock3 .tabs-content div[class='" + tabId + "']").show();
+    });
+
+
+
 
 });
 
@@ -531,4 +623,69 @@ function loadVehicleGpsList() {
 
     tableVehicleGpsList.draw();
 
+}
+
+
+function calTotalAxle() {
+    var totAxle = 0;
+    var frontAxle = $("#frmTyreInformation #frontAxle").val();
+    var rearAxle = $("#frmTyreInformation #rearAxle").val();
+
+    if (parseInt(frontAxle) > 0) {
+        totAxle += parseInt(frontAxle);
+    }
+
+    if (parseInt(rearAxle) > 0) {
+        totAxle += parseInt(rearAxle);
+    }
+
+    $("#frmTyreInformation #totalAxle").val(totAxle);
+}
+
+function getAxleConfiguration() {
+
+    var frontAxle = $("#frmTyreInformation #frontAxle").val();
+    var rearAxle = $("#frmTyreInformation #rearAxle").val();
+
+    if (frontAxle == "" || parseInt(frontAxle) <= 0) {
+        $('.error-popup-wrapper .error-message').text("Please enter front axle value !");
+        $('.error-popup-wrapper').show();
+    }
+
+    if (rearAxle == "" || parseInt(rearAxle) <= 0) {
+        $('.error-popup-wrapper .error-message').text("Please enter rear axle value !");
+        $('.error-popup-wrapper').show();
+    }
+
+    if (parseInt(frontAxle) && parseInt(rearAxle) > 0) {
+        $.ajax({
+            url: "getAxleConfiguration.php",
+            type: "GET",
+            async: true,
+            data: { 'front': frontAxle, 'rear': rearAxle },
+            beforeSend: function () {
+                $(".axleConfiguration").html("Please wait while loading...");
+            },
+            success: function (result) {
+                $(".axleConfiguration").html(result);
+            }
+        });
+    }
+
+}
+
+function closeErrorPopup(e) {
+    e.stopPropagation();
+    $('.error-popup-wrapper').hide();
+}
+
+function addSpareTyre() {
+    var stCount = $(".tyreSpareWrap .spareTyreWrap .spareTyre").length;
+    stCount += 1;
+    var spareTyreHtml = "";
+    spareTyreHtml += "<div class=\"spareTyre\" id=\"spareTyre_" + stCount + "\">";
+    spareTyreHtml += "<input type=\"checkbox\" name=\"chkSpareTyre[]\" id=\"chkSpareTyre_" + stCount + "\" value=\"1\">";
+    spareTyreHtml += "<label for=\"chkSpareTyre_" + stCount + "\"></label>";
+    spareTyreHtml += "</div>";
+    $(".tyreSpareWrap .spareTyreWrap").append(spareTyreHtml);
 }

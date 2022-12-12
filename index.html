@@ -20,31 +20,20 @@
 
 <body>
     <div class="header">
-        <div class="header-wrap">
-            <div class="header-wrap-left">
-                <ul class="tabs-list">
-
-                    <li id="tabVehicleList" class="tab active-tab">Vehicle List</li>
-                    <li id="tabVehicleGPSList" class="tab">Vehicle GPS List</li>
-
-                    <li id="tabBusMaster" class="tab"><span class="completed"></span>1. Bus Master</li>
-                    <li id="tabBusInfo" class="tab"><span class="completed"></span>2. Bus Info</li>
-                    <li id="tabGPS" class="tab">3. GPS</li>
-                    <li id="tabBusAmenities" class="tab">4. Bus Amenities</li>
-                    <li id="tabBusPicture" class="tab">5. Bus Picture</li>
-                    <li id="tabBusCommercial" class="tab">6. Bus Commercial</li>
-                </ul>
-            </div>
-            <div class="header-wrap-right">
-                <button class="btnSave" type="button" style="display:none;">SAVE</button>
-            </div>
-        </div>
+        <ul class="tabs-list">
+            <li id="tabVehicleList" class="tab ">Vehicle List</li>
+            <li id="tabVehicleGPSList" class="tab">Vehicle GPS List</li>
+            <li id="tabBusMaster" class="tab active-tab"><span class="completed"></span>1. Vehicle Master</li>
+            <li id="tabBusInfo" class="tab"><span class="completed"></span>2. Vehicle Info</li>
+            <li id="tabGPS" class="tab">3. Vehicle GPS</li>
+            <li id="tabBusAmenities" class="tab">4. Vehicle Amenities</li>
+            <li id="tabBusPicture" class="tab">5. Vehicle Picture</li>
+            <li id="tabBusCommercial" class="tab">6. Vehicle Commercial</li>
+        </ul>
     </div>
     <div class="page-container">
         <div class="tabs-content">
-
-            <div class="tabVehicleList">
-
+            <div class="tabVehicleList" style="display: none;">
                 <div class="vehicleListContainer">
                     <!-- status drop down added for filter data -->
                     <div class="custome_filter">
@@ -94,19 +83,22 @@
                     </table>
                 </div>
             </div>
-
-            <div class="tabBusMaster" style="display: none;">
-                <form name="frmBusMaster" id="frmBusMaster" action="" autocomplete="off">
-                    <div class="bus-master-form">
-                        <div class="form-wrap-left">
+            <!-- vehicle master tab content started -->
+            <div class="tabBusMaster">
+                <div class="vmBlock1">
+                    <form name="frmGeneralInfo" id="frmGeneralInfo" action="" autocomplete="off">
+                        <div class="input-wrap genInfo">
+                            <label class="generalInfo">1. General Information</label>
+                        </div>
+                        <div class="form-inputs-wrap">
                             <!-- Select Bus Number -->
                             <div class="input-wrap selBusNoType">
                                 <input class="custome_radio" type="radio" name="rdoBusNumber" id="rdoBusNumber-1"
                                     value="1" checked="checked">
-                                <label for="rdoBusNumber-1">Select Bus Number</label>
+                                <label for="rdoBusNumber-1">Select Vehicle Number</label>
                                 <input class="custome_radio" type="radio" name="rdoBusNumber" id="rdoBusNumber-2"
                                     value="2">
-                                <label for="rdoBusNumber-2">Create Bus Number</label>
+                                <label for="rdoBusNumber-2">Create Vehicle Number</label>
                             </div>
                             <!-- Bus Number & Status Drop Down -->
                             <div class="input-wrap selBusNumber">
@@ -121,7 +113,7 @@
                                                 <option value="">RJ-19-PA-1515</option>
                                                 <option value="">RJ-19-PB-9191</option>
                                             </select>
-                                            <label class="form-label">Select Bus Number</label>
+                                            <label class="form-label">Select Vehicle Number</label>
                                         </div>
                                     </div>
                                     <div class="input-wrap-right">
@@ -138,7 +130,7 @@
                             <!-- Bus Number Text Box -->
                             <div class="input-wrap txtBusNumber" style="display:none;">
                                 <input type="text" name="txtBusNumber" id="txtBusNumber">
-                                <label class="txtInputLabel">Enter Bus Number</label>
+                                <label class="txtInputLabel">Enter Vehicle Number</label>
                                 <span class="egLabel">Eg. GJ-01-LA-1314</span>
                             </div>
 
@@ -146,10 +138,10 @@
                             <div class="input-wrap selMstBusNoType">
                                 <input class="custome_radio" type="radio" name="rdoMstBusNumber" id="rdoMstBusNumber-1"
                                     value="1" checked="checked">
-                                <label for="rdoMstBusNumber-1">Select Master Bus Number</label>
+                                <label for="rdoMstBusNumber-1">Select Master Vehicle No.</label>
                                 <input class="custome_radio" type="radio" name="rdoMstBusNumber" id="rdoMstBusNumber-2"
                                     value="2">
-                                <label for="rdoMstBusNumber-2">New Master Bus Number</label>
+                                <label for="rdoMstBusNumber-2">New Vehicle No.</label>
                             </div>
 
                             <!-- Master Bus Number & Status Drop Down -->
@@ -165,7 +157,7 @@
                                                 <option value="">RJ-19-PA-1515</option>
                                                 <option value="">RJ-19-PB-9191</option>
                                             </select>
-                                            <label class="form-label">Select Master Bus Number</label>
+                                            <label class="form-label">Select Master Vehicle No.</label>
                                         </div>
                                     </div>
                                     <div class="input-wrap-right">
@@ -178,7 +170,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Master Bus Number Text Box -->
                             <div class="input-wrap txtMstBusNumber" style="display:none;">
                                 <div class="txtMstBusNumberBox">
@@ -205,150 +196,839 @@
                                 <span class="egLabel">Eg. GJ-01-LA-1314</span>
                             </div>
 
-                            <!-- Coach Drop Down -->
-                            <div class="input-wrap">
-                                <div class="input-box inputCoach">
-                                    <select class="chosen" name="coach" id="coach">
-                                        <option value="">Coach 1</option>
-                                        <option value="">Coach 2</option>
-                                        <option value="">Coach 3</option>
-                                        <option value="">Coach 4</option>
-                                    </select>
-                                    <label class="form-label">Select Coach</label>
-                                </div>
-                            </div>
-
-                            <!-- Bus Type Drop Down -->
-                            <div class="input-wrap">
-                                <div class="input-box inputBusType">
-                                    <select class="chosen" name="busType" id="busType">
-                                        <option value="">Semi Sleeper</option>
-                                        <option value="">Seater</option>
-                                        <option value="">Sleeper</option>
-                                    </select>
-                                    <label class="form-label">Select Bus Type</label>
-                                </div>
-                            </div>
-
                             <!-- Bus Usage -->
                             <div class="input-wrap">
-                                <label class="labelBusUsage">Bus Usage</label>
+                                <label class="labelBusUsage">Vehicle Usage</label>
                                 <div class="busUsageWrap">
-                                    <div class="busUsageBox activeBusUsage">
+                                    <div class="busUsageBox">
                                         <div class="busUsageIcon">
-                                            <svg fill="#757575" height="28" width="25"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                viewBox="0 0 25 30" style="enable-background:new 0 0 25 30;"
-                                                xml:space="preserve">
+                                            <svg width="63" height="20" viewBox="0 0 63 20" fill="#666666"
+                                                xmlns="http://www.w3.org/2000/svg">
                                                 <path
-                                                    d="M0,22.1c0,1.4,0.6,2.6,1.6,3.5v2.8c0,0.9,0.7,1.6,1.6,1.6h1.6c0.9,0,1.6-0.7,1.6-1.6v-1.6h12.5v1.6c0,0.9,0.7,1.6,1.6,1.6
-                                               h1.6c0.9,0,1.6-0.7,1.6-1.6v-2.8c1-0.9,1.6-2.1,1.6-3.5V6.3C25,0.8,19.4,0,12.5,0S0,0.8,0,6.3V22.1z M5.5,23.7
-                                               c-1.3,0-2.3-1.1-2.3-2.4c0-1.3,1-2.4,2.3-2.4s2.3,1.1,2.3,2.4C7.8,22.6,6.8,23.7,5.5,23.7z M19.5,23.7c-1.3,0-2.3-1.1-2.3-2.4
-                                               c0-1.3,1-2.4,2.3-2.4s2.3,1.1,2.3,2.4C21.9,22.6,20.8,23.7,19.5,23.7z M21.9,14.2H3.1V6.3h18.8V14.2z" />
+                                                    d="M57.8497 0.0357272C58.3771 0.0357272 58.6115 0.355202 58.7991 0.808275L61.9697 8.78353L62.0693 9.38763V13.2852L62.0576 16.2825C62.0693 17.0783 61.4657 17.4965 60.862 17.5197H58.5354C58.6115 17.2119 58.6526 16.8982 58.6526 16.5729V16.5322C58.6291 14.4469 56.9237 12.7624 54.808 12.7624C52.6864 12.7624 50.9692 14.4702 50.9634 16.5671V16.5787C50.9634 16.9098 51.0044 17.2177 51.0806 17.5197H31.2774L22.1699 17.5255C22.252 17.2177 22.2989 16.8982 22.2989 16.5671C22.2989 14.4644 20.57 12.7508 18.4543 12.7508C16.3386 12.7508 14.6097 14.4586 14.6097 16.5613C14.6097 16.8982 14.6624 17.2235 14.7445 17.5313H12.7284C12.8046 17.2235 12.8515 16.8982 12.8515 16.5613C12.8515 14.4528 11.1343 12.7566 9.01275 12.7566C6.89119 12.7566 5.16815 14.4586 5.16815 16.5613V16.5729C5.16815 16.9156 5.21504 17.2525 5.30295 17.5604H1.00708L0.930896 2.74255C0.919175 1.34267 2.67737 -0.039785 4.08979 0.000875437M52.8681 7.3546C52.8681 7.83091 53.2842 8.20267 53.7882 8.20267H58.7463C59.2504 8.20267 59.9595 7.97032 59.6079 7.20358L58.2599 3.86943C58.0606 3.34665 57.8438 3.02136 57.3398 3.02136H53.7882C53.2842 3.02136 52.8681 3.39893 52.8681 3.86943V7.3546ZM41.979 7.43593C41.979 7.92966 42.3892 8.32465 42.8932 8.32465H47.8162C48.3202 8.32465 48.7305 7.92966 48.7305 7.43593V3.7881C48.7305 3.29437 48.3202 2.89938 47.8162 2.89938H42.8932C42.3892 2.89938 41.979 3.29437 41.979 3.7881V7.43593ZM34.448 7.43593C34.448 7.92966 34.8583 8.32465 35.3623 8.32465H40.2852C40.7893 8.32465 41.1995 7.92966 41.1995 7.43593V3.7881C41.1995 3.29437 40.7893 2.89938 40.2852 2.89938H35.3623C34.8583 2.89938 34.448 3.29437 34.448 3.7881V7.43593ZM26.9112 7.43593C26.9112 7.92966 27.3215 8.32465 27.8255 8.32465H32.7484C33.2525 8.32465 33.6627 7.92966 33.6627 7.43593V3.7881C33.6627 3.29437 33.2525 2.89938 32.7484 2.89938H27.8255C27.3215 2.89938 26.9112 3.29437 26.9112 3.7881V7.43593ZM19.3744 7.43593C19.3744 7.92966 19.7905 8.32465 20.2887 8.32465H25.2116C25.7156 8.32465 26.1259 7.92966 26.1259 7.43593V3.7881C26.1259 3.29437 25.7156 2.89938 25.2116 2.89938H20.2887C19.7846 2.89938 19.3744 3.29437 19.3744 3.7881V7.43593ZM11.8434 7.43593C11.8434 7.92966 12.2596 8.32465 12.7577 8.32465H17.6807C18.1847 8.32465 18.5949 7.92966 18.5949 7.43593V3.7881C18.5949 3.29437 18.1788 2.89938 17.6807 2.89938H12.7577C12.2537 2.89938 11.8434 3.29437 11.8434 3.7881V7.43593ZM4.30664 7.43593C4.30664 7.92966 4.71688 8.32465 5.2209 8.32465H10.1439C10.6479 8.32465 11.0581 7.92966 11.0581 7.43593V3.7881C11.0581 3.29437 10.6479 2.89938 10.1439 2.89938H5.2209C4.71688 2.89938 4.30664 3.29437 4.30664 3.7881V7.43593Z" />
+                                                <path
+                                                    d="M54.8022 20.0001H54.8081C56.6894 19.9943 58.2073 18.484 58.2073 16.6253V16.5904C58.1897 14.7433 56.6718 13.2504 54.8022 13.2446C52.921 13.2446 51.3972 14.7549 51.3972 16.6194V16.6311C51.403 18.4956 52.9268 20.0001 54.8022 20.0001ZM54.8081 17.787C54.1576 17.787 53.636 17.27 53.6301 16.6311V16.6194C53.6301 15.9805 54.1576 15.4635 54.8022 15.4577C55.4469 15.4577 55.9744 15.9747 55.9744 16.6194V16.6485C55.9626 17.2758 55.4469 17.7812 54.8081 17.787Z" />
+                                                <path
+                                                    d="M8.9951 20.0001H9.00096C10.8822 19.9943 12.4001 18.484 12.4001 16.6253V16.6194C12.4001 14.7549 10.8764 13.2446 8.9951 13.2446C7.11383 13.2446 5.59005 14.7549 5.59005 16.6194V16.6311C5.59592 18.4956 7.11969 20.0001 8.9951 20.0001ZM9.00096 17.7812C8.35043 17.7812 7.82883 17.2642 7.82883 16.6253V16.6194C7.82883 15.9805 8.35043 15.4635 8.9951 15.4577C9.63978 15.4577 10.1672 15.9805 10.1672 16.6194V16.6543C10.1497 17.2816 9.63391 17.7812 9.00096 17.7812Z" />
+                                                <path
+                                                    d="M18.4485 20.0001H18.4543C20.3356 19.9943 21.8535 18.484 21.8535 16.6253V16.6194C21.8535 14.7549 20.3297 13.2446 18.4485 13.2446C16.5672 13.2446 15.0434 14.7549 15.0434 16.6194V16.6311C15.0434 18.4956 16.5672 20.0001 18.4485 20.0001ZM18.4485 17.7812C17.7979 17.7812 17.2763 17.2642 17.2763 16.6253V16.6194C17.2763 15.9805 17.7979 15.4635 18.4426 15.4577C19.0873 15.4577 19.6147 15.9805 19.6147 16.6194V16.6543C19.603 17.2816 19.0873 17.7812 18.4485 17.7812Z" />
                                             </svg>
                                         </div>
                                         <div class="busUsageLabel">Bus</div>
                                         <input type="radio" class="busUsageRadio" name="busUsage" id="busUsage"
-                                            value="1" checked="checked">
+                                            value="1">
                                     </div>
                                     <div class="busUsageBox">
                                         <div class="busUsageIcon">
-                                            <svg fill="#757575" height="28" width="45"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                viewBox="0 0 40 28" style="enable-background:new 0 0 40 28;"
-                                                xml:space="preserve">
-                                                <g>
-                                                    <path
-                                                        d="M33.4,21.8c-1.7,0-3,1.4-3,3.1l0,0l0,0c0,1.7,1.4,3.1,3,3.1c1.7,0,3-1.4,3-3.1C36.4,23.2,35.1,21.8,33.4,21.8z" />
-                                                    <path d="M23.5,0H0.8C0.4,0,0,0.4,0,0.9v22.2c0,0.6,0.5,1.1,1.1,1.1h2.6c0.3-2.1,2.1-3.8,4.2-3.8s3.9,1.7,4.2,3.8h12
-		c0-0.9,0,5.4,0-23.4C24.3,0.4,23.9,0,23.5,0z" />
-                                                    <path d="M11,24.9c0-1.7-1.4-3.1-3-3.1c-1.7,0-3,1.4-3,3.1c0,1.7,1.4,3.1,3,3.1C9.7,28,11,26.6,11,24.9C11.1,24.9,11,24.9,11,24.9
-		L11,24.9z" />
-                                                    <path d="M39.4,12.1c-1.7-1.8-4.5-4.7-6.4-6.6c-0.4-0.4-0.9-0.6-1.4-0.6h-4.8c-0.6,0-1,0.5-1.1,1v18.4h3.5c0.3-2.1,2.1-3.8,4.2-3.8
-		c2.2,0,3.9,1.7,4.2,3.8h1.9c0.2,0,0.4-0.2,0.4-0.4V13.5C39.9,13,39.7,12.5,39.4,12.1z M30.8,17.6h-1.9c-0.4,0-0.6-0.3-0.6-0.7
-		c0-0.4,0.3-0.7,0.6-0.7h1.9c0.4,0,0.6,0.3,0.6,0.7C31.4,17.3,31.2,17.6,30.8,17.6z M37,13.6h-8.5V7.2c0.1,0,3-0.1,2.8-0.1
-		c0.2,0,0.4,0.1,0.5,0.2c0.9,0.9,4.1,4.3,5,5.2c0.1,0.1,0.2,0.3,0.2,0.5L37,13.6z" />
-                                                </g>
-                                            </svg>
-                                        </div>
-                                        <div class="busUsageLabel">Cargo</div>
-                                        <input type="radio" class="busUsageRadio" name="busUsage" id="busUsage"
-                                            value="2">
-                                    </div>
-                                    <div class="busUsageBox">
-                                        <div class="busUsageIcon">
-                                            <svg fill="#757575" height="28" width="45"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                viewBox="0 0 40 28" style="enable-background:new 0 0 40 28;"
-                                                xml:space="preserve">
-                                                <g>
-                                                    <path
-                                                        d="M33.4,21.8c-1.7,0-3,1.4-3,3.1l0,0l0,0c0,1.7,1.4,3.1,3,3.1c1.7,0,3-1.4,3-3.1C36.4,23.2,35.1,21.8,33.4,21.8z" />
-                                                    <path d="M23.5,0H0.8C0.4,0,0,0.4,0,0.9v22.2c0,0.6,0.5,1.1,1.1,1.1h2.6c0.3-2.1,2.1-3.8,4.2-3.8s3.9,1.7,4.2,3.8h12
-		c0-0.9,0,5.4,0-23.4C24.3,0.4,23.9,0,23.5,0z" />
-                                                    <path d="M11,24.9c0-1.7-1.4-3.1-3-3.1c-1.7,0-3,1.4-3,3.1c0,1.7,1.4,3.1,3,3.1C9.7,28,11,26.6,11,24.9C11.1,24.9,11,24.9,11,24.9
-		L11,24.9z" />
-                                                    <path d="M39.4,12.1c-1.7-1.8-4.5-4.7-6.4-6.6c-0.4-0.4-0.9-0.6-1.4-0.6h-4.8c-0.6,0-1,0.5-1.1,1v18.4h3.5c0.3-2.1,2.1-3.8,4.2-3.8
-		c2.2,0,3.9,1.7,4.2,3.8h1.9c0.2,0,0.4-0.2,0.4-0.4V13.5C39.9,13,39.7,12.5,39.4,12.1z M30.8,17.6h-1.9c-0.4,0-0.6-0.3-0.6-0.7
-		c0-0.4,0.3-0.7,0.6-0.7h1.9c0.4,0,0.6,0.3,0.6,0.7C31.4,17.3,31.2,17.6,30.8,17.6z M37,13.6h-8.5V7.2c0.1,0,3-0.1,2.8-0.1
-		c0.2,0,0.4,0.1,0.5,0.2c0.9,0.9,4.1,4.3,5,5.2c0.1,0.1,0.2,0.3,0.2,0.5L37,13.6z" />
-                                                </g>
+                                            <svg width="63" height="20" viewBox="0 0 63 20" fill="#666666"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M57.8497 0.0357272C58.3771 0.0357272 58.6115 0.355202 58.7991 0.808275L61.9697 8.78353L62.0693 9.38763V13.2852L62.0576 16.2825C62.0693 17.0783 61.4657 17.4965 60.862 17.5197H58.5354C58.6115 17.2119 58.6526 16.8982 58.6526 16.5729V16.5322C58.6291 14.4469 56.9237 12.7624 54.808 12.7624C52.6864 12.7624 50.9692 14.4702 50.9634 16.5671V16.5787C50.9634 16.9098 51.0044 17.2177 51.0806 17.5197H31.2774L22.1699 17.5255C22.252 17.2177 22.2989 16.8982 22.2989 16.5671C22.2989 14.4644 20.57 12.7508 18.4543 12.7508C16.3386 12.7508 14.6097 14.4586 14.6097 16.5613C14.6097 16.8982 14.6624 17.2235 14.7445 17.5313H12.7284C12.8046 17.2235 12.8515 16.8982 12.8515 16.5613C12.8515 14.4528 11.1343 12.7566 9.01275 12.7566C6.89119 12.7566 5.16815 14.4586 5.16815 16.5613V16.5729C5.16815 16.9156 5.21504 17.2525 5.30295 17.5604H1.00708L0.930896 2.74255C0.919175 1.34267 2.67737 -0.039785 4.08979 0.000875437M52.8681 7.3546C52.8681 7.83091 53.2842 8.20267 53.7882 8.20267H58.7463C59.2504 8.20267 59.9595 7.97032 59.6079 7.20358L58.2599 3.86943C58.0606 3.34665 57.8438 3.02136 57.3398 3.02136H53.7882C53.2842 3.02136 52.8681 3.39893 52.8681 3.86943V7.3546ZM41.979 7.43593C41.979 7.92966 42.3892 8.32465 42.8932 8.32465H47.8162C48.3202 8.32465 48.7305 7.92966 48.7305 7.43593V3.7881C48.7305 3.29437 48.3202 2.89938 47.8162 2.89938H42.8932C42.3892 2.89938 41.979 3.29437 41.979 3.7881V7.43593ZM34.448 7.43593C34.448 7.92966 34.8583 8.32465 35.3623 8.32465H40.2852C40.7893 8.32465 41.1995 7.92966 41.1995 7.43593V3.7881C41.1995 3.29437 40.7893 2.89938 40.2852 2.89938H35.3623C34.8583 2.89938 34.448 3.29437 34.448 3.7881V7.43593ZM26.9112 7.43593C26.9112 7.92966 27.3215 8.32465 27.8255 8.32465H32.7484C33.2525 8.32465 33.6627 7.92966 33.6627 7.43593V3.7881C33.6627 3.29437 33.2525 2.89938 32.7484 2.89938H27.8255C27.3215 2.89938 26.9112 3.29437 26.9112 3.7881V7.43593ZM19.3744 7.43593C19.3744 7.92966 19.7905 8.32465 20.2887 8.32465H25.2116C25.7156 8.32465 26.1259 7.92966 26.1259 7.43593V3.7881C26.1259 3.29437 25.7156 2.89938 25.2116 2.89938H20.2887C19.7846 2.89938 19.3744 3.29437 19.3744 3.7881V7.43593ZM11.8434 7.43593C11.8434 7.92966 12.2596 8.32465 12.7577 8.32465H17.6807C18.1847 8.32465 18.5949 7.92966 18.5949 7.43593V3.7881C18.5949 3.29437 18.1788 2.89938 17.6807 2.89938H12.7577C12.2537 2.89938 11.8434 3.29437 11.8434 3.7881V7.43593ZM4.30664 7.43593C4.30664 7.92966 4.71688 8.32465 5.2209 8.32465H10.1439C10.6479 8.32465 11.0581 7.92966 11.0581 7.43593V3.7881C11.0581 3.29437 10.6479 2.89938 10.1439 2.89938H5.2209C4.71688 2.89938 4.30664 3.29437 4.30664 3.7881V7.43593Z" />
+                                                <path
+                                                    d="M54.8022 20.0001H54.8081C56.6894 19.9943 58.2073 18.484 58.2073 16.6253V16.5904C58.1897 14.7433 56.6718 13.2504 54.8022 13.2446C52.921 13.2446 51.3972 14.7549 51.3972 16.6194V16.6311C51.403 18.4956 52.9268 20.0001 54.8022 20.0001ZM54.8081 17.787C54.1576 17.787 53.636 17.27 53.6301 16.6311V16.6194C53.6301 15.9805 54.1576 15.4635 54.8022 15.4577C55.4469 15.4577 55.9744 15.9747 55.9744 16.6194V16.6485C55.9626 17.2758 55.4469 17.7812 54.8081 17.787Z" />
+                                                <path
+                                                    d="M8.9951 20.0001H9.00096C10.8822 19.9943 12.4001 18.484 12.4001 16.6253V16.6194C12.4001 14.7549 10.8764 13.2446 8.9951 13.2446C7.11383 13.2446 5.59005 14.7549 5.59005 16.6194V16.6311C5.59592 18.4956 7.11969 20.0001 8.9951 20.0001ZM9.00096 17.7812C8.35043 17.7812 7.82883 17.2642 7.82883 16.6253V16.6194C7.82883 15.9805 8.35043 15.4635 8.9951 15.4577C9.63978 15.4577 10.1672 15.9805 10.1672 16.6194V16.6543C10.1497 17.2816 9.63391 17.7812 9.00096 17.7812Z" />
+                                                <path
+                                                    d="M18.4485 20.0001H18.4543C20.3356 19.9943 21.8535 18.484 21.8535 16.6253V16.6194C21.8535 14.7549 20.3297 13.2446 18.4485 13.2446C16.5672 13.2446 15.0434 14.7549 15.0434 16.6194V16.6311C15.0434 18.4956 16.5672 20.0001 18.4485 20.0001ZM18.4485 17.7812C17.7979 17.7812 17.2763 17.2642 17.2763 16.6253V16.6194C17.2763 15.9805 17.7979 15.4635 18.4426 15.4577C19.0873 15.4577 19.6147 15.9805 19.6147 16.6194V16.6543C19.603 17.2816 19.0873 17.7812 18.4485 17.7812Z" />
                                             </svg>
                                         </div>
                                         <div class="busUsageLabel">Bus & Cargo</div>
                                         <input type="radio" class="busUsageRadio" name="busUsage" id="busUsage"
                                             value="3">
                                     </div>
+                                    <div class="busUsageBox">
+                                        <div class="busUsageIcon">
+                                            <svg width="47" height="18" viewBox="0 0 47 18" fill="#666666"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M37.9087 2.92334H44.6281L46.75 7.56388V13.063H37.9087V2.92334ZM45.8103 10.9779C45.8204 11.0187 45.8406 11.0596 45.8507 11.1107L46.6085 11.724V10.7939H45.7901C45.8002 10.8552 45.8002 10.9165 45.8103 10.9779ZM39.9195 6.40886L41.3038 7.56388H45.1333V7.0017L43.7995 4.09881C43.7187 4.07837 43.6278 4.06814 43.5166 4.06814H40.0508C39.9801 4.06814 39.9094 4.12947 39.9094 4.1908L39.9195 6.40886Z" />
+                                                <path d="M35.9384 0H0.260063V13.0733H35.9384V0Z" />
+                                                <path
+                                                    d="M6.69656 16.3237C6.69656 15.3935 7.44428 14.6474 8.36377 14.6474C9.27316 14.6474 10.0209 15.3935 10.0209 16.3237C10.0209 17.2436 9.27316 18 8.36377 18C7.44428 18 6.69656 17.2436 6.69656 16.3237Z" />
+                                                <path
+                                                    d="M11.5164 16.3237C11.5164 15.3935 12.2641 14.6474 13.1735 14.6474C14.093 14.6474 14.8306 15.3935 14.8306 16.3237C14.8306 17.2436 14.093 18 13.1735 18C12.2641 18 11.5164 17.2436 11.5164 16.3237Z" />
+                                                <path
+                                                    d="M30.664 16.3237C30.664 15.3935 31.4117 14.6474 32.3312 14.6474C33.2406 14.6474 33.9883 15.3935 33.9883 16.3237C33.9883 17.2436 33.2406 18 32.3312 18C31.4016 18 30.664 17.2436 30.664 16.3237Z" />
+                                                <path
+                                                    d="M42.1727 14.6576C43.0821 14.6576 43.8298 15.4038 43.8298 16.3339C43.8298 17.2538 43.0821 18.0102 42.1727 18.0102C41.2532 18.0102 40.5156 17.2538 40.5156 16.3339C40.5257 15.3935 41.2633 14.6576 42.1727 14.6576Z" />
+                                                <path
+                                                    d="M45.2546 16.0477H44.3351C44.2037 14.954 43.2842 14.1056 42.1829 14.1056C41.0613 14.1056 40.1519 14.954 40.0205 16.0477H34.4935C34.3621 14.954 33.4426 14.1056 32.3413 14.1056C31.2197 14.1056 30.3002 14.954 30.1789 16.0477H15.3559C15.2145 14.954 14.3051 14.1056 13.1936 14.1056C12.0821 14.1056 11.1626 14.954 11.0313 16.0477H10.5564C10.425 14.954 9.50554 14.1056 8.40417 14.1056C7.2826 14.1056 6.36311 14.954 6.24185 16.0477H4.16037C4.03912 15.3731 3.51369 14.8313 2.84681 14.7189V13.615H46.75V14.5349C46.75 15.3731 46.0831 16.0477 45.2546 16.0477Z" />
+                                            </svg>
+                                        </div>
+                                        <div class="busUsageLabel">Cargo</div>
+                                        <input type="radio" class="busUsageRadio" name="busUsage" id="busUsage"
+                                            value="2">
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="input-wrap">
-                                <div class="heading-wrap">
-                                    <div class="left">Heading1</div>
-                                    <div class="right">Heading2</div>
-                                </div>
                                 <div class="input-wrap-lr" style="justify-content: space-between">
-                                    <div class="input-wrap-25">
-                                        <input type="text" name="" id="" value="">
-                                        <label class="txtInputLabel">%</label>
+                                    <div class="input-wrap-25" style="width:49%;">
+                                        <div class="input-box inputCoach">
+                                            <select class="chosen" name="coach" id="vehicleOEM">
+                                                <option value="">Ashok Leyland</option>
+                                                <option value="">BharatBenz</option>
+                                                <option value="">Force Motors – Traveller</option>
+                                                <option value="">Mahindra</option>
+                                                <option value="">MAN SE</option>
+                                                <option value="">Motors – Skyline</option>
+                                                <option value="">Scania</option>
+                                                <option value="">SML Isuzu</option>
+                                                <option value="">Tata Motors</option>
+                                                <option value="">Volvo</option>
+                                            </select>
+                                            <label class="form-label">Vehicle OEM</label>
+                                        </div>
                                     </div>
-                                    <div class="input-wrap-25">
-                                        <input type="text" name="" id="" value="">
-                                        <label class="txtInputLabel">Rs</label>
+                                    <div class="input-wrap-25" style="width:49%;">
+                                        <div class="input-box inputBusType">
+                                            <select class="chosen" name="busType" id="vehicleModel">
+                                                <option value="">Starbus Ultra 34+D LPO 7.5/44</option>
+                                                <option value="">Starbus Ultra 34+D AC LPO 7.5/44</option>
+                                                <option value="">Starbus Ultra 40+D HBR AC LPO 10.2/54</option>
+                                                <option value="">Starbus Ultra 44+D LPO 10.2/54</option>
+                                                <option value="">Starbus Ultra 44+D AC LPO 10.2/54</option>
+                                                <option value="">VK2010.9T6R 37+D 2X2</option>
+                                                <option value="">VK2010.9T6R 41+D 2X2</option>
+                                                <option value="">VK2010.9T6R 42+D 2X2</option>
+                                                <option value="">VK2010.9T6R 45+D 2X2</option>
+                                                <option value="">VK2010.9T6R 51+D 3X2</option>
+                                                <option value="">Pro 3019 4490 WB HSD</option>
+                                                <option value="">Pro 3019 5490 WB CBC</option>
+                                                <option value="">Pro 3019 5490 WB HSD</option>
+                                                <option value="">Pro 3019 5490 WB mS Container</option>
+                                                <option value="">Pro 3019 6690 WB CBC</option>
+                                                <option value="">1015R+ 4X2 4250 WB 20 ft</option>
+                                                <option value="">1215RE 4X2 4250 WB 20 ft</option>
+                                                <option value="">1415R 4X2 3760 WB 17 ft</option>
+                                                <option value="">1415R 4X2 5050 WB 24 ft</option>
+                                                <option value="">1415RE 4X2 3360 WB 14.6 ft</option>
+                                                <option value="">Volvo 9600 7200 WB 13.5 m Seater 47+1(D)+1(CD) 2X2
+                                                </option>
+                                                <option value="">Volvo 9400 B8R 6200 WB 12 m 43+1(D)+1(D)+1(CD)</option>
+                                                <option value="">Volvo FM 420 4X2 T 3500 WB</option>
+                                                <option value="">Volvo FM 420 8x4 5035 WB 23 Cum</option>
+                                                <option value="">Volvo FMX 440 5600 WB CAB</option>
+                                                <option value="">S7 School Bus 3335 WB 3X3 36+D</option>
+                                                <option value="">S7 School Bus 4240 WB 2X2 30+D</option>
+                                                <option value="">Prestige School Bus 2515 WB 3X2 21+D</option>
+                                                <option value="">Prestige School Bus 3335 WB 3X2 4 Wheels 26+D</option>
+                                                <option value="">Prestige School Bus 4240 WB 2X2 32+D</option>
+                                            </select>
+                                            <label class="form-label">Vehicle Model</label>
+                                        </div>
                                     </div>
-                                    <div class="input-wrap-25">
-                                        <input type="text" name="" id="" value="">
-                                        <label class="txtInputLabel">%</label>
+                                </div>
+                            </div>
+
+                            <div class="input-wrap">
+                                <div class="input-wrap-lr" style="justify-content: space-between">
+                                    <div class="input-wrap-25" style="width:49%;">
+                                        <div class="input-box inputCoach">
+                                            <select class="chosen" name="coach" id="coach">
+                                                <option value="">Fixed</option>
+                                                <option value="">Seatwise</option>
+                                                <option value="">Min Quarantee</option>
+                                                <option value="">Own</option>
+                                            </select>
+                                            <label class="form-label">Contract Type</label>
+                                        </div>
                                     </div>
-                                    <div class="input-wrap-25">
+                                    <div class="input-wrap-25" style="width:49%;">
                                         <input type="text" name="" id="" value="">
-                                        <label class="txtInputLabel">Rs</label>
+                                        <label class="txtInputLabel">Contract Value</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="input-wrap">
                                 <div class="input-wrap-lr" style="justify-content: space-between">
                                     <div class="input-wrap-25" style="width:49%;">
-                                        <input type="text" name="" id="" value="">
-                                        <label class="txtInputLabel">%</label>
+                                        <div class="input-box inputCoach">
+                                            <select class="chosen" name="coach" id="coach">
+                                                <option value="">2X1(44) NAC Seater-Sleeper </option>
+                                                <option value="">2X1(45) AC Seater-Sleeper </option>
+                                                <option value="">2X1(45) AC-NAC Seater-Sleeper </option>
+                                                <option value="">2X1(46) AC Seater-Sleeper </option>
+                                                <option value="">2X1(46) AC Seater-Sleeper volvo</option>
+                                                <option value="">2X1(46) NAC Seater-Sleeper </option>
+                                            </select>
+                                            <label class="form-label">Select Coach</label>
+                                        </div>
                                     </div>
                                     <div class="input-wrap-25" style="width:49%;">
+                                        <div class="input-box inputBusType">
+                                            <select class="chosen" name="busType" id="busType">
+                                                <option value="">Semi Sleeper</option>
+                                                <option value="">Seater</option>
+                                                <option value="">Sleeper</option>
+                                            </select>
+                                            <label class="form-label">Select Bus Type</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-wrap cargoCommRow">
+                                <div class="input-wrap-lr" style="justify-content: space-between">
+                                    <div class="input-wrap-25" style="width:32%;margin:0px;">
                                         <input type="text" name="" id="" value="">
-                                        <label class="txtInputLabel">Rs</label>
+                                        <label class="txtInputLabel">Cargo Comm</label>
+                                    </div>
+                                    <div class="input-wrap-25" style="width:32%;margin:0px;">
+                                        <input type="text" name="" id="" value="">
+                                        <label class="txtInputLabel">Loading Charge</label>
+                                    </div>
+                                    <div class="input-wrap-25" style="width:32%;margin:0px;">
+                                        <input type="text" name="" id="" value="">
+                                        <label class="txtInputLabel">Unloading Charge</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-wrap-right">
-                            <div class="seatChartBox">
-                                Seat Layout
+                        <div class="input-wrap">
+                            <button type="button" class="buttonSave buttonSaveDisable">SAVE</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="vmBlock2">
+                    <ul class="tabs-list">
+                        <li id="tabUsageBodyType" class="tab active-tab tabDisabled">2. Usage & Body Type</li>
+                        <li id="tabChartLayout" class="tab tabDisabled">Chart Layout</li>
+                    </ul>
+                    <div class="tabs-content">
+                        <div class="tabUsageBodyType">
+                            <form name="frmUsageBodyType" id="frmUsageBodyType" action="" autocomplete="off">
+                                <div class="form-inputs-wrap tabDisabled">
+                                    <!-- usage type -->
+                                    <div class="input-wrap usageType">
+                                        <div class="input-box">
+                                            <select class="chosen" name="vehicleUsageType" id="vehicleUsageType">
+                                                <option data-img-src="/images/multi-purpose-pickups.svg" value="">Multi
+                                                    Purpose
+                                                    Pickups</option>
+                                                <option data-img-src="/images/refrigerator-chiller.svg" value="">
+                                                    Refrigerator /
+                                                    Chiller</option>
+                                                <option data-img-src="/images/tanker.svg" value="">Tanker</option>
+                                                <option data-img-src="/images/logging.svg" value="">Logging</option>
+                                                <option data-img-src="/images/towing.svg" value="">Towing</option>
+                                                <option data-img-src="/images/tipper-dumper.svg" value="">Tipper /
+                                                    Dumper
+                                                </option>
+                                                <option data-img-src="/images/cement-concrete.svg" value="">Cement /
+                                                    Concrete
+                                                </option>
+                                                <option data-img-src="/images/garbage.svg" value="">Garbage</option>
+                                                <option data-img-src="/images/car-transporter.svg" value="">Car
+                                                    Transporter
+                                                </option>
+                                                <option data-img-src="/images/snow-plow.svg" value="">Snow Plow</option>
+                                                <option data-img-src="/images/livestock.svg" value="">Livestock</option>
+                                            </select>
+                                            <label class="form-label">Usage Type</label>
+                                        </div>
+                                    </div>
+                                    <!-- truck type -->
+                                    <div class="input-wrap">
+                                        <label class="labelTruckType">Truck Type</label>
+                                        <div class="truckTypeWrap">
+                                            <div class="truckTypeBox">
+                                                <div class="truckTypeIcon">
+                                                    <svg width="35" height="18" viewBox="0 0 35 18" fill="#666666"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M24.2742 0H0.354935V11.7415H24.2742V0Z" />
+                                                        <path
+                                                            d="M28.3519 13.1331C29.6949 13.1331 30.7888 14.22 30.7888 15.57C30.7888 16.92 29.6949 18 28.3519 18C27.0088 18 25.9149 16.9131 25.9149 15.57C25.9149 14.22 27.0088 13.1331 28.3519 13.1331ZM28.3519 16.6223C28.9334 16.6223 29.4111 16.1515 29.4111 15.5631C29.4111 14.9815 28.9334 14.5038 28.3519 14.5038C27.7703 14.5038 27.2926 14.9746 27.2926 15.5631C27.2926 16.1515 27.7703 16.6223 28.3519 16.6223Z" />
+                                                        <path
+                                                            d="M25.2642 3.51692H29.6119C30.9134 3.51692 32.0072 3.58615 32.5126 4.81846C33.018 6.05077 34.1811 9.24231 34.1811 9.24231V13.2577H34.9426V15.8538H31.5088C31.5157 15.7569 31.5226 15.66 31.5226 15.5631C31.5226 13.8115 30.1034 12.3854 28.3449 12.3854C26.5934 12.3854 25.1672 13.8046 25.1672 15.5631C25.1672 15.66 25.1742 15.7569 25.1811 15.8538H21.4011L19.8226 14.4208H16.0219C15.7242 13.6523 15.1357 13.0223 14.388 12.6831H25.2572L25.2642 3.51692ZM26.8219 7.17923L28.698 8.91H32.7688C32.5126 8.20385 31.8896 6.52154 31.578 5.76692C31.1834 4.79769 30.3249 4.74231 29.3072 4.74231H26.8149L26.8219 7.17923ZM10.1096 14.4208H8.80109C8.5034 13.6523 7.91494 13.0223 7.16724 12.6831H11.7503C11.0026 13.0292 10.4072 13.6523 10.1096 14.4208ZM4.52263 12.6831C3.77494 13.0292 3.18647 13.6523 2.88878 14.4208H0.0572433V12.6831H4.52263Z" />
+                                                        <path
+                                                            d="M13.0657 13.1331C14.4088 13.1331 15.5026 14.22 15.5026 15.57C15.5026 16.92 14.4157 18 13.0657 18C11.7226 18 10.6288 16.9131 10.6288 15.57C10.6357 14.22 11.7226 13.1331 13.0657 13.1331ZM13.0657 16.6223C13.6472 16.6223 14.1249 16.1515 14.1249 15.5631C14.1249 14.9815 13.6472 14.5038 13.0657 14.5038C12.4842 14.5038 12.0065 14.9746 12.0065 15.5631C12.0134 16.1515 12.4842 16.6223 13.0657 16.6223Z" />
+                                                        <path
+                                                            d="M5.84493 13.1331C7.18801 13.1331 8.28186 14.22 8.28186 15.57C8.28186 16.92 7.18801 18 5.84493 18C4.50186 18 3.41493 16.9131 3.41493 15.57C3.40801 14.22 4.50186 13.1331 5.84493 13.1331ZM5.84493 16.6223C6.42647 16.6223 6.90417 16.1515 6.90417 15.5631C6.90417 14.9815 6.42647 14.5038 5.84493 14.5038C5.2634 14.5038 4.7857 14.9746 4.7857 15.5631C4.7857 16.1515 5.25647 16.6223 5.84493 16.6223Z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="truckTypeLabel">Rigid Trucks</div>
+                                                <input type="radio" class="truckTypeRadio" name="busUsage" id="busUsage"
+                                                    value="1">
+                                            </div>
+                                            <div class="truckTypeBox">
+                                                <div class="truckTypeIcon">
+                                                    <svg width="25" height="18" viewBox="0 0 25 18" fill="#666666"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M21.1667 4.51191H17.9167V0.333344H2.75004C1.55837 0.333344 0.583374 1.27352 0.583374 2.42263V13.9137H2.75004C2.75004 15.6478 4.20171 17.0476 6.00004 17.0476C7.79837 17.0476 9.25004 15.6478 9.25004 13.9137H15.75C15.75 15.6478 17.2017 17.0476 19 17.0476C20.7984 17.0476 22.25 15.6478 22.25 13.9137H24.4167V8.69049L21.1667 4.51191ZM6.00004 15.4807C5.10087 15.4807 4.37504 14.7808 4.37504 13.9137C4.37504 13.0466 5.10087 12.3467 6.00004 12.3467C6.89921 12.3467 7.62504 13.0466 7.62504 13.9137C7.62504 14.7808 6.89921 15.4807 6.00004 15.4807ZM20.625 6.07888L22.7484 8.69049H17.9167V6.07888H20.625ZM19 15.4807C18.1009 15.4807 17.375 14.7808 17.375 13.9137C17.375 13.0466 18.1009 12.3467 19 12.3467C19.8992 12.3467 20.625 13.0466 20.625 13.9137C20.625 14.7808 19.8992 15.4807 19 15.4807Z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="truckTypeLabel">Tractor Trailer Truck</div>
+                                                <input type="radio" class="truckTypeRadio" name="busUsage" id="busUsage"
+                                                    value="3">
+                                            </div>
+                                            <div class="truckTypeBox">
+                                                <div class="truckTypeIcon">
+                                                    <svg width="47" height="18" viewBox="0 0 47 18" fill="#666666"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M37.9087 2.92334H44.6281L46.75 7.56388V13.063H37.9087V2.92334ZM45.8103 10.9779C45.8204 11.0187 45.8406 11.0596 45.8507 11.1107L46.6085 11.724V10.7939H45.7901C45.8002 10.8552 45.8002 10.9165 45.8103 10.9779ZM39.9195 6.40886L41.3038 7.56388H45.1333V7.0017L43.7995 4.09881C43.7187 4.07837 43.6278 4.06814 43.5166 4.06814H40.0508C39.9801 4.06814 39.9094 4.12947 39.9094 4.1908L39.9195 6.40886Z" />
+                                                        <path d="M35.9384 0H0.260063V13.0733H35.9384V0Z" />
+                                                        <path
+                                                            d="M6.69656 16.3237C6.69656 15.3935 7.44428 14.6474 8.36377 14.6474C9.27316 14.6474 10.0209 15.3935 10.0209 16.3237C10.0209 17.2436 9.27316 18 8.36377 18C7.44428 18 6.69656 17.2436 6.69656 16.3237Z" />
+                                                        <path
+                                                            d="M11.5164 16.3237C11.5164 15.3935 12.2641 14.6474 13.1735 14.6474C14.093 14.6474 14.8306 15.3935 14.8306 16.3237C14.8306 17.2436 14.093 18 13.1735 18C12.2641 18 11.5164 17.2436 11.5164 16.3237Z" />
+                                                        <path
+                                                            d="M30.664 16.3237C30.664 15.3935 31.4117 14.6474 32.3312 14.6474C33.2406 14.6474 33.9883 15.3935 33.9883 16.3237C33.9883 17.2436 33.2406 18 32.3312 18C31.4016 18 30.664 17.2436 30.664 16.3237Z" />
+                                                        <path
+                                                            d="M42.1727 14.6576C43.0821 14.6576 43.8298 15.4038 43.8298 16.3339C43.8298 17.2538 43.0821 18.0102 42.1727 18.0102C41.2532 18.0102 40.5156 17.2538 40.5156 16.3339C40.5257 15.3935 41.2633 14.6576 42.1727 14.6576Z" />
+                                                        <path
+                                                            d="M45.2546 16.0477H44.3351C44.2037 14.954 43.2842 14.1056 42.1829 14.1056C41.0613 14.1056 40.1519 14.954 40.0205 16.0477H34.4935C34.3621 14.954 33.4426 14.1056 32.3413 14.1056C31.2197 14.1056 30.3002 14.954 30.1789 16.0477H15.3559C15.2145 14.954 14.3051 14.1056 13.1936 14.1056C12.0821 14.1056 11.1626 14.954 11.0313 16.0477H10.5564C10.425 14.954 9.50554 14.1056 8.40417 14.1056C7.2826 14.1056 6.36311 14.954 6.24185 16.0477H4.16037C4.03912 15.3731 3.51369 14.8313 2.84681 14.7189V13.615H46.75V14.5349C46.75 15.3731 46.0831 16.0477 45.2546 16.0477Z" />
+                                                    </svg>
+                                                </div>
+                                                <div class="truckTypeLabel">Tempo / Small Truck / Van</div>
+                                                <input type="radio" class="truckTypeRadio" name="busUsage" id="busUsage"
+                                                    value="2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- rear body type -->
+                                    <div class="input-wrap">
+                                        <label class="labelRearBodyType">Rear Body Type</label>
+                                        <div class="rearBodyTypeWrap">
+                                            <div class="rearBodyTypeBox">
+                                                <div class="rearBodyTypeIcon">
+                                                    <svg width="36" height="18" viewBox="0 0 36 18" fill="#666666"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_168_2279)">
+                                                            <path
+                                                                d="M24.4821 10.8H0V14.4C0 14.8179 0.299999 15.1179 0.717857 15.1179H4.8C4.8 15.3536 4.86428 15.6 4.91786 15.8357C5.21786 17.1 6.35357 18 7.68214 18C9 18 10.1464 17.1 10.4464 15.8357C10.5107 15.6 10.5643 15.3536 10.5643 15.1179H25.2643C25.2643 15.3536 25.3286 15.6 25.3821 15.8357C25.6821 17.1 26.8179 18 28.1357 18C29.4536 18 30.6 17.1 30.9 15.8357C30.9643 15.6 31.0179 15.3536 31.0179 15.1179H35.2821C35.7 15.1179 36 14.8179 36 14.4V7.91786H28.8C28.3821 7.91786 28.0821 7.61786 28.0821 7.2V4.31786C28.0821 3.9 28.3821 3.6 28.8 3.6H35.0357C33.7821 1.43571 31.4357 0 28.8 0H24.4821V10.8ZM27.0536 15.1179C27.0536 14.5179 27.5357 14.0357 28.1357 14.0357C28.7357 14.0357 29.2179 14.5179 29.2179 15.1179C29.2179 15.7179 28.7357 16.2 28.1357 16.2C27.5357 16.2 27.0536 15.7179 27.0536 15.1179ZM8.75357 15.1179C8.75357 15.7179 8.27143 16.2 7.67143 16.2C7.07143 16.2 6.58928 15.7179 6.58928 15.1179C6.58928 14.5179 7.07143 14.0357 7.67143 14.0357C8.28214 14.0357 8.75357 14.5179 8.75357 15.1179Z" />
+                                                            <rect width="25" height="2"
+                                                                transform="matrix(-1 0 0 1 25 9)" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_168_2279">
+                                                                <rect width="36" height="18" fill="white"
+                                                                    transform="matrix(-1 0 0 1 36 0)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                                <div class="rearBodyTypeLabel">Open with half wall</div>
+                                                <input type="radio" class="rearBodyTypeRadio" name="rearBodyTypeRadio"
+                                                    id="rearBodyTypeRadio-1" value="1">
+                                            </div>
+                                            <div class="rearBodyTypeBox">
+                                                <div class="rearBodyTypeIcon">
+                                                    <svg width="30" height="18" viewBox="0 0 30 18" fill="#666666"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_168_2249)">
+                                                            <path
+                                                                d="M0 0.598214V11.4018H19.8036V0.598214C19.8036 0.25 19.5536 0 19.2054 0H0.607141C0.249998 0 0 0.25 0 0.598214ZM20.4018 12H0V15C0 15.3482 0.25 15.5982 0.598215 15.5982H4C4 15.7946 4.05357 16 4.09821 16.1964C4.34821 17.25 5.29464 18 6.40179 18C7.5 18 8.45536 17.25 8.70536 16.1964C8.75893 16 8.80357 15.7946 8.80357 15.5982H21.0536C21.0536 15.7946 21.1071 16 21.1518 16.1964C21.4018 17.25 22.3482 18 23.4554 18C24.5536 18 25.5089 17.25 25.7589 16.1964C25.8125 16 25.8571 15.7946 25.8571 15.5982H29.4018C29.75 15.5982 30 15.3482 30 15V9.59821H24C23.6518 9.59821 23.4018 9.34821 23.4018 9V6.59821C23.4018 6.25 23.6518 6 24 6H29.1964C28.1518 4.19643 26.1964 3 24 3H20.4018V12ZM22.5446 15.5982C22.5446 15.0982 22.9464 14.6964 23.4464 14.6964C23.9464 14.6964 24.3482 15.0982 24.3482 15.5982C24.3482 16.0982 23.9464 16.5 23.4464 16.5C22.9464 16.5 22.5446 16.0982 22.5446 15.5982ZM7.29464 15.5982C7.29464 16.0982 6.89286 16.5 6.39286 16.5C5.89286 16.5 5.49107 16.0982 5.49107 15.5982C5.49107 15.0982 5.89286 14.6964 6.39286 14.6964C6.90178 14.6964 7.29464 15.0982 7.29464 15.5982Z" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_168_2249">
+                                                                <rect width="30" height="18"
+                                                                    transform="matrix(-1 0 0 1 30 0)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                                <div class="rearBodyTypeLabel">Open with full wall</div>
+                                                <input type="radio" class="rearBodyTypeRadio" name="rearBodyTypeRadio"
+                                                    id="rearBodyTypeRadio-2" value="2">
+                                            </div>
+                                            <div class="rearBodyTypeBox">
+                                                <div class="rearBodyTypeIcon">
+                                                    <svg width="54" height="18" viewBox="0 0 54 18" fill="#666666"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_168_2236)">
+                                                            <path
+                                                                d="M42.3945 0H50.5098L53.0725 5.55254V12.118H42.3945V0ZM51.9376 9.61627C51.9498 9.66509 51.9742 9.7139 51.9864 9.77492L52.9017 10.5071V9.39661H51.9132C51.9254 9.48203 51.9254 9.54305 51.9376 9.61627ZM44.8108 4.17356L46.4949 5.55254H51.12V4.88136L49.5091 1.41559C49.4115 1.39119 49.3017 1.37898 49.1674 1.37898H44.9817C44.8962 1.37898 44.8108 1.4522 44.8108 1.52542V4.17356Z" />
+                                                            <path
+                                                                d="M6.71178 14.0095C7.81008 14.0095 8.71313 14.9003 8.71313 16.0108C8.71313 17.1092 7.81008 18.0122 6.71178 18.0122C5.60127 18.0122 4.69822 17.1092 4.69822 16.0108C4.69822 14.9003 5.60127 14.0095 6.71178 14.0095Z" />
+                                                            <path
+                                                                d="M12.5084 14.0095C13.6189 14.0095 14.5098 14.9003 14.5098 16.0108C14.5098 17.1092 13.6189 18.0122 12.5084 18.0122C11.4101 18.0122 10.5071 17.1092 10.5071 16.0108C10.5193 14.9003 11.4223 14.0095 12.5084 14.0095Z" />
+                                                            <path
+                                                                d="M35.6461 14.0095C36.7444 14.0095 37.6475 14.9003 37.6475 16.0108C37.6475 17.1092 36.7444 18.0122 35.6461 18.0122C34.5356 18.0122 33.6325 17.1092 33.6325 16.0108C33.6447 14.9003 34.5478 14.0095 35.6461 14.0095Z" />
+                                                            <path
+                                                                d="M47.5444 14.0095C48.6427 14.0095 49.5458 14.9003 49.5458 16.0108C49.5458 17.1092 48.6427 18.0122 47.5444 18.0122C46.4339 18.0122 45.5431 17.1092 45.5431 16.0108C45.5553 14.9003 46.4461 14.0095 47.5444 14.0095Z" />
+                                                            <path
+                                                                d="M53.0725 13.863C53.0725 14.8759 52.2671 15.6814 51.2664 15.6814H50.1559C49.9973 14.3756 48.8867 13.3627 47.5566 13.3627C46.202 13.3627 45.1037 14.3756 44.9451 15.6814H38.2698C38.1112 14.3756 37.0006 13.3627 35.6705 13.3627C34.3159 13.3627 33.2054 14.3756 33.059 15.6814H15.1566C14.9857 14.3756 13.8874 13.3627 12.5451 13.3627C11.2027 13.3627 10.0922 14.3756 9.93353 15.6814H9.35997C9.20132 14.3756 8.09082 13.3627 6.76065 13.3627C5.40607 13.3627 4.29556 14.3756 4.14912 15.6814H1.63522C1.48878 14.8759 0.854206 14.2292 0.0487823 14.0949V12.7769H53.0725V13.863Z" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_168_2236">
+                                                                <rect width="53.0725" height="18"
+                                                                    transform="matrix(-1 0 0 1 53.0725 0)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                                <div class="rearBodyTypeLabel">Flat body</div>
+                                                <input type="radio" class="rearBodyTypeRadio" name="rearBodyTypeRadio"
+                                                    id="rearBodyTypeRadio-3" value="3">
+                                            </div>
+                                            <div class="rearBodyTypeBox">
+                                                <div class="rearBodyTypeIcon">
+                                                    <svg width="47" height="18" viewBox="0 0 47 18" fill="#666666"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_168_2254)">
+                                                            <path
+                                                                d="M37.6587 2.92334H44.3781L46.5 7.56388V13.063H37.6587V2.92334ZM45.5603 10.9779C45.5704 11.0187 45.5906 11.0596 45.6007 11.1107L46.3585 11.724V10.7939H45.5401C45.5502 10.8552 45.5502 10.9165 45.5603 10.9779ZM39.6695 6.40886L41.0538 7.56388H44.8833V7.0017L43.5495 4.09881C43.4687 4.07837 43.3778 4.06814 43.2666 4.06814H39.8008C39.7301 4.06814 39.6594 4.12947 39.6594 4.1908L39.6695 6.40886Z" />
+                                                            <path d="M35.6884 0H0.0100632V13.0733H35.6884V0Z" />
+                                                            <path
+                                                                d="M6.44656 16.3237C6.44656 15.3935 7.19428 14.6474 8.11377 14.6474C9.02316 14.6474 9.77087 15.3935 9.77087 16.3237C9.77087 17.2436 9.02316 18 8.11377 18C7.19428 18 6.44656 17.2436 6.44656 16.3237Z" />
+                                                            <path
+                                                                d="M11.2664 16.3237C11.2664 15.3935 12.0141 14.6474 12.9235 14.6474C13.843 14.6474 14.5806 15.3935 14.5806 16.3237C14.5806 17.2436 13.843 18 12.9235 18C12.0141 18 11.2664 17.2436 11.2664 16.3237Z" />
+                                                            <path
+                                                                d="M30.414 16.3237C30.414 15.3935 31.1617 14.6474 32.0812 14.6474C32.9906 14.6474 33.7383 15.3935 33.7383 16.3237C33.7383 17.2436 32.9906 18 32.0812 18C31.1516 18 30.414 17.2436 30.414 16.3237Z" />
+                                                            <path
+                                                                d="M41.9227 14.6576C42.8321 14.6576 43.5798 15.4038 43.5798 16.3339C43.5798 17.2538 42.8321 18.0102 41.9227 18.0102C41.0032 18.0102 40.2656 17.2538 40.2656 16.3339C40.2757 15.3935 41.0133 14.6576 41.9227 14.6576Z" />
+                                                            <path
+                                                                d="M45.0046 16.0477H44.0851C43.9537 14.954 43.0342 14.1056 41.9329 14.1056C40.8113 14.1056 39.9019 14.954 39.7705 16.0477H34.2435C34.1121 14.954 33.1926 14.1056 32.0913 14.1056C30.9697 14.1056 30.0502 14.954 29.9289 16.0477H15.1059C14.9645 14.954 14.0551 14.1056 12.9436 14.1056C11.8321 14.1056 10.9126 14.954 10.7813 16.0477H10.3064C10.175 14.954 9.25554 14.1056 8.15417 14.1056C7.0326 14.1056 6.11311 14.954 5.99185 16.0477H3.91037C3.78912 15.3731 3.26369 14.8313 2.59681 14.7189V13.615H46.5V14.5349C46.5 15.3731 45.8331 16.0477 45.0046 16.0477Z" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_168_2254">
+                                                                <rect width="46.5" height="18" fill="white"
+                                                                    transform="matrix(-1 0 0 1 46.5 0)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </div>
+                                                <div class="rearBodyTypeLabel">Closed Container</div>
+                                                <input type="radio" class="rearBodyTypeRadio" name="rearBodyTypeRadio"
+                                                    id="rearBodyTypeRadio-4" value="4">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-wrap">
+                                    <button type="button" class="buttonSave buttonSaveDisable">SAVE</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tabChartLayout" style="display: none;">
+                            <div class="seatChartBox tabDisabled">
+                                <table class="chart table table-bordered" id="#chartMasterBus1"
+                                    style="width:auto;border-spacing:2px;border-collapse:separate">
+                                    <tbody>
+                                        <tr style="background-color: #888;color:#fff">
+                                            <th>Up</th>
+                                            <th>Up</th>
+                                            <th>Dn</th>
+                                            <th>Dn</th>
+                                            <th>Dn</th>
+                                            <th>Dn</th>
+                                            <th>Dn</th>
+                                            <th>Up</th>
+                                            <th>Up</th>
+                                        </tr>
+                                        <tr>
+                                            <td chartlayoutid="1667779" class="seat sleeper-vert"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
+                                                data-details="0^A1^^2^^false" data-seat="seatno-A1" rowspan="2"
+                                                data-nomenu="yes">A1<br></td>
+                                            <td chartlayoutid="1667780" class="seat sleeper-vert"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
+                                                data-details="1^A2^^2^^false" data-seat="seatno-A2" rowspan="2"
+                                                data-nomenu="yes">A2<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
+                                                data-details="2^P1^^1^^false" data-seat="seatno-P1" data-nomenu="yes"
+                                                chartlayoutid="1667743">P1<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
+                                                data-details="3^P2^^1^^false" data-seat="seatno-P2" data-nomenu="yes"
+                                                chartlayoutid="1667744">P2<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
+                                                data-details="4^T1^^4^^false" data-seat="seatno-T1" data-nomenu="yes"
+                                                chartlayoutid="1667745">T1<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
+                                                data-details="5^P3^^1^^false" data-seat="seatno-P3" data-nomenu="yes"
+                                                chartlayoutid="1667746">P3<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
+                                                data-details="6^P4^^1^^false" data-seat="seatno-P4" data-nomenu="yes"
+                                                chartlayoutid="1667747">P4<br></td>
+                                            <td chartlayoutid="1667782" class="seat sleeper-vert"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
+                                                data-details="7^A3^^2^^false" data-seat="seatno-A3" rowspan="2"
+                                                data-nomenu="yes">A3<br></td>
+                                            <td chartlayoutid="1667783" class="seat sleeper-vert"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
+                                                data-details="8^A4^^2^^false" data-seat="seatno-A4" rowspan="2"
+                                                data-nomenu="yes">A4<br></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
+                                                data-details="9^P5^^1^^false" data-seat="seatno-P5" data-nomenu="yes"
+                                                chartlayoutid="1667748">P5<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
+                                                data-details="10^P6^^1^^false" data-seat="seatno-P6" data-nomenu="yes"
+                                                chartlayoutid="1667749">P6<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
+                                                data-details="11^T2^^4^^false" data-seat="seatno-T2" data-nomenu="yes"
+                                                chartlayoutid="1667750">T2<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
+                                                data-details="12^P7^^1^^false" data-seat="seatno-P7" data-nomenu="yes"
+                                                chartlayoutid="1667751">P7<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
+                                                data-details="13^P8^^1^^false" data-seat="seatno-P8" data-nomenu="yes"
+                                                chartlayoutid="1667752">P8<br></td>
+                                        </tr>
+                                        <tr>
+                                            <td chartlayoutid="1667785" class="seat sleeper-vert"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
+                                                data-details="14^A5^^2^^false" data-seat="seatno-A5" rowspan="2"
+                                                data-nomenu="yes">A5<br></td>
+                                            <td chartlayoutid="1667786" class="seat sleeper-vert"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
+                                                data-details="15^A6^^2^^false" data-seat="seatno-A6" rowspan="2"
+                                                data-nomenu="yes">A6<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
+                                                data-details="16^P9^^1^^false" data-seat="seatno-P9" data-nomenu="yes"
+                                                chartlayoutid="1667753">P9<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
+                                                data-details="17^P10^^1^^false" data-seat="seatno-P10" data-nomenu="yes"
+                                                chartlayoutid="1667754">P10<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
+                                                data-details="18^T3^^4^^false" data-seat="seatno-T3" data-nomenu="yes"
+                                                chartlayoutid="1667755">T3<br></td>
+                                            <td chartlayoutid="1667756" class="seat sleeper-vert"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
+                                                data-details="19^A7^^2^^false" data-seat="seatno-A7" rowspan="2"
+                                                data-nomenu="yes">A7<br></td>
+                                            <td chartlayoutid="1667757" class="seat sleeper-vert"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
+                                                data-details="20^A8^^2^^false" data-seat="seatno-A8" rowspan="2"
+                                                data-nomenu="yes">A8<br></td>
+                                            <td chartlayoutid="1667788" class="seat sleeper-vert"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
+                                                data-details="21^A9^^2^^false" data-seat="seatno-A9" rowspan="2"
+                                                data-nomenu="yes">A9<br></td>
+                                            <td chartlayoutid="1667789" class="seat sleeper-vert"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
+                                                data-details="22^A10^^2^^false" data-seat="seatno-A10" rowspan="2"
+                                                data-nomenu="yes">A10<br></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
+                                                data-details="23^P11^^1^^false" data-seat="seatno-P11" data-nomenu="yes"
+                                                chartlayoutid="1667758">P11<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
+                                                data-details="24^P12^^1^^false" data-seat="seatno-P12" data-nomenu="yes"
+                                                chartlayoutid="1667759">P12<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
+                                                data-details="25^T4^^4^^false" data-seat="seatno-T4" data-nomenu="yes"
+                                                chartlayoutid="1667760">T4<br></td>
+                                        </tr>
+                                        <tr>
+                                            <td chartlayoutid="1667791" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="26^B1^^2^^true" data-seat="seatno-B1" rowspan="2"
+                                                data-nomenu="yes">B1<br></td>
+                                            <td chartlayoutid="1667792" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="27^B2^^2^^true" data-seat="seatno-B2" rowspan="2"
+                                                data-nomenu="yes">B2<br></td>
+                                            <td chartlayoutid="1667761" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="28^B3^^2^^true" data-seat="seatno-B3" rowspan="2"
+                                                data-nomenu="yes">B3<br></td>
+                                            <td chartlayoutid="1667762" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="29^B4^^2^^true" data-seat="seatno-B4" rowspan="2"
+                                                data-nomenu="yes">B4<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
+                                                data-details="30^T5^^4^^false" data-seat="seatno-T5" data-nomenu="yes"
+                                                chartlayoutid="1667763">T5<br></td>
+                                            <td chartlayoutid="1667764" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="31^B5^^2^^true" data-seat="seatno-B5" rowspan="2"
+                                                data-nomenu="yes">B5<br></td>
+                                            <td chartlayoutid="1667765" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="32^B6^^2^^true" data-seat="seatno-B6" rowspan="2"
+                                                data-nomenu="yes">B6<br></td>
+                                            <td chartlayoutid="1667794" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="33^B7^^2^^true" data-seat="seatno-B7" rowspan="2"
+                                                data-nomenu="yes">B7<br></td>
+                                            <td chartlayoutid="1667795" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="34^B8^^2^^true" data-seat="seatno-B8" rowspan="2"
+                                                data-nomenu="yes">B8<br></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
+                                                data-details="35^T6^^4^^false" data-seat="seatno-T6" data-nomenu="yes"
+                                                chartlayoutid="1667766">T6<br></td>
+                                        </tr>
+                                        <tr>
+                                            <td chartlayoutid="1667797" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="36^C1^^2^^true" data-seat="seatno-C1" rowspan="2"
+                                                data-nomenu="yes">C1<br></td>
+                                            <td chartlayoutid="1667798" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="37^C2^^2^^true" data-seat="seatno-C2" rowspan="2"
+                                                data-nomenu="yes">C2<br></td>
+                                            <td chartlayoutid="1667767" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="38^C3^^2^^true" data-seat="seatno-C3" rowspan="2"
+                                                data-nomenu="yes">C3<br></td>
+                                            <td chartlayoutid="1667768" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="39^C4^^2^^true" data-seat="seatno-C4" rowspan="2"
+                                                data-nomenu="yes">C4<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
+                                                data-details="40^T7^^4^^false" data-seat="seatno-T7" data-nomenu="yes"
+                                                chartlayoutid="1667769">T7<br></td>
+                                            <td chartlayoutid="1667770" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="41^C5^^2^^true" data-seat="seatno-C5" rowspan="2"
+                                                data-nomenu="yes">C5<br></td>
+                                            <td chartlayoutid="1667771" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="42^C6^^2^^true" data-seat="seatno-C6" rowspan="2"
+                                                data-nomenu="yes">C6<br></td>
+                                            <td chartlayoutid="1667800" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="43^C7^^2^^true" data-seat="seatno-C7" rowspan="2"
+                                                data-nomenu="yes">C7<br></td>
+                                            <td chartlayoutid="1667801" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="44^C8^^2^^true" data-seat="seatno-C8" rowspan="2"
+                                                data-nomenu="yes">C8<br></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
+                                                data-details="45^T8^^4^^false" data-seat="seatno-T8" data-nomenu="yes"
+                                                chartlayoutid="1667772">T8<br></td>
+                                        </tr>
+                                        <tr>
+                                            <td chartlayoutid="1667803" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="46^D1^^2^^true" data-seat="seatno-D1" rowspan="2"
+                                                data-nomenu="yes">D1<br></td>
+                                            <td chartlayoutid="1667804" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="47^D2^^2^^true" data-seat="seatno-D2" rowspan="2"
+                                                data-nomenu="yes">D2<br></td>
+                                            <td chartlayoutid="1667773" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="48^D3^^2^^true" data-seat="seatno-D3" rowspan="2"
+                                                data-nomenu="yes">D3<br></td>
+                                            <td chartlayoutid="1667774" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="49^D4^^2^^true" data-seat="seatno-D4" rowspan="2"
+                                                data-nomenu="yes">D4<br></td>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
+                                                data-details="50^T9^^4^^false" data-seat="seatno-T9" data-nomenu="yes"
+                                                chartlayoutid="1667775">T9<br></td>
+                                            <td chartlayoutid="1667776" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="51^D5^^2^^true" data-seat="seatno-D5" rowspan="2"
+                                                data-nomenu="yes">D5<br></td>
+                                            <td chartlayoutid="1667777" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="52^D6^^2^^true" data-seat="seatno-D6" rowspan="2"
+                                                data-nomenu="yes">D6<br></td>
+                                            <td chartlayoutid="1667806" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="53^D7^^2^^true" data-seat="seatno-D7" rowspan="2"
+                                                data-nomenu="yes">D7<br></td>
+                                            <td chartlayoutid="1667807" class="seat sleeper-vert"
+                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
+                                                data-details="54^D8^^2^^true" data-seat="seatno-D8" rowspan="2"
+                                                data-nomenu="yes">D8<br></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="seat seater"
+                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
+                                                data-details="55^T10^^4^^false" data-seat="seatno-T10" data-nomenu="yes"
+                                                chartlayoutid="1667778">T10<br></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="input-wrap">
+                                <button type="button" class="buttonSave">SAVE</button>
                             </div>
                         </div>
                     </div>
-                </form>
+                </div>
+                <div class="vmBlock3">
+                    <ul class="tabs-list">
+                        <li id="tabDimensionWeight" class="tab active-tab tabDisabled">3. Dimension & Weight</li>
+                        <li id="tabTyreInformation" class="tab tabDisabled">Tyre Information</li>
+                    </ul>
+                    <div class="tabs-content">
+                        <div class="tabDimensionWeight" style="display:none1;">
+                            <form name="frmDimensionWeight" id="frmDimensionWeight" action="" autocomplete="off">
+                                <div class="form-inputs-wrap tabDisabled">
+                                    <div class="input-wrap">
+                                        <label class="labelWeightInfo">Weight Information</label>
+                                        <div class="input-wrap-lr" style="justify-content: space-between">
+                                            <div class="input-wrap-25" style="width:49%;position:relative;">
+                                                <input type="number" name="" id="grossVehicleWeight" value="">
+                                                <label class="txtInputLabel">Gross Vehicle Weight</label>
+                                                <span class="inputNotes">(x1,000kgs) / Tonnes</span>
+                                            </div>
+                                            <div class="input-wrap-25" style="width:49%;position:relative;">
+                                                <input type="number" name="" id="cargoLadingCapacity" value="">
+                                                <label class="txtInputLabel">Cargo Loading Capacity</label>
+                                                <span class="inputNotes">(x1,000kgs) / Tonnes</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label class="labelCargoDim">Max Cargo Loading Dimensions</label>
+                                        <div class="input-wrap-lr" style="justify-content: space-between">
+                                            <div class="input-wrap-25" style="width:32%;position:relative;">
+                                                <input type="number" name="" id="grossVehicleWeight" value="">
+                                                <label class="txtInputLabel">Length</label>
+                                                <span class="inputNotes">In Feet</span>
+                                            </div>
+                                            <div class="input-wrap-25" style="width:32%;position:relative;">
+                                                <input type="number" name="" id="cargoLadingCapacity" value="">
+                                                <label class="txtInputLabel">Width</label>
+                                            </div>
+                                            <div class="input-wrap-25" style="width:32%;position:relative;">
+                                                <input type="number" name="" id="cargoLadingCapacity" value="">
+                                                <label class="txtInputLabel">Height</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-wrap">
+                                    <button type="button" class="buttonSave buttonSaveDisable">SAVE</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tabTyreInformation" style="display: none;">
+                            <form name="frmTyreInformation" id="frmTyreInformation" action="axle-config.php"
+                                autocomplete="off" method="post" target="_blank">
+                                <div class="form-inputs-wrap tabDisabled">
+                                    <div class="input-wrap">
+                                        <label class="labelTyreCode">Tyre Code</label>
+                                        <div class="input-wrap-lr" style="justify-content: space-between">
+                                            <div class="input-wrap-25" style="width:15%;position:relative;">
+                                                <input type="text" name="" id="grossVehicleWeight" value="">
+                                                <label class="txtInputLabel">Width</label>
+                                            </div>
+                                            <div style="width: 2%;display: flex;align-items: center;">
+                                                <svg width="10" height="20" viewBox="0 0 10 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path opacity="0.5"
+                                                        d="M9.19922 0.9375L2.08594 19.4648H0.222656L7.34766 0.9375H9.19922Z"
+                                                        fill="black" />
+                                                </svg>
+                                            </div>
+                                            <div class="input-wrap-25" style="width:15%;position:relative;">
+                                                <input type="text" name="" id="cargoLadingCapacity" value="">
+                                                <label class="txtInputLabel">Ratio</label>
+                                            </div>
+                                            <div class="input-wrap-25" style="width:15%;position:relative;">
+                                                <input type="text" name="" id="cargoLadingCapacity" value="">
+                                                <label class="txtInputLabel">Const.</label>
+                                            </div>
+                                            <div class="input-wrap-25" style="width:15%;position:relative;">
+                                                <input type="text" name="" id="cargoLadingCapacity" value="">
+                                                <label class="txtInputLabel">Rim</label>
+                                            </div>
+                                            <div class="input-wrap-25" style="width:15%;position:relative;">
+                                                <input type="text" name="" id="cargoLadingCapacity" value="">
+                                                <label class="txtInputLabel">Load</label>
+                                            </div>
+                                            <div class="input-wrap-25" style="width:15%;position:relative;">
+                                                <input type="text" name="" id="cargoLadingCapacity" value="">
+                                                <label class="txtInputLabel">Speed</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-wrap">
+                                        <label class="labelAxleConfig">Axle Configruation</label>
+                                        <div class="input-wrap-lr" style="justify-content: space-between">
+                                            <div class="input-wrap-25" style="width:20%;position:relative;">
+                                                <input type="number" name="" id="frontAxle" value=""
+                                                    onkeyup="calTotalAxle()">
+                                                <label class="txtInputLabel txtInputActiveLabel filled">Front</label>
+                                            </div>
+                                            <div style="width: 3%;display: flex;align-items: center;">
+                                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path opacity="0.6"
+                                                        d="M10.3906 4.20703V6.32617H0.644531V4.20703H10.3906ZM6.66016 0.222656V10.5742H4.38477V0.222656H6.66016Z"
+                                                        fill="black" />
+                                                </svg>
+                                            </div>
+                                            <div class="input-wrap-25" style="width:20%;position:relative;">
+                                                <input type="number" name="" id="rearAxle" value=""
+                                                    onkeyup="calTotalAxle()">
+                                                <label class="txtInputLabel txtInputActiveLabel filled">Rear</label>
+                                            </div>
+                                            <div style="width: 3%;display: flex;align-items: center;">
+                                                <svg width="9" height="7" viewBox="0 0 9 7" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path opacity="0.6"
+                                                        d="M8.87305 0.449219V2.38281H0.396484V0.449219H8.87305ZM8.87305 4.58984V6.52344H0.396484V4.58984H8.87305Z"
+                                                        fill="black" />
+                                                </svg>
+                                            </div>
+                                            <div class="input-wrap-25" style="width:20%;position:relative;">
+                                                <input type="number" name="" id="totalAxle" value=""
+                                                    style="border: 1px solid #E7E7E7;" readonly="readonly">
+                                                <label class="txtInputLabel txtInputActiveLabel filled">Total</label>
+                                            </div>
+                                            <div class="input-wrap-25" style="width:24%;position:relative;">
+                                                <button type="button" class="btnConfig"
+                                                    onclick="getAxleConfiguration()">Configure</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="axleConfiguration">
+                                        <!-- tyre and axle layout load here-->
+                                    </div>
+                                    <div class="tyreSpareWrap">
+                                        <div class="spareHeading">
+                                            Spare
+                                        </div>
+                                        <div class="spareTyreWrap">
+                                            <div class="spareTyre" id="spareTyre_1">
+                                                <input type="checkbox" name="chkSpareTyre[]" id="chkSpareTyre_1" value="1">
+                                                <label for="chkSpareTyre_1"></label>
+                                            </div>
+                                        </div>
+                                        <div class="addSpare">
+                                            <img src="/images/addSpare.svg" onclick="addSpareTyre()">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-wrap">
+                                    <button type="submit" class="buttonSave buttonSaveDisable">SAVE</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- vehicle master tab content end -->
             <div class="tabBusInfo" style="display: none;">
                 <div class="bus-info-container">
                     <div class="bus-info-form">
@@ -2338,9 +3018,29 @@
         </div>
     </div>
 
+
+    <!-- error popupbox -->
+    <div class="error-popup-wrapper" style="display:none;">
+        <div class="error-popup-content">
+            <div class="error-popup-body">
+                <div class="error-icon">
+                    <img src="/images/error.svg">
+                </div>
+                <div class="error-message">
+                    Please select vehicle usage to continue
+                </div>
+                <div class="error-action">
+                    <button type="button" class="btnOk" onclick="closeErrorPopup(event)">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!-- <script src="./js/jquery-3.6.0.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="./chosen/chosen.jquery.min.js"></script>
+    <script src="./chosen/ImageSelect.jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
     </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js">
