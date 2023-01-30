@@ -1010,7 +1010,8 @@
                                         </div>
                                         <div class="spareTyreWrap">
                                             <div class="spareTyre" id="spareTyre_1">
-                                                <input type="checkbox" name="chkSpareTyre[]" id="chkSpareTyre_1" value="1">
+                                                <input type="checkbox" name="chkSpareTyre[]" id="chkSpareTyre_1"
+                                                    value="1">
                                                 <label for="chkSpareTyre_1"></label>
                                             </div>
                                         </div>
@@ -3020,7 +3021,7 @@
 
 
     <!-- error popupbox -->
-    <div class="error-popup-wrapper" style="display:none;">
+    <div class="error-popup-wrapper" style="display:none1;">
         <div class="error-popup-content">
             <div class="error-popup-body">
                 <div class="error-icon">
@@ -3030,11 +3031,31 @@
                     Please select vehicle usage to continue
                 </div>
                 <div class="error-action">
-                    <button type="button" class="btnOk" onclick="closeErrorPopup(event)">OK</button>
+                    <button type="button" class="btnOk" onclick="closeErrorPopup(event)">Take Me Back</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- success popupbox -->
+    <div class="success-popup-wrapper" style="display:none1;">
+        <div class="success-popup-content">
+            <div class="error-popup-body">
+                <div class="success-icon">
+                    <img src="/images/success.svg">
+                </div>
+                <div class="success-message">
+                    Detail Saved Successfully
+                </div>
+                <div class="success-action">
+                    <button type="button" class="btnOk" onclick="closeSuccessPopup(event)">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
     <!-- <script src="./js/jquery-3.6.0.min.js"></script> -->

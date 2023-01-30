@@ -679,6 +679,11 @@ function closeErrorPopup(e) {
     $('.error-popup-wrapper').hide();
 }
 
+function closeSuccessPopup(e) {
+    e.stopPropagation();
+    $('.success-popup-wrapper').hide();
+}
+
 function addSpareTyre() {
     var stCount = $(".tyreSpareWrap .spareTyreWrap .spareTyre").length;
     stCount += 1;
