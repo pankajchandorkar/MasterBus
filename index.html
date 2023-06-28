@@ -103,7 +103,7 @@
                             <!-- Bus Number & Status Drop Down -->
                             <div class="input-wrap selBusNumber">
                                 <div class="input-wrap-lr">
-                                    <div class="input-wrap-left">
+                                    <div class="input-wrap-busno-left">
                                         <div class="input-box inputBusNumber">
                                             <select class="chosen" name="busNumber" id="busNumber">
                                                 <option value="">RJ-19-PB-9191</option>
@@ -115,8 +115,15 @@
                                             </select>
                                             <label class="form-label">Select Vehicle Number</label>
                                         </div>
+                                        <div class="inputEditBusNumber">
+                                            <input type="text" name="txtEditBusNumber" id="txtEditBusNumber">
+                                            <label class="txtInputLabel">Enter Vehicle Number</label>
+                                        </div>
                                     </div>
-                                    <div class="input-wrap-right">
+                                    <div class="input-wrap-busno-center">
+                                        <button type="button"  class="btnEdit" onClick="toggleEditBusNoInput()">Edit</button>
+                                    </div>
+                                    <div class="input-wrap-busno-right">
                                         <div class="input-box inputBusNumberStatus inputDisabled">
                                             <select class="chosen" name="busNumberStatus" id="busNumberStatus">
                                                 <option value="1">Active</option>
@@ -3021,7 +3028,7 @@
 
 
     <!-- error popupbox -->
-    <div class="error-popup-wrapper" style="display:none1;">
+    <div class="error-popup-wrapper" style="display:none;">
         <div class="error-popup-content">
             <div class="error-popup-body">
                 <div class="error-icon">
@@ -3038,7 +3045,7 @@
     </div>
 
     <!-- success popupbox -->
-    <div class="success-popup-wrapper" style="display:none1;">
+    <div class="success-popup-wrapper" style="display:none;">
         <div class="success-popup-content">
             <div class="error-popup-body">
                 <div class="success-icon">

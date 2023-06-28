@@ -694,3 +694,15 @@ function addSpareTyre() {
     spareTyreHtml += "</div>";
     $(".tyreSpareWrap .spareTyreWrap").append(spareTyreHtml);
 }
+
+
+function toggleEditBusNoInput(){
+    if(!$(".selBusNumber .inputEditBusNumber").is(":visible")){
+        $(".selBusNumber .inputEditBusNumber").show();
+        $(".selBusNumber .inputBusNumber").hide();
+        $(".inputEditBusNumber #txtEditBusNumber").focus();
+    }else{
+        $(".selBusNumber .inputEditBusNumber").hide();
+        $(".selBusNumber .inputBusNumber").show();
+    }
+}
