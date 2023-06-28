@@ -1,0 +1,58 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "Sr": "1",
+            "Coach Name":"2X1(38) AC Seater-Sleeper",
+            "Created Data & Time": "30-02-2023 16:00PM",
+            "Bus Type": "Toyto",
+            "Bus Cat": "Normal",
+            "Standard Bus Type": "Normal",
+            "Capacity": "30",
+            "Created By Branch": "Maven Operation Jaipur",
+            "Created User": "Nisar",
+            "Status": "",
+            "Action" : ""
+        },
+         {
+            "id": "2",
+            "Sr": "2",
+            "Coach Name":"2X1(38) AC Seater-Sleeper",
+            "Created Data & Time": "30-02-2023 16:00PM",
+            "Bus Type": "Toyto",
+            "Bus Cat": "Normal",
+            "Standard Bus Type": "Normal",
+            "Capacity": "30",
+            "Created By Branch": "Maven Operation Jaipur",
+            "Created User": "Nisar",
+            "Status": "",
+            "Action" : ""
+        }, {
+            "id": "3",
+            "Sr": "3",
+            "Coach Name":"2X1(38) AC Seater-Sleeper",
+            "Created Data & Time": "30-02-2023 16:00PM",
+            "Bus Type": "Toyto",
+            "Bus Cat": "Normal",
+            "Standard Bus Type": "Normal",
+            "Capacity": "34",
+            "Created By Branch": "Maven Operation Jaipur",
+            "Created User": "khushboo",
+            "Status": "",
+            "Action" : ""
+        },{
+            "id": "4",
+            "Sr": "4",
+            "Coach Name":"2X1(38) AC Seater-Sleeper",
+            "Created Data & Time": "30-02-2023 16:00PM",
+            "Bus Type": "Toyto",
+            "Bus Cat": "Normal",
+            "Standard Bus Type": "Normal",
+            "Capacity": "34",
+            "Created By Branch": "Maven Operation Jaipur",
+            "Created User": "khushboo",
+            "Status": "",
+            "Action" : ""
+        }
+    ]
+}

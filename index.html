@@ -8,20 +8,22 @@
     <link rel="stylesheet" href="./chosen/chosen.min.css" />
 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css"
-        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 
     <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <title>Master Bus</title>
 </head>
 
 <body>
     <div class="header">
         <ul class="tabs-list">
-            <li id="tabVehicleList" class="tab ">Vehicle List</li>
+            <li id="tabCreateLayout" class="tab">Create Layout</li>
+            <li id="tabCreatCoach" class="tab">Create Coach</li>
+            <li id="tabVehicleList" class="tab">Vehicle List</li>
             <li id="tabVehicleGPSList" class="tab">Vehicle GPS List</li>
             <li id="tabBusMaster" class="tab active-tab"><span class="completed"></span>1. Vehicle Master</li>
             <li id="tabBusInfo" class="tab"><span class="completed"></span>2. Vehicle Info</li>
@@ -93,11 +95,9 @@
                         <div class="form-inputs-wrap">
                             <!-- Select Bus Number -->
                             <div class="input-wrap selBusNoType">
-                                <input class="custome_radio" type="radio" name="rdoBusNumber" id="rdoBusNumber-1"
-                                    value="1" checked="checked">
+                                <input class="custome_radio" type="radio" name="rdoBusNumber" id="rdoBusNumber-1" value="1" checked="checked">
                                 <label for="rdoBusNumber-1">Select Vehicle Number</label>
-                                <input class="custome_radio" type="radio" name="rdoBusNumber" id="rdoBusNumber-2"
-                                    value="2">
+                                <input class="custome_radio" type="radio" name="rdoBusNumber" id="rdoBusNumber-2" value="2">
                                 <label for="rdoBusNumber-2">Create Vehicle Number</label>
                             </div>
                             <!-- Bus Number & Status Drop Down -->
@@ -143,11 +143,9 @@
 
                             <!-- Select Master Bus Number -->
                             <div class="input-wrap selMstBusNoType">
-                                <input class="custome_radio" type="radio" name="rdoMstBusNumber" id="rdoMstBusNumber-1"
-                                    value="1" checked="checked">
+                                <input class="custome_radio" type="radio" name="rdoMstBusNumber" id="rdoMstBusNumber-1" value="1" checked="checked">
                                 <label for="rdoMstBusNumber-1">Select Master Vehicle No.</label>
-                                <input class="custome_radio" type="radio" name="rdoMstBusNumber" id="rdoMstBusNumber-2"
-                                    value="2">
+                                <input class="custome_radio" type="radio" name="rdoMstBusNumber" id="rdoMstBusNumber-2" value="2">
                                 <label for="rdoMstBusNumber-2">New Vehicle No.</label>
                             </div>
 
@@ -209,8 +207,7 @@
                                 <div class="busUsageWrap">
                                     <div class="busUsageBox">
                                         <div class="busUsageIcon">
-                                            <svg width="63" height="20" viewBox="0 0 63 20" fill="#666666"
-                                                xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="63" height="20" viewBox="0 0 63 20" fill="#666666" xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M57.8497 0.0357272C58.3771 0.0357272 58.6115 0.355202 58.7991 0.808275L61.9697 8.78353L62.0693 9.38763V13.2852L62.0576 16.2825C62.0693 17.0783 61.4657 17.4965 60.862 17.5197H58.5354C58.6115 17.2119 58.6526 16.8982 58.6526 16.5729V16.5322C58.6291 14.4469 56.9237 12.7624 54.808 12.7624C52.6864 12.7624 50.9692 14.4702 50.9634 16.5671V16.5787C50.9634 16.9098 51.0044 17.2177 51.0806 17.5197H31.2774L22.1699 17.5255C22.252 17.2177 22.2989 16.8982 22.2989 16.5671C22.2989 14.4644 20.57 12.7508 18.4543 12.7508C16.3386 12.7508 14.6097 14.4586 14.6097 16.5613C14.6097 16.8982 14.6624 17.2235 14.7445 17.5313H12.7284C12.8046 17.2235 12.8515 16.8982 12.8515 16.5613C12.8515 14.4528 11.1343 12.7566 9.01275 12.7566C6.89119 12.7566 5.16815 14.4586 5.16815 16.5613V16.5729C5.16815 16.9156 5.21504 17.2525 5.30295 17.5604H1.00708L0.930896 2.74255C0.919175 1.34267 2.67737 -0.039785 4.08979 0.000875437M52.8681 7.3546C52.8681 7.83091 53.2842 8.20267 53.7882 8.20267H58.7463C59.2504 8.20267 59.9595 7.97032 59.6079 7.20358L58.2599 3.86943C58.0606 3.34665 57.8438 3.02136 57.3398 3.02136H53.7882C53.2842 3.02136 52.8681 3.39893 52.8681 3.86943V7.3546ZM41.979 7.43593C41.979 7.92966 42.3892 8.32465 42.8932 8.32465H47.8162C48.3202 8.32465 48.7305 7.92966 48.7305 7.43593V3.7881C48.7305 3.29437 48.3202 2.89938 47.8162 2.89938H42.8932C42.3892 2.89938 41.979 3.29437 41.979 3.7881V7.43593ZM34.448 7.43593C34.448 7.92966 34.8583 8.32465 35.3623 8.32465H40.2852C40.7893 8.32465 41.1995 7.92966 41.1995 7.43593V3.7881C41.1995 3.29437 40.7893 2.89938 40.2852 2.89938H35.3623C34.8583 2.89938 34.448 3.29437 34.448 3.7881V7.43593ZM26.9112 7.43593C26.9112 7.92966 27.3215 8.32465 27.8255 8.32465H32.7484C33.2525 8.32465 33.6627 7.92966 33.6627 7.43593V3.7881C33.6627 3.29437 33.2525 2.89938 32.7484 2.89938H27.8255C27.3215 2.89938 26.9112 3.29437 26.9112 3.7881V7.43593ZM19.3744 7.43593C19.3744 7.92966 19.7905 8.32465 20.2887 8.32465H25.2116C25.7156 8.32465 26.1259 7.92966 26.1259 7.43593V3.7881C26.1259 3.29437 25.7156 2.89938 25.2116 2.89938H20.2887C19.7846 2.89938 19.3744 3.29437 19.3744 3.7881V7.43593ZM11.8434 7.43593C11.8434 7.92966 12.2596 8.32465 12.7577 8.32465H17.6807C18.1847 8.32465 18.5949 7.92966 18.5949 7.43593V3.7881C18.5949 3.29437 18.1788 2.89938 17.6807 2.89938H12.7577C12.2537 2.89938 11.8434 3.29437 11.8434 3.7881V7.43593ZM4.30664 7.43593C4.30664 7.92966 4.71688 8.32465 5.2209 8.32465H10.1439C10.6479 8.32465 11.0581 7.92966 11.0581 7.43593V3.7881C11.0581 3.29437 10.6479 2.89938 10.1439 2.89938H5.2209C4.71688 2.89938 4.30664 3.29437 4.30664 3.7881V7.43593Z" />
                                                 <path
@@ -222,13 +219,11 @@
                                             </svg>
                                         </div>
                                         <div class="busUsageLabel">Bus</div>
-                                        <input type="radio" class="busUsageRadio" name="busUsage" id="busUsage"
-                                            value="1">
+                                        <input type="radio" class="busUsageRadio" name="busUsage" id="busUsage" value="1">
                                     </div>
                                     <div class="busUsageBox">
                                         <div class="busUsageIcon">
-                                            <svg width="63" height="20" viewBox="0 0 63 20" fill="#666666"
-                                                xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="63" height="20" viewBox="0 0 63 20" fill="#666666" xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M57.8497 0.0357272C58.3771 0.0357272 58.6115 0.355202 58.7991 0.808275L61.9697 8.78353L62.0693 9.38763V13.2852L62.0576 16.2825C62.0693 17.0783 61.4657 17.4965 60.862 17.5197H58.5354C58.6115 17.2119 58.6526 16.8982 58.6526 16.5729V16.5322C58.6291 14.4469 56.9237 12.7624 54.808 12.7624C52.6864 12.7624 50.9692 14.4702 50.9634 16.5671V16.5787C50.9634 16.9098 51.0044 17.2177 51.0806 17.5197H31.2774L22.1699 17.5255C22.252 17.2177 22.2989 16.8982 22.2989 16.5671C22.2989 14.4644 20.57 12.7508 18.4543 12.7508C16.3386 12.7508 14.6097 14.4586 14.6097 16.5613C14.6097 16.8982 14.6624 17.2235 14.7445 17.5313H12.7284C12.8046 17.2235 12.8515 16.8982 12.8515 16.5613C12.8515 14.4528 11.1343 12.7566 9.01275 12.7566C6.89119 12.7566 5.16815 14.4586 5.16815 16.5613V16.5729C5.16815 16.9156 5.21504 17.2525 5.30295 17.5604H1.00708L0.930896 2.74255C0.919175 1.34267 2.67737 -0.039785 4.08979 0.000875437M52.8681 7.3546C52.8681 7.83091 53.2842 8.20267 53.7882 8.20267H58.7463C59.2504 8.20267 59.9595 7.97032 59.6079 7.20358L58.2599 3.86943C58.0606 3.34665 57.8438 3.02136 57.3398 3.02136H53.7882C53.2842 3.02136 52.8681 3.39893 52.8681 3.86943V7.3546ZM41.979 7.43593C41.979 7.92966 42.3892 8.32465 42.8932 8.32465H47.8162C48.3202 8.32465 48.7305 7.92966 48.7305 7.43593V3.7881C48.7305 3.29437 48.3202 2.89938 47.8162 2.89938H42.8932C42.3892 2.89938 41.979 3.29437 41.979 3.7881V7.43593ZM34.448 7.43593C34.448 7.92966 34.8583 8.32465 35.3623 8.32465H40.2852C40.7893 8.32465 41.1995 7.92966 41.1995 7.43593V3.7881C41.1995 3.29437 40.7893 2.89938 40.2852 2.89938H35.3623C34.8583 2.89938 34.448 3.29437 34.448 3.7881V7.43593ZM26.9112 7.43593C26.9112 7.92966 27.3215 8.32465 27.8255 8.32465H32.7484C33.2525 8.32465 33.6627 7.92966 33.6627 7.43593V3.7881C33.6627 3.29437 33.2525 2.89938 32.7484 2.89938H27.8255C27.3215 2.89938 26.9112 3.29437 26.9112 3.7881V7.43593ZM19.3744 7.43593C19.3744 7.92966 19.7905 8.32465 20.2887 8.32465H25.2116C25.7156 8.32465 26.1259 7.92966 26.1259 7.43593V3.7881C26.1259 3.29437 25.7156 2.89938 25.2116 2.89938H20.2887C19.7846 2.89938 19.3744 3.29437 19.3744 3.7881V7.43593ZM11.8434 7.43593C11.8434 7.92966 12.2596 8.32465 12.7577 8.32465H17.6807C18.1847 8.32465 18.5949 7.92966 18.5949 7.43593V3.7881C18.5949 3.29437 18.1788 2.89938 17.6807 2.89938H12.7577C12.2537 2.89938 11.8434 3.29437 11.8434 3.7881V7.43593ZM4.30664 7.43593C4.30664 7.92966 4.71688 8.32465 5.2209 8.32465H10.1439C10.6479 8.32465 11.0581 7.92966 11.0581 7.43593V3.7881C11.0581 3.29437 10.6479 2.89938 10.1439 2.89938H5.2209C4.71688 2.89938 4.30664 3.29437 4.30664 3.7881V7.43593Z" />
                                                 <path
@@ -240,13 +235,11 @@
                                             </svg>
                                         </div>
                                         <div class="busUsageLabel">Bus & Cargo</div>
-                                        <input type="radio" class="busUsageRadio" name="busUsage" id="busUsage"
-                                            value="3">
+                                        <input type="radio" class="busUsageRadio" name="busUsage" id="busUsage" value="3">
                                     </div>
                                     <div class="busUsageBox">
                                         <div class="busUsageIcon">
-                                            <svg width="47" height="18" viewBox="0 0 47 18" fill="#666666"
-                                                xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="47" height="18" viewBox="0 0 47 18" fill="#666666" xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M37.9087 2.92334H44.6281L46.75 7.56388V13.063H37.9087V2.92334ZM45.8103 10.9779C45.8204 11.0187 45.8406 11.0596 45.8507 11.1107L46.6085 11.724V10.7939H45.7901C45.8002 10.8552 45.8002 10.9165 45.8103 10.9779ZM39.9195 6.40886L41.3038 7.56388H45.1333V7.0017L43.7995 4.09881C43.7187 4.07837 43.6278 4.06814 43.5166 4.06814H40.0508C39.9801 4.06814 39.9094 4.12947 39.9094 4.1908L39.9195 6.40886Z" />
                                                 <path d="M35.9384 0H0.260063V13.0733H35.9384V0Z" />
@@ -263,8 +256,7 @@
                                             </svg>
                                         </div>
                                         <div class="busUsageLabel">Cargo</div>
-                                        <input type="radio" class="busUsageRadio" name="busUsage" id="busUsage"
-                                            value="2">
+                                        <input type="radio" class="busUsageRadio" name="busUsage" id="busUsage" value="2">
                                     </div>
                                 </div>
                             </div>
@@ -441,8 +433,7 @@
                                         <div class="truckTypeWrap">
                                             <div class="truckTypeBox">
                                                 <div class="truckTypeIcon">
-                                                    <svg width="35" height="18" viewBox="0 0 35 18" fill="#666666"
-                                                        xmlns="http://www.w3.org/2000/svg">
+                                                    <svg width="35" height="18" viewBox="0 0 35 18" fill="#666666" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M24.2742 0H0.354935V11.7415H24.2742V0Z" />
                                                         <path
                                                             d="M28.3519 13.1331C29.6949 13.1331 30.7888 14.22 30.7888 15.57C30.7888 16.92 29.6949 18 28.3519 18C27.0088 18 25.9149 16.9131 25.9149 15.57C25.9149 14.22 27.0088 13.1331 28.3519 13.1331ZM28.3519 16.6223C28.9334 16.6223 29.4111 16.1515 29.4111 15.5631C29.4111 14.9815 28.9334 14.5038 28.3519 14.5038C27.7703 14.5038 27.2926 14.9746 27.2926 15.5631C27.2926 16.1515 27.7703 16.6223 28.3519 16.6223Z" />
@@ -455,25 +446,21 @@
                                                     </svg>
                                                 </div>
                                                 <div class="truckTypeLabel">Rigid Trucks</div>
-                                                <input type="radio" class="truckTypeRadio" name="busUsage" id="busUsage"
-                                                    value="1">
+                                                <input type="radio" class="truckTypeRadio" name="busUsage" id="busUsage" value="1">
                                             </div>
                                             <div class="truckTypeBox">
                                                 <div class="truckTypeIcon">
-                                                    <svg width="25" height="18" viewBox="0 0 25 18" fill="#666666"
-                                                        xmlns="http://www.w3.org/2000/svg">
+                                                    <svg width="25" height="18" viewBox="0 0 25 18" fill="#666666" xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M21.1667 4.51191H17.9167V0.333344H2.75004C1.55837 0.333344 0.583374 1.27352 0.583374 2.42263V13.9137H2.75004C2.75004 15.6478 4.20171 17.0476 6.00004 17.0476C7.79837 17.0476 9.25004 15.6478 9.25004 13.9137H15.75C15.75 15.6478 17.2017 17.0476 19 17.0476C20.7984 17.0476 22.25 15.6478 22.25 13.9137H24.4167V8.69049L21.1667 4.51191ZM6.00004 15.4807C5.10087 15.4807 4.37504 14.7808 4.37504 13.9137C4.37504 13.0466 5.10087 12.3467 6.00004 12.3467C6.89921 12.3467 7.62504 13.0466 7.62504 13.9137C7.62504 14.7808 6.89921 15.4807 6.00004 15.4807ZM20.625 6.07888L22.7484 8.69049H17.9167V6.07888H20.625ZM19 15.4807C18.1009 15.4807 17.375 14.7808 17.375 13.9137C17.375 13.0466 18.1009 12.3467 19 12.3467C19.8992 12.3467 20.625 13.0466 20.625 13.9137C20.625 14.7808 19.8992 15.4807 19 15.4807Z" />
                                                     </svg>
                                                 </div>
                                                 <div class="truckTypeLabel">Tractor Trailer Truck</div>
-                                                <input type="radio" class="truckTypeRadio" name="busUsage" id="busUsage"
-                                                    value="3">
+                                                <input type="radio" class="truckTypeRadio" name="busUsage" id="busUsage" value="3">
                                             </div>
                                             <div class="truckTypeBox">
                                                 <div class="truckTypeIcon">
-                                                    <svg width="47" height="18" viewBox="0 0 47 18" fill="#666666"
-                                                        xmlns="http://www.w3.org/2000/svg">
+                                                    <svg width="47" height="18" viewBox="0 0 47 18" fill="#666666" xmlns="http://www.w3.org/2000/svg">
                                                         <path
                                                             d="M37.9087 2.92334H44.6281L46.75 7.56388V13.063H37.9087V2.92334ZM45.8103 10.9779C45.8204 11.0187 45.8406 11.0596 45.8507 11.1107L46.6085 11.724V10.7939H45.7901C45.8002 10.8552 45.8002 10.9165 45.8103 10.9779ZM39.9195 6.40886L41.3038 7.56388H45.1333V7.0017L43.7995 4.09881C43.7187 4.07837 43.6278 4.06814 43.5166 4.06814H40.0508C39.9801 4.06814 39.9094 4.12947 39.9094 4.1908L39.9195 6.40886Z" />
                                                         <path d="M35.9384 0H0.260063V13.0733H35.9384V0Z" />
@@ -490,8 +477,7 @@
                                                     </svg>
                                                 </div>
                                                 <div class="truckTypeLabel">Tempo / Small Truck / Van</div>
-                                                <input type="radio" class="truckTypeRadio" name="busUsage" id="busUsage"
-                                                    value="2">
+                                                <input type="radio" class="truckTypeRadio" name="busUsage" id="busUsage" value="2">
                                             </div>
                                         </div>
                                     </div>
@@ -501,8 +487,7 @@
                                         <div class="rearBodyTypeWrap">
                                             <div class="rearBodyTypeBox">
                                                 <div class="rearBodyTypeIcon">
-                                                    <svg width="36" height="18" viewBox="0 0 36 18" fill="#666666"
-                                                        xmlns="http://www.w3.org/2000/svg">
+                                                    <svg width="36" height="18" viewBox="0 0 36 18" fill="#666666" xmlns="http://www.w3.org/2000/svg">
                                                         <g clip-path="url(#clip0_168_2279)">
                                                             <path
                                                                 d="M24.4821 10.8H0V14.4C0 14.8179 0.299999 15.1179 0.717857 15.1179H4.8C4.8 15.3536 4.86428 15.6 4.91786 15.8357C5.21786 17.1 6.35357 18 7.68214 18C9 18 10.1464 17.1 10.4464 15.8357C10.5107 15.6 10.5643 15.3536 10.5643 15.1179H25.2643C25.2643 15.3536 25.3286 15.6 25.3821 15.8357C25.6821 17.1 26.8179 18 28.1357 18C29.4536 18 30.6 17.1 30.9 15.8357C30.9643 15.6 31.0179 15.3536 31.0179 15.1179H35.2821C35.7 15.1179 36 14.8179 36 14.4V7.91786H28.8C28.3821 7.91786 28.0821 7.61786 28.0821 7.2V4.31786C28.0821 3.9 28.3821 3.6 28.8 3.6H35.0357C33.7821 1.43571 31.4357 0 28.8 0H24.4821V10.8ZM27.0536 15.1179C27.0536 14.5179 27.5357 14.0357 28.1357 14.0357C28.7357 14.0357 29.2179 14.5179 29.2179 15.1179C29.2179 15.7179 28.7357 16.2 28.1357 16.2C27.5357 16.2 27.0536 15.7179 27.0536 15.1179ZM8.75357 15.1179C8.75357 15.7179 8.27143 16.2 7.67143 16.2C7.07143 16.2 6.58928 15.7179 6.58928 15.1179C6.58928 14.5179 7.07143 14.0357 7.67143 14.0357C8.28214 14.0357 8.75357 14.5179 8.75357 15.1179Z" />
@@ -518,13 +503,11 @@
                                                     </svg>
                                                 </div>
                                                 <div class="rearBodyTypeLabel">Open with half wall</div>
-                                                <input type="radio" class="rearBodyTypeRadio" name="rearBodyTypeRadio"
-                                                    id="rearBodyTypeRadio-1" value="1">
+                                                <input type="radio" class="rearBodyTypeRadio" name="rearBodyTypeRadio" id="rearBodyTypeRadio-1" value="1">
                                             </div>
                                             <div class="rearBodyTypeBox">
                                                 <div class="rearBodyTypeIcon">
-                                                    <svg width="30" height="18" viewBox="0 0 30 18" fill="#666666"
-                                                        xmlns="http://www.w3.org/2000/svg">
+                                                    <svg width="30" height="18" viewBox="0 0 30 18" fill="#666666" xmlns="http://www.w3.org/2000/svg">
                                                         <g clip-path="url(#clip0_168_2249)">
                                                             <path
                                                                 d="M0 0.598214V11.4018H19.8036V0.598214C19.8036 0.25 19.5536 0 19.2054 0H0.607141C0.249998 0 0 0.25 0 0.598214ZM20.4018 12H0V15C0 15.3482 0.25 15.5982 0.598215 15.5982H4C4 15.7946 4.05357 16 4.09821 16.1964C4.34821 17.25 5.29464 18 6.40179 18C7.5 18 8.45536 17.25 8.70536 16.1964C8.75893 16 8.80357 15.7946 8.80357 15.5982H21.0536C21.0536 15.7946 21.1071 16 21.1518 16.1964C21.4018 17.25 22.3482 18 23.4554 18C24.5536 18 25.5089 17.25 25.7589 16.1964C25.8125 16 25.8571 15.7946 25.8571 15.5982H29.4018C29.75 15.5982 30 15.3482 30 15V9.59821H24C23.6518 9.59821 23.4018 9.34821 23.4018 9V6.59821C23.4018 6.25 23.6518 6 24 6H29.1964C28.1518 4.19643 26.1964 3 24 3H20.4018V12ZM22.5446 15.5982C22.5446 15.0982 22.9464 14.6964 23.4464 14.6964C23.9464 14.6964 24.3482 15.0982 24.3482 15.5982C24.3482 16.0982 23.9464 16.5 23.4464 16.5C22.9464 16.5 22.5446 16.0982 22.5446 15.5982ZM7.29464 15.5982C7.29464 16.0982 6.89286 16.5 6.39286 16.5C5.89286 16.5 5.49107 16.0982 5.49107 15.5982C5.49107 15.0982 5.89286 14.6964 6.39286 14.6964C6.90178 14.6964 7.29464 15.0982 7.29464 15.5982Z" />
@@ -538,13 +521,11 @@
                                                     </svg>
                                                 </div>
                                                 <div class="rearBodyTypeLabel">Open with full wall</div>
-                                                <input type="radio" class="rearBodyTypeRadio" name="rearBodyTypeRadio"
-                                                    id="rearBodyTypeRadio-2" value="2">
+                                                <input type="radio" class="rearBodyTypeRadio" name="rearBodyTypeRadio" id="rearBodyTypeRadio-2" value="2">
                                             </div>
                                             <div class="rearBodyTypeBox">
                                                 <div class="rearBodyTypeIcon">
-                                                    <svg width="54" height="18" viewBox="0 0 54 18" fill="#666666"
-                                                        xmlns="http://www.w3.org/2000/svg">
+                                                    <svg width="54" height="18" viewBox="0 0 54 18" fill="#666666" xmlns="http://www.w3.org/2000/svg">
                                                         <g clip-path="url(#clip0_168_2236)">
                                                             <path
                                                                 d="M42.3945 0H50.5098L53.0725 5.55254V12.118H42.3945V0ZM51.9376 9.61627C51.9498 9.66509 51.9742 9.7139 51.9864 9.77492L52.9017 10.5071V9.39661H51.9132C51.9254 9.48203 51.9254 9.54305 51.9376 9.61627ZM44.8108 4.17356L46.4949 5.55254H51.12V4.88136L49.5091 1.41559C49.4115 1.39119 49.3017 1.37898 49.1674 1.37898H44.9817C44.8962 1.37898 44.8108 1.4522 44.8108 1.52542V4.17356Z" />
@@ -568,13 +549,11 @@
                                                     </svg>
                                                 </div>
                                                 <div class="rearBodyTypeLabel">Flat body</div>
-                                                <input type="radio" class="rearBodyTypeRadio" name="rearBodyTypeRadio"
-                                                    id="rearBodyTypeRadio-3" value="3">
+                                                <input type="radio" class="rearBodyTypeRadio" name="rearBodyTypeRadio" id="rearBodyTypeRadio-3" value="3">
                                             </div>
                                             <div class="rearBodyTypeBox">
                                                 <div class="rearBodyTypeIcon">
-                                                    <svg width="47" height="18" viewBox="0 0 47 18" fill="#666666"
-                                                        xmlns="http://www.w3.org/2000/svg">
+                                                    <svg width="47" height="18" viewBox="0 0 47 18" fill="#666666" xmlns="http://www.w3.org/2000/svg">
                                                         <g clip-path="url(#clip0_168_2254)">
                                                             <path
                                                                 d="M37.6587 2.92334H44.3781L46.5 7.56388V13.063H37.6587V2.92334ZM45.5603 10.9779C45.5704 11.0187 45.5906 11.0596 45.6007 11.1107L46.3585 11.724V10.7939H45.5401C45.5502 10.8552 45.5502 10.9165 45.5603 10.9779ZM39.6695 6.40886L41.0538 7.56388H44.8833V7.0017L43.5495 4.09881C43.4687 4.07837 43.3778 4.06814 43.2666 4.06814H39.8008C39.7301 4.06814 39.6594 4.12947 39.6594 4.1908L39.6695 6.40886Z" />
@@ -599,8 +578,7 @@
                                                     </svg>
                                                 </div>
                                                 <div class="rearBodyTypeLabel">Closed Container</div>
-                                                <input type="radio" class="rearBodyTypeRadio" name="rearBodyTypeRadio"
-                                                    id="rearBodyTypeRadio-4" value="4">
+                                                <input type="radio" class="rearBodyTypeRadio" name="rearBodyTypeRadio" id="rearBodyTypeRadio-4" value="4">
                                             </div>
                                         </div>
                                     </div>
@@ -612,8 +590,7 @@
                         </div>
                         <div class="tabChartLayout" style="display: none;">
                             <div class="seatChartBox tabDisabled">
-                                <table class="chart table table-bordered" id="#chartMasterBus1"
-                                    style="width:auto;border-spacing:2px;border-collapse:separate">
+                                <table class="chart table table-bordered" id="#chartMasterBus1" style="width:auto;border-spacing:2px;border-collapse:separate">
                                     <tbody>
                                         <tr style="background-color: #888;color:#fff">
                                             <th>Up</th>
@@ -627,248 +604,80 @@
                                             <th>Up</th>
                                         </tr>
                                         <tr>
-                                            <td chartlayoutid="1667779" class="seat sleeper-vert"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
-                                                data-details="0^A1^^2^^false" data-seat="seatno-A1" rowspan="2"
-                                                data-nomenu="yes">A1<br></td>
-                                            <td chartlayoutid="1667780" class="seat sleeper-vert"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
-                                                data-details="1^A2^^2^^false" data-seat="seatno-A2" rowspan="2"
-                                                data-nomenu="yes">A2<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
-                                                data-details="2^P1^^1^^false" data-seat="seatno-P1" data-nomenu="yes"
-                                                chartlayoutid="1667743">P1<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
-                                                data-details="3^P2^^1^^false" data-seat="seatno-P2" data-nomenu="yes"
-                                                chartlayoutid="1667744">P2<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
-                                                data-details="4^T1^^4^^false" data-seat="seatno-T1" data-nomenu="yes"
-                                                chartlayoutid="1667745">T1<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
-                                                data-details="5^P3^^1^^false" data-seat="seatno-P3" data-nomenu="yes"
-                                                chartlayoutid="1667746">P3<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
-                                                data-details="6^P4^^1^^false" data-seat="seatno-P4" data-nomenu="yes"
-                                                chartlayoutid="1667747">P4<br></td>
-                                            <td chartlayoutid="1667782" class="seat sleeper-vert"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
-                                                data-details="7^A3^^2^^false" data-seat="seatno-A3" rowspan="2"
-                                                data-nomenu="yes">A3<br></td>
-                                            <td chartlayoutid="1667783" class="seat sleeper-vert"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
-                                                data-details="8^A4^^2^^false" data-seat="seatno-A4" rowspan="2"
-                                                data-nomenu="yes">A4<br></td>
+                                            <td chartlayoutid="1667779" class="seat sleeper-vert" style="border:1px solid #818181;background-color:rgb(193, 221, 193)" data-details="0^A1^^2^^false" data-seat="seatno-A1" rowspan="2" data-nomenu="yes">A1<br></td>
+                                            <td chartlayoutid="1667780" class="seat sleeper-vert" style="border:1px solid #818181;background-color:rgb(193, 221, 193)" data-details="1^A2^^2^^false" data-seat="seatno-A2" rowspan="2" data-nomenu="yes">A2<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(193, 221, 193);" data-details="2^P1^^1^^false" data-seat="seatno-P1" data-nomenu="yes" chartlayoutid="1667743">P1<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(193, 221, 193);" data-details="3^P2^^1^^false" data-seat="seatno-P2" data-nomenu="yes" chartlayoutid="1667744">P2<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;" data-details="4^T1^^4^^false" data-seat="seatno-T1" data-nomenu="yes" chartlayoutid="1667745">T1<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(193, 221, 193);" data-details="5^P3^^1^^false" data-seat="seatno-P3" data-nomenu="yes" chartlayoutid="1667746">P3<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(193, 221, 193);" data-details="6^P4^^1^^false" data-seat="seatno-P4" data-nomenu="yes" chartlayoutid="1667747">P4<br></td>
+                                            <td chartlayoutid="1667782" class="seat sleeper-vert" style="border:1px solid #818181;background-color:rgb(193, 221, 193)" data-details="7^A3^^2^^false" data-seat="seatno-A3" rowspan="2" data-nomenu="yes">A3<br></td>
+                                            <td chartlayoutid="1667783" class="seat sleeper-vert" style="border:1px solid #818181;background-color:rgb(193, 221, 193)" data-details="8^A4^^2^^false" data-seat="seatno-A4" rowspan="2" data-nomenu="yes">A4<br></td>
                                         </tr>
                                         <tr>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
-                                                data-details="9^P5^^1^^false" data-seat="seatno-P5" data-nomenu="yes"
-                                                chartlayoutid="1667748">P5<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
-                                                data-details="10^P6^^1^^false" data-seat="seatno-P6" data-nomenu="yes"
-                                                chartlayoutid="1667749">P6<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
-                                                data-details="11^T2^^4^^false" data-seat="seatno-T2" data-nomenu="yes"
-                                                chartlayoutid="1667750">T2<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
-                                                data-details="12^P7^^1^^false" data-seat="seatno-P7" data-nomenu="yes"
-                                                chartlayoutid="1667751">P7<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
-                                                data-details="13^P8^^1^^false" data-seat="seatno-P8" data-nomenu="yes"
-                                                chartlayoutid="1667752">P8<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(193, 221, 193);" data-details="9^P5^^1^^false" data-seat="seatno-P5" data-nomenu="yes" chartlayoutid="1667748">P5<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(193, 221, 193);" data-details="10^P6^^1^^false" data-seat="seatno-P6" data-nomenu="yes" chartlayoutid="1667749">P6<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;" data-details="11^T2^^4^^false" data-seat="seatno-T2" data-nomenu="yes" chartlayoutid="1667750">T2<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(193, 221, 193);" data-details="12^P7^^1^^false" data-seat="seatno-P7" data-nomenu="yes" chartlayoutid="1667751">P7<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(193, 221, 193);" data-details="13^P8^^1^^false" data-seat="seatno-P8" data-nomenu="yes" chartlayoutid="1667752">P8<br></td>
                                         </tr>
                                         <tr>
-                                            <td chartlayoutid="1667785" class="seat sleeper-vert"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
-                                                data-details="14^A5^^2^^false" data-seat="seatno-A5" rowspan="2"
-                                                data-nomenu="yes">A5<br></td>
-                                            <td chartlayoutid="1667786" class="seat sleeper-vert"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
-                                                data-details="15^A6^^2^^false" data-seat="seatno-A6" rowspan="2"
-                                                data-nomenu="yes">A6<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
-                                                data-details="16^P9^^1^^false" data-seat="seatno-P9" data-nomenu="yes"
-                                                chartlayoutid="1667753">P9<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
-                                                data-details="17^P10^^1^^false" data-seat="seatno-P10" data-nomenu="yes"
-                                                chartlayoutid="1667754">P10<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
-                                                data-details="18^T3^^4^^false" data-seat="seatno-T3" data-nomenu="yes"
-                                                chartlayoutid="1667755">T3<br></td>
-                                            <td chartlayoutid="1667756" class="seat sleeper-vert"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
-                                                data-details="19^A7^^2^^false" data-seat="seatno-A7" rowspan="2"
-                                                data-nomenu="yes">A7<br></td>
-                                            <td chartlayoutid="1667757" class="seat sleeper-vert"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
-                                                data-details="20^A8^^2^^false" data-seat="seatno-A8" rowspan="2"
-                                                data-nomenu="yes">A8<br></td>
-                                            <td chartlayoutid="1667788" class="seat sleeper-vert"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
-                                                data-details="21^A9^^2^^false" data-seat="seatno-A9" rowspan="2"
-                                                data-nomenu="yes">A9<br></td>
-                                            <td chartlayoutid="1667789" class="seat sleeper-vert"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193)"
-                                                data-details="22^A10^^2^^false" data-seat="seatno-A10" rowspan="2"
-                                                data-nomenu="yes">A10<br></td>
+                                            <td chartlayoutid="1667785" class="seat sleeper-vert" style="border:1px solid #818181;background-color:rgb(193, 221, 193)" data-details="14^A5^^2^^false" data-seat="seatno-A5" rowspan="2" data-nomenu="yes">A5<br></td>
+                                            <td chartlayoutid="1667786" class="seat sleeper-vert" style="border:1px solid #818181;background-color:rgb(193, 221, 193)" data-details="15^A6^^2^^false" data-seat="seatno-A6" rowspan="2" data-nomenu="yes">A6<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(193, 221, 193);" data-details="16^P9^^1^^false" data-seat="seatno-P9" data-nomenu="yes" chartlayoutid="1667753">P9<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(193, 221, 193);" data-details="17^P10^^1^^false" data-seat="seatno-P10" data-nomenu="yes" chartlayoutid="1667754">P10<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;" data-details="18^T3^^4^^false" data-seat="seatno-T3" data-nomenu="yes" chartlayoutid="1667755">T3<br></td>
+                                            <td chartlayoutid="1667756" class="seat sleeper-vert" style="border:1px solid #818181;background-color:rgb(193, 221, 193)" data-details="19^A7^^2^^false" data-seat="seatno-A7" rowspan="2" data-nomenu="yes">A7<br></td>
+                                            <td chartlayoutid="1667757" class="seat sleeper-vert" style="border:1px solid #818181;background-color:rgb(193, 221, 193)" data-details="20^A8^^2^^false" data-seat="seatno-A8" rowspan="2" data-nomenu="yes">A8<br></td>
+                                            <td chartlayoutid="1667788" class="seat sleeper-vert" style="border:1px solid #818181;background-color:rgb(193, 221, 193)" data-details="21^A9^^2^^false" data-seat="seatno-A9" rowspan="2" data-nomenu="yes">A9<br></td>
+                                            <td chartlayoutid="1667789" class="seat sleeper-vert" style="border:1px solid #818181;background-color:rgb(193, 221, 193)" data-details="22^A10^^2^^false" data-seat="seatno-A10" rowspan="2" data-nomenu="yes">A10<br></td>
                                         </tr>
                                         <tr>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
-                                                data-details="23^P11^^1^^false" data-seat="seatno-P11" data-nomenu="yes"
-                                                chartlayoutid="1667758">P11<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(193, 221, 193);"
-                                                data-details="24^P12^^1^^false" data-seat="seatno-P12" data-nomenu="yes"
-                                                chartlayoutid="1667759">P12<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
-                                                data-details="25^T4^^4^^false" data-seat="seatno-T4" data-nomenu="yes"
-                                                chartlayoutid="1667760">T4<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(193, 221, 193);" data-details="23^P11^^1^^false" data-seat="seatno-P11" data-nomenu="yes" chartlayoutid="1667758">P11<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(193, 221, 193);" data-details="24^P12^^1^^false" data-seat="seatno-P12" data-nomenu="yes" chartlayoutid="1667759">P12<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;" data-details="25^T4^^4^^false" data-seat="seatno-T4" data-nomenu="yes" chartlayoutid="1667760">T4<br></td>
                                         </tr>
                                         <tr>
-                                            <td chartlayoutid="1667791" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="26^B1^^2^^true" data-seat="seatno-B1" rowspan="2"
-                                                data-nomenu="yes">B1<br></td>
-                                            <td chartlayoutid="1667792" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="27^B2^^2^^true" data-seat="seatno-B2" rowspan="2"
-                                                data-nomenu="yes">B2<br></td>
-                                            <td chartlayoutid="1667761" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="28^B3^^2^^true" data-seat="seatno-B3" rowspan="2"
-                                                data-nomenu="yes">B3<br></td>
-                                            <td chartlayoutid="1667762" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="29^B4^^2^^true" data-seat="seatno-B4" rowspan="2"
-                                                data-nomenu="yes">B4<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
-                                                data-details="30^T5^^4^^false" data-seat="seatno-T5" data-nomenu="yes"
-                                                chartlayoutid="1667763">T5<br></td>
-                                            <td chartlayoutid="1667764" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="31^B5^^2^^true" data-seat="seatno-B5" rowspan="2"
-                                                data-nomenu="yes">B5<br></td>
-                                            <td chartlayoutid="1667765" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="32^B6^^2^^true" data-seat="seatno-B6" rowspan="2"
-                                                data-nomenu="yes">B6<br></td>
-                                            <td chartlayoutid="1667794" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="33^B7^^2^^true" data-seat="seatno-B7" rowspan="2"
-                                                data-nomenu="yes">B7<br></td>
-                                            <td chartlayoutid="1667795" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="34^B8^^2^^true" data-seat="seatno-B8" rowspan="2"
-                                                data-nomenu="yes">B8<br></td>
+                                            <td chartlayoutid="1667791" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="26^B1^^2^^true" data-seat="seatno-B1" rowspan="2" data-nomenu="yes">B1<br></td>
+                                            <td chartlayoutid="1667792" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="27^B2^^2^^true" data-seat="seatno-B2" rowspan="2" data-nomenu="yes">B2<br></td>
+                                            <td chartlayoutid="1667761" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="28^B3^^2^^true" data-seat="seatno-B3" rowspan="2" data-nomenu="yes">B3<br></td>
+                                            <td chartlayoutid="1667762" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="29^B4^^2^^true" data-seat="seatno-B4" rowspan="2" data-nomenu="yes">B4<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;" data-details="30^T5^^4^^false" data-seat="seatno-T5" data-nomenu="yes" chartlayoutid="1667763">T5<br></td>
+                                            <td chartlayoutid="1667764" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="31^B5^^2^^true" data-seat="seatno-B5" rowspan="2" data-nomenu="yes">B5<br></td>
+                                            <td chartlayoutid="1667765" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="32^B6^^2^^true" data-seat="seatno-B6" rowspan="2" data-nomenu="yes">B6<br></td>
+                                            <td chartlayoutid="1667794" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="33^B7^^2^^true" data-seat="seatno-B7" rowspan="2" data-nomenu="yes">B7<br></td>
+                                            <td chartlayoutid="1667795" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="34^B8^^2^^true" data-seat="seatno-B8" rowspan="2" data-nomenu="yes">B8<br></td>
                                         </tr>
                                         <tr>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
-                                                data-details="35^T6^^4^^false" data-seat="seatno-T6" data-nomenu="yes"
-                                                chartlayoutid="1667766">T6<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;" data-details="35^T6^^4^^false" data-seat="seatno-T6" data-nomenu="yes" chartlayoutid="1667766">T6<br></td>
                                         </tr>
                                         <tr>
-                                            <td chartlayoutid="1667797" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="36^C1^^2^^true" data-seat="seatno-C1" rowspan="2"
-                                                data-nomenu="yes">C1<br></td>
-                                            <td chartlayoutid="1667798" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="37^C2^^2^^true" data-seat="seatno-C2" rowspan="2"
-                                                data-nomenu="yes">C2<br></td>
-                                            <td chartlayoutid="1667767" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="38^C3^^2^^true" data-seat="seatno-C3" rowspan="2"
-                                                data-nomenu="yes">C3<br></td>
-                                            <td chartlayoutid="1667768" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="39^C4^^2^^true" data-seat="seatno-C4" rowspan="2"
-                                                data-nomenu="yes">C4<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
-                                                data-details="40^T7^^4^^false" data-seat="seatno-T7" data-nomenu="yes"
-                                                chartlayoutid="1667769">T7<br></td>
-                                            <td chartlayoutid="1667770" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="41^C5^^2^^true" data-seat="seatno-C5" rowspan="2"
-                                                data-nomenu="yes">C5<br></td>
-                                            <td chartlayoutid="1667771" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="42^C6^^2^^true" data-seat="seatno-C6" rowspan="2"
-                                                data-nomenu="yes">C6<br></td>
-                                            <td chartlayoutid="1667800" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="43^C7^^2^^true" data-seat="seatno-C7" rowspan="2"
-                                                data-nomenu="yes">C7<br></td>
-                                            <td chartlayoutid="1667801" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="44^C8^^2^^true" data-seat="seatno-C8" rowspan="2"
-                                                data-nomenu="yes">C8<br></td>
+                                            <td chartlayoutid="1667797" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="36^C1^^2^^true" data-seat="seatno-C1" rowspan="2" data-nomenu="yes">C1<br></td>
+                                            <td chartlayoutid="1667798" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="37^C2^^2^^true" data-seat="seatno-C2" rowspan="2" data-nomenu="yes">C2<br></td>
+                                            <td chartlayoutid="1667767" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="38^C3^^2^^true" data-seat="seatno-C3" rowspan="2" data-nomenu="yes">C3<br></td>
+                                            <td chartlayoutid="1667768" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="39^C4^^2^^true" data-seat="seatno-C4" rowspan="2" data-nomenu="yes">C4<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;" data-details="40^T7^^4^^false" data-seat="seatno-T7" data-nomenu="yes" chartlayoutid="1667769">T7<br></td>
+                                            <td chartlayoutid="1667770" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="41^C5^^2^^true" data-seat="seatno-C5" rowspan="2" data-nomenu="yes">C5<br></td>
+                                            <td chartlayoutid="1667771" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="42^C6^^2^^true" data-seat="seatno-C6" rowspan="2" data-nomenu="yes">C6<br></td>
+                                            <td chartlayoutid="1667800" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="43^C7^^2^^true" data-seat="seatno-C7" rowspan="2" data-nomenu="yes">C7<br></td>
+                                            <td chartlayoutid="1667801" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="44^C8^^2^^true" data-seat="seatno-C8" rowspan="2" data-nomenu="yes">C8<br></td>
                                         </tr>
                                         <tr>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
-                                                data-details="45^T8^^4^^false" data-seat="seatno-T8" data-nomenu="yes"
-                                                chartlayoutid="1667772">T8<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;" data-details="45^T8^^4^^false" data-seat="seatno-T8" data-nomenu="yes" chartlayoutid="1667772">T8<br></td>
                                         </tr>
                                         <tr>
-                                            <td chartlayoutid="1667803" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="46^D1^^2^^true" data-seat="seatno-D1" rowspan="2"
-                                                data-nomenu="yes">D1<br></td>
-                                            <td chartlayoutid="1667804" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="47^D2^^2^^true" data-seat="seatno-D2" rowspan="2"
-                                                data-nomenu="yes">D2<br></td>
-                                            <td chartlayoutid="1667773" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="48^D3^^2^^true" data-seat="seatno-D3" rowspan="2"
-                                                data-nomenu="yes">D3<br></td>
-                                            <td chartlayoutid="1667774" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="49^D4^^2^^true" data-seat="seatno-D4" rowspan="2"
-                                                data-nomenu="yes">D4<br></td>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
-                                                data-details="50^T9^^4^^false" data-seat="seatno-T9" data-nomenu="yes"
-                                                chartlayoutid="1667775">T9<br></td>
-                                            <td chartlayoutid="1667776" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="51^D5^^2^^true" data-seat="seatno-D5" rowspan="2"
-                                                data-nomenu="yes">D5<br></td>
-                                            <td chartlayoutid="1667777" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="52^D6^^2^^true" data-seat="seatno-D6" rowspan="2"
-                                                data-nomenu="yes">D6<br></td>
-                                            <td chartlayoutid="1667806" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="53^D7^^2^^true" data-seat="seatno-D7" rowspan="2"
-                                                data-nomenu="yes">D7<br></td>
-                                            <td chartlayoutid="1667807" class="seat sleeper-vert"
-                                                style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)"
-                                                data-details="54^D8^^2^^true" data-seat="seatno-D8" rowspan="2"
-                                                data-nomenu="yes">D8<br></td>
+                                            <td chartlayoutid="1667803" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="46^D1^^2^^true" data-seat="seatno-D1" rowspan="2" data-nomenu="yes">D1<br></td>
+                                            <td chartlayoutid="1667804" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="47^D2^^2^^true" data-seat="seatno-D2" rowspan="2" data-nomenu="yes">D2<br></td>
+                                            <td chartlayoutid="1667773" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="48^D3^^2^^true" data-seat="seatno-D3" rowspan="2" data-nomenu="yes">D3<br></td>
+                                            <td chartlayoutid="1667774" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="49^D4^^2^^true" data-seat="seatno-D4" rowspan="2" data-nomenu="yes">D4<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;" data-details="50^T9^^4^^false" data-seat="seatno-T9" data-nomenu="yes" chartlayoutid="1667775">T9<br></td>
+                                            <td chartlayoutid="1667776" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="51^D5^^2^^true" data-seat="seatno-D5" rowspan="2" data-nomenu="yes">D5<br></td>
+                                            <td chartlayoutid="1667777" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="52^D6^^2^^true" data-seat="seatno-D6" rowspan="2" data-nomenu="yes">D6<br></td>
+                                            <td chartlayoutid="1667806" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="53^D7^^2^^true" data-seat="seatno-D7" rowspan="2" data-nomenu="yes">D7<br></td>
+                                            <td chartlayoutid="1667807" class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:rgb(193, 221, 193)" data-details="54^D8^^2^^true" data-seat="seatno-D8" rowspan="2" data-nomenu="yes">D8<br></td>
                                         </tr>
                                         <tr>
-                                            <td class="seat seater"
-                                                style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;"
-                                                data-details="55^T10^^4^^false" data-seat="seatno-T10" data-nomenu="yes"
-                                                chartlayoutid="1667778">T10<br></td>
+                                            <td class="seat seater" style="border:1px solid #818181;background-color:rgb(255, 255, 255);color:#fff;" data-details="55^T10^^4^^false" data-seat="seatno-T10" data-nomenu="yes" chartlayoutid="1667778">T10<br></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -928,8 +737,7 @@
                             </form>
                         </div>
                         <div class="tabTyreInformation" style="display: none;">
-                            <form name="frmTyreInformation" id="frmTyreInformation" action="axle-config.php"
-                                autocomplete="off" method="post" target="_blank">
+                            <form name="frmTyreInformation" id="frmTyreInformation" action="axle-config.php" autocomplete="off" method="post" target="_blank">
                                 <div class="form-inputs-wrap tabDisabled">
                                     <div class="input-wrap">
                                         <label class="labelTyreCode">Tyre Code</label>
@@ -939,8 +747,7 @@
                                                 <label class="txtInputLabel">Width</label>
                                             </div>
                                             <div style="width: 2%;display: flex;align-items: center;">
-                                                <svg width="10" height="20" viewBox="0 0 10 20" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
+                                                <svg width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path opacity="0.5"
                                                         d="M9.19922 0.9375L2.08594 19.4648H0.222656L7.34766 0.9375H9.19922Z"
                                                         fill="black" />
@@ -972,39 +779,33 @@
                                         <label class="labelAxleConfig">Axle Configruation</label>
                                         <div class="input-wrap-lr" style="justify-content: space-between">
                                             <div class="input-wrap-25" style="width:20%;position:relative;">
-                                                <input type="number" name="" id="frontAxle" value=""
-                                                    onkeyup="calTotalAxle()">
+                                                <input type="number" name="" id="frontAxle" value="" onkeyup="calTotalAxle()">
                                                 <label class="txtInputLabel txtInputActiveLabel filled">Front</label>
                                             </div>
                                             <div style="width: 3%;display: flex;align-items: center;">
-                                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
+                                                <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path opacity="0.6"
                                                         d="M10.3906 4.20703V6.32617H0.644531V4.20703H10.3906ZM6.66016 0.222656V10.5742H4.38477V0.222656H6.66016Z"
                                                         fill="black" />
                                                 </svg>
                                             </div>
                                             <div class="input-wrap-25" style="width:20%;position:relative;">
-                                                <input type="number" name="" id="rearAxle" value=""
-                                                    onkeyup="calTotalAxle()">
+                                                <input type="number" name="" id="rearAxle" value="" onkeyup="calTotalAxle()">
                                                 <label class="txtInputLabel txtInputActiveLabel filled">Rear</label>
                                             </div>
                                             <div style="width: 3%;display: flex;align-items: center;">
-                                                <svg width="9" height="7" viewBox="0 0 9 7" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
+                                                <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path opacity="0.6"
                                                         d="M8.87305 0.449219V2.38281H0.396484V0.449219H8.87305ZM8.87305 4.58984V6.52344H0.396484V4.58984H8.87305Z"
                                                         fill="black" />
                                                 </svg>
                                             </div>
                                             <div class="input-wrap-25" style="width:20%;position:relative;">
-                                                <input type="number" name="" id="totalAxle" value=""
-                                                    style="border: 1px solid #E7E7E7;" readonly="readonly">
+                                                <input type="number" name="" id="totalAxle" value="" style="border: 1px solid #E7E7E7;" readonly="readonly">
                                                 <label class="txtInputLabel txtInputActiveLabel filled">Total</label>
                                             </div>
                                             <div class="input-wrap-25" style="width:24%;position:relative;">
-                                                <button type="button" class="btnConfig"
-                                                    onclick="getAxleConfiguration()">Configure</button>
+                                                <button type="button" class="btnConfig" onclick="getAxleConfiguration()">Configure</button>
                                             </div>
                                         </div>
                                     </div>
@@ -1017,8 +818,7 @@
                                         </div>
                                         <div class="spareTyreWrap">
                                             <div class="spareTyre" id="spareTyre_1">
-                                                <input type="checkbox" name="chkSpareTyre[]" id="chkSpareTyre_1"
-                                                    value="1">
+                                                <input type="checkbox" name="chkSpareTyre[]" id="chkSpareTyre_1" value="1">
                                                 <label for="chkSpareTyre_1"></label>
                                             </div>
                                         </div>
@@ -1047,23 +847,19 @@
                                 <div class="bus-info-input-row">
                                     <div class="bus-info-input-wrap busnum">
                                         <div class="bus-info-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="GJ" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="GJ" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
                                         <div class="bus-info-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="15" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="15" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
                                         <div class="bus-info-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="PA" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="PA" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
                                         <div class="bus-info-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="3077" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="3077" readonly="readonly">
                                         </div>
                                     </div>
                                     <div class="bus-info-input-wrap">
@@ -1163,12 +959,10 @@
                                     <div class="bus-doc-file-input-wrap">
                                         <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-1" class="fileBrowse">
-                                            <input type="text" name="" id="txtBrowse-1" class="txtBrowse"
-                                                readonly="readonly">
+                                            <input type="text" name="" id="txtBrowse-1" class="txtBrowse" readonly="readonly">
                                         </div>
                                         <div class="div-btn">
-                                            <button type="button" id="btnBrowse-1" class="btnBrowse"
-                                                onclick="showBrowseDialog(this)">Browse</button>
+                                            <button type="button" id="btnBrowse-1" class="btnBrowse" onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
                                         <div class="div-icon">
                                             <div class="pdf-file"></div>
@@ -1193,12 +987,10 @@
                                     <div class="bus-doc-file-input-wrap">
                                         <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-2" class="fileBrowse">
-                                            <input type="text" name="" id="txtBrowse-2" class="txtBrowse"
-                                                readonly="readonly">
+                                            <input type="text" name="" id="txtBrowse-2" class="txtBrowse" readonly="readonly">
                                         </div>
                                         <div class="div-btn">
-                                            <button type="button" id="btnBrowse-2" class="btnBrowse"
-                                                onclick="showBrowseDialog(this)">Browse</button>
+                                            <button type="button" id="btnBrowse-2" class="btnBrowse" onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
                                         <div class="div-icon">
                                             <div class="pdf-file"></div>
@@ -1223,12 +1015,10 @@
                                     <div class="bus-doc-file-input-wrap">
                                         <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-3" class="fileBrowse">
-                                            <input type="text" name="" id="txtBrowse-3" class="txtBrowse"
-                                                readonly="readonly">
+                                            <input type="text" name="" id="txtBrowse-3" class="txtBrowse" readonly="readonly">
                                         </div>
                                         <div class="div-btn">
-                                            <button type="button" id="btnBrowse-3" class="btnBrowse"
-                                                onclick="showBrowseDialog(this)">Browse</button>
+                                            <button type="button" id="btnBrowse-3" class="btnBrowse" onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
                                         <div class="div-icon">
                                             <div class="pdf-file"></div>
@@ -1253,12 +1043,10 @@
                                     <div class="bus-doc-file-input-wrap">
                                         <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-4" class="fileBrowse">
-                                            <input type="text" name="" id="txtBrowse-4" class="txtBrowse"
-                                                readonly="readonly">
+                                            <input type="text" name="" id="txtBrowse-4" class="txtBrowse" readonly="readonly">
                                         </div>
                                         <div class="div-btn">
-                                            <button type="button" id="btnBrowse-4" class="btnBrowse"
-                                                onclick="showBrowseDialog(this)">Browse</button>
+                                            <button type="button" id="btnBrowse-4" class="btnBrowse" onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
                                         <div class="div-icon">
                                             <div class="pdf-file"></div>
@@ -1283,12 +1071,10 @@
                                     <div class="bus-doc-file-input-wrap">
                                         <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-5" class="fileBrowse">
-                                            <input type="text" name="" id="txtBrowse-5" class="txtBrowse"
-                                                readonly="readonly">
+                                            <input type="text" name="" id="txtBrowse-5" class="txtBrowse" readonly="readonly">
                                         </div>
                                         <div class="div-btn">
-                                            <button type="button" id="btnBrowse-5" class="btnBrowse"
-                                                onclick="showBrowseDialog(this)">Browse</button>
+                                            <button type="button" id="btnBrowse-5" class="btnBrowse" onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
                                         <div class="div-icon">
                                             <div class="pdf-file1"></div>
@@ -1313,12 +1099,10 @@
                                     <div class="bus-doc-file-input-wrap">
                                         <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-6" class="fileBrowse">
-                                            <input type="text" name="" id="txtBrowse-6" class="txtBrowse"
-                                                readonly="readonly">
+                                            <input type="text" name="" id="txtBrowse-6" class="txtBrowse" readonly="readonly">
                                         </div>
                                         <div class="div-btn">
-                                            <button type="button" id="btnBrowse-6" class="btnBrowse"
-                                                onclick="showBrowseDialog(this)">Browse</button>
+                                            <button type="button" id="btnBrowse-6" class="btnBrowse" onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
                                         <div class="div-icon">
                                             <div class="pdf-file"></div>
@@ -1343,12 +1127,10 @@
                                     <div class="bus-doc-file-input-wrap">
                                         <div class="div-text">
                                             <input type="file" name="" id="fileBrowse-7" class="fileBrowse">
-                                            <input type="text" name="" id="txtBrowse-7" class="txtBrowse"
-                                                readonly="readonly">
+                                            <input type="text" name="" id="txtBrowse-7" class="txtBrowse" readonly="readonly">
                                         </div>
                                         <div class="div-btn">
-                                            <button type="button" id="btnBrowse-7" class="btnBrowse"
-                                                onclick="showBrowseDialog(this)">Browse</button>
+                                            <button type="button" id="btnBrowse-7" class="btnBrowse" onclick="showBrowseDialog(this)">Browse</button>
                                         </div>
                                         <div class="div-icon">
                                             <div class="pdf-file"></div>
@@ -1385,23 +1167,19 @@
                                 <div class="gps-input-row">
                                     <div class="gps-input-wrap busnum">
                                         <div class="gps-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="GJ" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="GJ" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
                                         <div class="gps-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="15" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="15" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
                                         <div class="gps-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="PA" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="PA" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
                                         <div class="gps-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="3077" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="3077" readonly="readonly">
                                         </div>
                                     </div>
                                     <div class="gps-input-wrap" style="width:75%;">
@@ -1459,11 +1237,9 @@
                                 <!-- inputs row -->
                                 <div class="gps-input-row">
                                     <div class="gps-input-wrap rdo-gps-for">
-                                        <input class="custome_radio" type="radio" name="rdoGPSFor" id="rdoGPSFor-1"
-                                            value="1" checked="checked">
+                                        <input class="custome_radio" type="radio" name="rdoGPSFor" id="rdoGPSFor-1" value="1" checked="checked">
                                         <label for="rdoGPSFor-1">Select Existing Bus Number For GPS Data</label>
-                                        <input class="custome_radio" type="radio" name="rdoGPSFor" id="rdoGPSFor-2"
-                                            value="2">
+                                        <input class="custome_radio" type="radio" name="rdoGPSFor" id="rdoGPSFor-2" value="2">
                                         <label for="rdoGPSFor-2">Enter New GPS Data</label>
                                         <button type="button" id="btnSaveConfig" class="btnSaveGPS">
                                             Save GPS Configuration
@@ -1478,8 +1254,7 @@
                                                 <!-- data row -->
                                                 <div class="associate-vendor-data-row">
                                                     <div class="associate-vendor-data-col col1 gps-brd-right">
-                                                        <input class="custome_radio" type="radio" name="rdoGPSAssBusNo"
-                                                            id="rdoGPSAssBusNo-1" value="1">
+                                                        <input class="custome_radio" type="radio" name="rdoGPSAssBusNo" id="rdoGPSAssBusNo-1" value="1">
                                                         <label for="rdoGPSAssBusNo-1">GJ-15-PA-3077</label>
                                                     </div>
                                                     <div class="associate-vendor-data-col col2 gps-brd-right">
@@ -1504,8 +1279,7 @@
                                                 <!-- data row -->
                                                 <div class="associate-vendor-data-row">
                                                     <div class="associate-vendor-data-col col1 gps-brd-right">
-                                                        <input class="custome_radio" type="radio" name="rdoGPSAssBusNo"
-                                                            id="rdoGPSAssBusNo-2" value="2" checked="checked">
+                                                        <input class="custome_radio" type="radio" name="rdoGPSAssBusNo" id="rdoGPSAssBusNo-2" value="2" checked="checked">
                                                         <label for="rdoGPSAssBusNo-2">GJ-15-PA-3077</label>
                                                     </div>
                                                     <div class="associate-vendor-data-col col2 gps-brd-right">
@@ -1530,8 +1304,7 @@
                                                 <!-- data row -->
                                                 <div class="associate-vendor-data-row">
                                                     <div class="associate-vendor-data-col col1 gps-brd-right">
-                                                        <input class="custome_radio" type="radio" name="rdoGPSAssBusNo"
-                                                            id="rdoGPSAssBusNo-3" value="3">
+                                                        <input class="custome_radio" type="radio" name="rdoGPSAssBusNo" id="rdoGPSAssBusNo-3" value="3">
                                                         <label for="rdoGPSAssBusNo-3">GJ-15-PA-3077</label>
                                                     </div>
                                                     <div class="associate-vendor-data-col col2 gps-brd-right">
@@ -1556,8 +1329,7 @@
                                                 <!-- data row -->
                                                 <div class="associate-vendor-data-row">
                                                     <div class="associate-vendor-data-col col1 gps-brd-right">
-                                                        <input class="custome_radio" type="radio" name="rdoGPSAssBusNo"
-                                                            id="rdoGPSAssBusNo-4" value="4">
+                                                        <input class="custome_radio" type="radio" name="rdoGPSAssBusNo" id="rdoGPSAssBusNo-4" value="4">
                                                         <label for="rdoGPSAssBusNo-4">GJ-15-PA-3077</label>
                                                     </div>
                                                     <div class="associate-vendor-data-col col2 gps-brd-right">
@@ -1582,8 +1354,7 @@
                                                 <!-- data row -->
                                                 <div class="associate-vendor-data-row">
                                                     <div class="associate-vendor-data-col col1 gps-brd-right">
-                                                        <input class="custome_radio" type="radio" name="rdoGPSAssBusNo"
-                                                            id="rdoGPSAssBusNo-5" value="5">
+                                                        <input class="custome_radio" type="radio" name="rdoGPSAssBusNo" id="rdoGPSAssBusNo-5" value="5">
                                                         <label for="rdoGPSAssBusNo-5">GJ-15-PA-3077</label>
                                                     </div>
                                                     <div class="associate-vendor-data-col col2 gps-brd-right">
@@ -1715,14 +1486,12 @@
                                 <!-- inputs row -->
                                 <div class="gps-input-row">
                                     <div class="gps-input-wrap rdo-mnt-comm-type">
-                                        <input class="custome_radio" type="radio" name="rdoMntCommType"
-                                            id="rdoMntCommType-1" value="1" checked="checked">
+                                        <input class="custome_radio" type="radio" name="rdoMntCommType" id="rdoMntCommType-1" value="1" checked="checked">
                                         <label for="rdoMntCommType-1">Mantis Monthly Fees + GST (Rs)</label>
                                         <div style="padding-right:5px;">
                                             <input type="text" name="" id="" class="fees-amt">
                                         </div>
-                                        <input class="custome_radio" type="radio" name="rdoMntCommType"
-                                            id="rdoMntCommType-2" value="2">
+                                        <input class="custome_radio" type="radio" name="rdoMntCommType" id="rdoMntCommType-2" value="2">
                                         <label for="rdoMntCommType-2">Free Of Charge (FOC)</label>
                                         <button type="button" id="btnSaveCommercial" class="btnSaveGPS">
                                             Save GPS Commercial
@@ -1837,23 +1606,19 @@
                                 <div class="bus-ame-input-row">
                                     <div class="bus-ame-input-wrap busnum">
                                         <div class="bus-ame-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="GJ" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="GJ" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
                                         <div class="bus-ame-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="15" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="15" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
                                         <div class="bus-ame-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="PA" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="PA" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
                                         <div class="bus-ame-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="3077" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="3077" readonly="readonly">
                                         </div>
                                     </div>
                                 </div>
@@ -1883,8 +1648,7 @@
                                                     <div class="amenities-item">
                                                         <div class="amenities-item-wrap">
                                                             <div class="amenities-item-left-wrap">
-                                                                <input class="amenities-checkbox" type="checkbox"
-                                                                    name="" id="atbus-ame-checkall">
+                                                                <input class="amenities-checkbox" type="checkbox" name="" id="atbus-ame-checkall">
                                                             </div>
                                                             <div class="amenities-item-right-wrap">
                                                                 <div class="amenities-title"><span id="checkAll">Check
@@ -1898,8 +1662,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Water Bottle</div>
@@ -1911,8 +1674,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Wifi</div>
@@ -1924,8 +1686,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Toilet</div>
@@ -1937,8 +1698,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Snacks</div>
@@ -1950,8 +1710,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Meal</div>
@@ -1962,8 +1721,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="" checked="checked">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="" checked="checked">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Emergency Exit</div>
@@ -1974,8 +1732,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">First Aid Box</div>
@@ -1986,8 +1743,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Central TV</div>
@@ -1998,8 +1754,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Heater</div>
@@ -2010,8 +1765,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Fire Extiguisher</div>
@@ -2022,8 +1776,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">CCTV</div>
@@ -2034,8 +1787,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Hammer</div>
@@ -2061,8 +1813,7 @@
                                                     <div class="amenities-item">
                                                         <div class="amenities-item-wrap">
                                                             <div class="amenities-item-left-wrap">
-                                                                <input class="amenities-checkbox" type="checkbox"
-                                                                    name="" id="atbus-ame-checkall">
+                                                                <input class="amenities-checkbox" type="checkbox" name="" id="atbus-ame-checkall">
                                                             </div>
                                                             <div class="amenities-item-right-wrap">
                                                                 <div class="amenities-title"><span id="checkAll">Check
@@ -2076,14 +1827,10 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
-                                                            <div class="amenities-title">Fumigation <span
-                                                                    class="ex-mark" data-toggle="tooltip"
-                                                                    data-placement="top"
-                                                                    title="Tooltip Text Will Be Here"></span></div>
+                                                            <div class="amenities-title">Fumigation <span class="ex-mark" data-toggle="tooltip" data-placement="top" title="Tooltip Text Will Be Here"></span></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2092,15 +1839,10 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
-                                                            <div class="amenities-title" style="padding:8px 5px;">Bus
-                                                                Crew
-                                                                Covid Tested <span class="ex-mark" data-toggle="tooltip"
-                                                                    data-placement="top"
-                                                                    title="Tooltip Text Will Be Here"></span> </div>
+                                                            <div class="amenities-title" style="padding:8px 5px;">Bus Crew Covid Tested <span class="ex-mark" data-toggle="tooltip" data-placement="top" title="Tooltip Text Will Be Here"></span> </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2109,8 +1851,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Bus Crew Mask</div>
@@ -2122,8 +1863,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Hand Sanitizer</div>
@@ -2135,14 +1875,10 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
-                                                            <div class="amenities-title">Filtration <span
-                                                                    class="ex-mark" data-toggle="tooltip"
-                                                                    data-placement="top"
-                                                                    title="Tooltip Text Will Be Here"></span></div>
+                                                            <div class="amenities-title">Filtration <span class="ex-mark" data-toggle="tooltip" data-placement="top" title="Tooltip Text Will Be Here"></span></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2150,8 +1886,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="" checked="checked">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="" checked="checked">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Passenger Face Mask</div>
@@ -2162,8 +1897,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="" checked="checked">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="" checked="checked">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Bus Sanitization </div>
@@ -2174,8 +1908,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Social Distancing</div>
@@ -2186,14 +1919,10 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
-                                                            <div class="amenities-title">Bipolar Ionisation <span
-                                                                    class="ex-mark" data-toggle="tooltip"
-                                                                    data-placement="top"
-                                                                    title="Tooltip Text Will Be Here"></span></div>
+                                                            <div class="amenities-title">Bipolar Ionisation <span class="ex-mark" data-toggle="tooltip" data-placement="top" title="Tooltip Text Will Be Here"></span></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2201,8 +1930,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Social Distancing</div>
@@ -2213,8 +1941,7 @@
                                                 <div class="amenities-item">
                                                     <div class="amenities-item-wrap">
                                                         <div class="amenities-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="amenities-item-right-wrap">
                                                             <div class="amenities-title">Thermal Screening</div>
@@ -2240,8 +1967,7 @@
                                                     <div class="inbus-ame-item">
                                                         <div class="inbus-ame-item-wrap">
                                                             <div class="inbus-ame-item-left-wrap">
-                                                                <input class="amenities-checkbox" type="checkbox"
-                                                                    name="" id="inbus-ame-checkall">
+                                                                <input class="amenities-checkbox" type="checkbox" name="" id="inbus-ame-checkall">
                                                             </div>
                                                             <div class="inbus-ame-item-center-wrap">
                                                                 <div class="amenities-title"><span id="checkAll">Check
@@ -2258,8 +1984,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Water Bottle Holder</div>
@@ -2281,8 +2006,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Vomiting Bag</div>
@@ -2302,8 +2026,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Blanket</div>
@@ -2324,8 +2047,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Extra Leg Space</div>
@@ -2346,8 +2068,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Novel</div>
@@ -2369,8 +2090,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Water Bottle Holder</div>
@@ -2391,8 +2111,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Meal</div>
@@ -2412,8 +2131,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Pillow</div>
@@ -2433,8 +2151,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Fan</div>
@@ -2454,8 +2171,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Facial Tissues</div>
@@ -2475,8 +2191,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Newspaper</div>
@@ -2496,8 +2211,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Reading Light</div>
@@ -2517,8 +2231,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Charging Point</div>
@@ -2538,8 +2251,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Snacks</div>
@@ -2560,8 +2272,7 @@
                                                 <div class="inbus-ame-item">
                                                     <div class="inbus-ame-item-wrap">
                                                         <div class="inbus-ame-item-left-wrap">
-                                                            <input class="amenities-checkbox" type="checkbox" name=""
-                                                                id="">
+                                                            <input class="amenities-checkbox" type="checkbox" name="" id="">
                                                         </div>
                                                         <div class="inbus-ame-item-center-wrap">
                                                             <div class="amenities-title">Personal TV</div>
@@ -2590,36 +2301,29 @@
             <div class="tabBusPicture" style="display: none;">
                 <div class="bus-pictures-container">
                     <div class="bus-pictures-form">
-                        <form method="post" name="busPictures" id="busPictures" autocomplete="off"
-                            enctype="multipart/form-data">
+                        <form method="post" name="busPictures" id="busPictures" autocomplete="off" enctype="multipart/form-data">
                             <div class="bus-pictures-inputs">
                                 <label class="mstBusNoLabel">Master Bus Number</label>
                                 <div class="bus-number-input-row">
                                     <div class="bus-number-input-wrap">
                                         <div class="bus-number-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="GJ" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="GJ" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
                                         <div class="bus-number-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="15" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="15" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
                                         <div class="bus-number-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="PA" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="PA" readonly="readonly">
                                         </div>
                                         <div class="input-seperator">-</div>
                                         <div class="bus-number-input-box">
-                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1"
-                                                class="bgColor1 txtCenter" value="3077" readonly="readonly">
+                                            <input type="text" name="txtMstBusNumber1" id="txtMstBusNumber1" class="bgColor1 txtCenter" value="3077" readonly="readonly">
                                         </div>
                                     </div>
                                     <div class="bus-pictures-notes">
-                                        <span class="ex-mark" data-toggle="tooltip" title=""
-                                            data-original-title="Accepted formats are jpg. Maximum size allowed is 100MB."></span>
-                                        Accepted formats are jpg. Maximum size allowed is 100MB.
+                                        <span class="ex-mark" data-toggle="tooltip" title="" data-original-title="Accepted formats are jpg. Maximum size allowed is 100MB."></span> Accepted formats are jpg. Maximum size allowed is 100MB.
                                     </div>
                                 </div>
                                 <div class="bus-pictures-wrapper">
@@ -2649,8 +2353,12 @@
                                             <div class="uploaded-img">
                                                 <div class="action-wrapper">
                                                     <ul>
-                                                        <li><a href="#" class="del-icon"></a></li>
-                                                        <li><a href="#" class="edit-icon"></a></li>
+                                                        <li>
+                                                            <a href="#" class="del-icon"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="edit-icon"></a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="./images/outside-front.jpg" alt="Outside Front">
@@ -2666,11 +2374,9 @@
                                                 </div>
                                                 <div class="browse-box">
                                                     <div class="browse-link">
-                                                        <a href="javascript:void(0);"
-                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
+                                                        <a href="javascript:void(0);" onclick="showBusPictureSelectDailog(this)">Browse</a>
                                                     </div>
-                                                    <input type="file" name="busPicture2" id="busPicture2"
-                                                        class="fileBrowse">
+                                                    <input type="file" name="busPicture2" id="busPicture2" class="fileBrowse">
                                                 </div>
                                                 <div class="progress-bar-box" style="display:none;">
                                                     <div class="probar">
@@ -2686,10 +2392,12 @@
                                             <div class="uploaded-img" style="display:none;">
                                                 <div class="action-wrapper">
                                                     <ul>
-                                                        <li><a href="#" class="del-icon"
-                                                                onclick="deleteBusPicture(this)"></a></li>
-                                                        <li><a href="#" class="edit-icon"
-                                                                onclick="editBusPicture(this)"></a></li>
+                                                        <li>
+                                                            <a href="#" class="del-icon" onclick="deleteBusPicture(this)"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="edit-icon" onclick="editBusPicture(this)"></a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="./images/outside-front.jpg" alt="Outside Front">
@@ -2705,11 +2413,9 @@
                                                 </div>
                                                 <div class="browse-box">
                                                     <div class="browse-link">
-                                                        <a href="javascript:void(0);"
-                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
+                                                        <a href="javascript:void(0);" onclick="showBusPictureSelectDailog(this)">Browse</a>
                                                     </div>
-                                                    <input type="file" name="busPicture3" id="busPicture3"
-                                                        class="fileBrowse">
+                                                    <input type="file" name="busPicture3" id="busPicture3" class="fileBrowse">
                                                 </div>
                                                 <div class="progress-bar-box" style="display:none;">
                                                     <div class="probar">
@@ -2725,10 +2431,12 @@
                                             <div class="uploaded-img" style="display:none;">
                                                 <div class="action-wrapper">
                                                     <ul>
-                                                        <li><a href="#" class="del-icon"
-                                                                onclick="deleteBusPicture(this)"></a></li>
-                                                        <li><a href="#" class="edit-icon"
-                                                                onclick="editBusPicture(this)"></a></li>
+                                                        <li>
+                                                            <a href="#" class="del-icon" onclick="deleteBusPicture(this)"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="edit-icon" onclick="editBusPicture(this)"></a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="./images/outside-front.jpg" alt="Outside Front">
@@ -2745,11 +2453,9 @@
                                                 </div>
                                                 <div class="browse-box">
                                                     <div class="browse-link">
-                                                        <a href="javascript:void(0);"
-                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
+                                                        <a href="javascript:void(0);" onclick="showBusPictureSelectDailog(this)">Browse</a>
                                                     </div>
-                                                    <input type="file" name="busPicture4" id="busPicture4"
-                                                        class="fileBrowse">
+                                                    <input type="file" name="busPicture4" id="busPicture4" class="fileBrowse">
                                                 </div>
                                                 <div class="progress-bar-box" style="display:none;">
                                                     <div class="probar">
@@ -2765,10 +2471,12 @@
                                             <div class="uploaded-img" style="display:none;">
                                                 <div class="action-wrapper">
                                                     <ul>
-                                                        <li><a href="#" class="del-icon"
-                                                                onclick="deleteBusPicture(this)"></a></li>
-                                                        <li><a href="#" class="edit-icon"
-                                                                onclick="editBusPicture(this)"></a></li>
+                                                        <li>
+                                                            <a href="#" class="del-icon" onclick="deleteBusPicture(this)"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="edit-icon" onclick="editBusPicture(this)"></a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="./images/outside-front.jpg" alt="Outside Front">
@@ -2787,11 +2495,9 @@
                                                 </div>
                                                 <div class="browse-box">
                                                     <div class="browse-link">
-                                                        <a href="javascript:void(0);"
-                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
+                                                        <a href="javascript:void(0);" onclick="showBusPictureSelectDailog(this)">Browse</a>
                                                     </div>
-                                                    <input type="file" name="busPicture5" id="busPicture5"
-                                                        class="fileBrowse">
+                                                    <input type="file" name="busPicture5" id="busPicture5" class="fileBrowse">
                                                 </div>
                                                 <div class="progress-bar-box" style="display:none;">
                                                     <div class="probar">
@@ -2807,10 +2513,12 @@
                                             <div class="uploaded-img" style="display:none;">
                                                 <div class="action-wrapper">
                                                     <ul>
-                                                        <li><a href="#" class="del-icon"
-                                                                onclick="deleteBusPicture(this)"></a></li>
-                                                        <li><a href="#" class="edit-icon"
-                                                                onclick="editBusPicture(this)"></a></li>
+                                                        <li>
+                                                            <a href="#" class="del-icon" onclick="deleteBusPicture(this)"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="edit-icon" onclick="editBusPicture(this)"></a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="./images/outside-front.jpg" alt="Outside Front">
@@ -2826,11 +2534,9 @@
                                                 </div>
                                                 <div class="browse-box">
                                                     <div class="browse-link">
-                                                        <a href="javascript:void(0);"
-                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
+                                                        <a href="javascript:void(0);" onclick="showBusPictureSelectDailog(this)">Browse</a>
                                                     </div>
-                                                    <input type="file" name="busPicture6" id="busPicture6"
-                                                        class="fileBrowse">
+                                                    <input type="file" name="busPicture6" id="busPicture6" class="fileBrowse">
                                                 </div>
                                                 <div class="progress-bar-box" style="display:none;">
                                                     <div class="probar">
@@ -2846,10 +2552,12 @@
                                             <div class="uploaded-img" style="display:none;">
                                                 <div class="action-wrapper">
                                                     <ul>
-                                                        <li><a href="#" class="del-icon"
-                                                                onclick="deleteBusPicture(this)"></a></li>
-                                                        <li><a href="#" class="edit-icon"
-                                                                onclick="editBusPicture(this)"></a></li>
+                                                        <li>
+                                                            <a href="#" class="del-icon" onclick="deleteBusPicture(this)"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="edit-icon" onclick="editBusPicture(this)"></a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="./images/outside-front.jpg" alt="Outside Front">
@@ -2865,11 +2573,9 @@
                                                 </div>
                                                 <div class="browse-box">
                                                     <div class="browse-link">
-                                                        <a href="javascript:void(0);"
-                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
+                                                        <a href="javascript:void(0);" onclick="showBusPictureSelectDailog(this)">Browse</a>
                                                     </div>
-                                                    <input type="file" name="busPicture7" id="busPicture7"
-                                                        class="fileBrowse">
+                                                    <input type="file" name="busPicture7" id="busPicture7" class="fileBrowse">
                                                 </div>
                                                 <div class="progress-bar-box" style="display:none;">
                                                     <div class="probar">
@@ -2885,10 +2591,12 @@
                                             <div class="uploaded-img" style="display:none;">
                                                 <div class="action-wrapper">
                                                     <ul>
-                                                        <li><a href="#" class="del-icon"
-                                                                onclick="deleteBusPicture(this)"></a></li>
-                                                        <li><a href="#" class="edit-icon"
-                                                                onclick="editBusPicture(this)"></a></li>
+                                                        <li>
+                                                            <a href="#" class="del-icon" onclick="deleteBusPicture(this)"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="edit-icon" onclick="editBusPicture(this)"></a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="./images/outside-front.jpg" alt="Outside Front">
@@ -2904,11 +2612,9 @@
                                                 </div>
                                                 <div class="browse-box">
                                                     <div class="browse-link">
-                                                        <a href="javascript:void(0);"
-                                                            onclick="showBusPictureSelectDailog(this)">Browse</a>
+                                                        <a href="javascript:void(0);" onclick="showBusPictureSelectDailog(this)">Browse</a>
                                                     </div>
-                                                    <input type="file" name="busPicture8" id="busPicture8"
-                                                        class="fileBrowse">
+                                                    <input type="file" name="busPicture8" id="busPicture8" class="fileBrowse">
                                                 </div>
                                                 <div class="progress-bar-box" style="display:none;">
                                                     <div class="probar">
@@ -2924,10 +2630,12 @@
                                             <div class="uploaded-img" style="display:none;">
                                                 <div class="action-wrapper">
                                                     <ul>
-                                                        <li><a href="#" class="del-icon"
-                                                                onclick="deleteBusPicture(this)"></a></li>
-                                                        <li><a href="#" class="edit-icon"
-                                                                onclick="editBusPicture(this)"></a></li>
+                                                        <li>
+                                                            <a href="#" class="del-icon" onclick="deleteBusPicture(this)"></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#" class="edit-icon" onclick="editBusPicture(this)"></a>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <img src="./images/outside-front.jpg" alt="Outside Front">
@@ -2948,114 +2656,447 @@
             <div class="tabBusCommercial" style="display: none;">
                 Bus Commercial Content Will Be Here...
             </div>
+            <!-- /*************************Create chart layout*******************************************/ -->
+            <div class="tabCreateLayout" style="display: none;">
+                <div class="flex-container">
+                    <div class="form-group col-md-2">
+                        <input id="seaterBox" type="text" class="form-control">
+                        <label for="seaterBox" class="placeholder">Seater</label>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <input id="sleeperBox" type="text" class="form-control">
+                        <label for="sleeperBox" class="placeholder">Sleeper</label>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <input id="semiBox" type="text" class="form-control">
+                        <label for="semiBox" class="placeholder">Semi Sleeper</label>
+                    </div>
+                    <div class="form-group form-control chosen-container-align1">
+                        <select class="chosen">
+                            <option value="">-select-</option>
+                        </select>
+                        <label class="placeholder active-label">Deck</label>
+                    </div>
+                    <div class="form-group form-control chosen-container-align1">
+                        <select class="chosen">
+                            <option value="">-select-</option>
+                        </select>
+                        <label class="placeholder active-label">Chart Type</label>
+                    </div>
+                    <div class="col-md-3" style="margin-top: 26px;">
+                        <input type="checkbox" id="v1">
+                        <label for="v1">Self Created</label>
+                    </div>
+                    <div class="col-md-3" style="margin-left: -40px; margin-top: 27px;">
+                        <input type="checkbox" for="v2">
+                        <label for="v2">Whitelisted</label>
+                    </div>
+                    <div class="col-md-2" style="margin-left: -45px; margin-top: 15px;">
+                        <button type="button" id="gobtn" class="btn1 btn-orange" style="width: 62px;
+                        height: 44px;">GO</button>
+                    </div>
+                    <div id="filter_link" class="col-md-2">
+                        <a style="color: #0086ff;">More Filters</a>
+                    </div>
+
+                    <div class="vline3"></div>
+
+                    <div class="col-md-2" style="margin-top: 15px;">
+                        <button type="button" id="newbtn" class="btn1 btn-new" style="width: 71px;
+                        height: 44px;">New</button>
+                    </div>
+                </div>
+                <div class="morefilter" style="display: none;">
+                    <div class="form-group child" style="width: 222px; margin-left: 31px;">
+                        <input id="min" type="text" class="form-control datepicker1" style="width: 135%; height: 38px;">
+                        <label for="min" class="placeholder1">From Chart Created Month (MM/YY)</label>
+                    </div>
+                    <div class="form-group child" style="margin-left: 25px; width: 17%;">
+                        <input id="max" type="text" class="form-control datepicker1" style="width: 125%; height: 38px;">
+                        <label for="max" class="placeholder1">To Chart Created Month (MM/YY)</label>
+                    </div>
+                    <div class="" style="margin-top: 15px; margin-left: -10px;">
+                        <button type="button" id="filterbtn" class="btn1 btn-orange" style="padding: 8px 40px;">FILTER</button>
+                    </div>
+                    <div class="" style="margin-top: 19px; margin-left: 10px; margin-top: 15px;">
+                        <button type="button" id="resetbtn" class="btn1 btn-new" style="padding: 8px 40px;">RESET</button>
+                    </div>
+
+                </div>
+
+                <div class="ChartListContainer" style="display: none;">
+                    <table id="chart_layout" class="display">
+                        <thead>
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Chart Name</th>
+                                <th>Created Date & Time</th>
+                                <th>Chart Type</th>
+                                <th>Deck</th>
+                                <th>Capacity</th>
+                                <th>Seaters</th>
+                                <th>Sleepers</th>
+                                <th>Semi Sleeper</th>
+                                <th>Self Created</th>
+                                <th>Whitlisted</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="new-flex-container" style="display: none;">
+                    <div style="display: flex; height: 75px;">
+                        <div class="form-group col-md-2" style="width: 11%;">
+                            <input id="rowCC" type="text" class="form-control">
+                            <label for="rowCC" class="placeholder">Rows</label>
+                        </div>
+                        <div class="form-group col-md-2" style="width: 11%;">
+                            <input id="columnCC" type="text" class="form-control">
+                            <label for="columnCC" class="placeholder">Columns</label>
+                        </div>
+                        <div class="form-group form-control chosen-container-align2" style="width: 20%;">
+                            <select class="chosen" id="decknewCC">
+                            <option value="0">-select-</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            </select>
+                            <label class="placeholder active-label">Deck</label>
+                        </div>
+                        <div style="margin-top: 15px; margin-left: 38px;">
+                            <button type="button" id="btnGenerateCC" class="btn1 btn-orange" style="padding: 8px 13px;">GENERATE</button>
+                        </div>
+                        <div class="col-md-3" style="margin-top: 26px;">
+                            <input type="checkbox" id="v1">
+                            <label for="v1">Self Created</label>
+                        </div>
+                    </div>
+                    <div style="display: flex; width: 20%;"></div>
+                    <div style="display: flex;" style="width: 16%;">
+
+                        <div class="vline1"></div>
+
+                        <div style="margin-top: 15px;">
+                            <button type=" button " id="btnSaveCC " class="btn1 btn-orange " style="padding: 8px 21px; ">SAVE</button>
+                        </div>
+                        <div style="margin-left: 10px; margin-top: 15px; ">
+                            <button type="button " id="btnCancelCC" class="btn1 btn-new " style="padding: 8px 12px; ">CANCEL</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gen-deck" style="display: none;">
+                    <div class="lower-deck">
+                        <div class="mr-panel mr-fix-height">
+                            <div id="lowerDeck">
+                                <center><b>Lower Deck</b></center>
+                                <center>
+                                    <table id="lowerDeckTable" style="table-layout: fixed; margin-top: 20px;">
+
+                                    </table>
+                                </center>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vline2"></div>
+                    <div class="upper-deck">
+                        <div class="mr-panel mr-fix-height">
+                            <div id="upperDeck">
+                                <center><b>Upper Deck</b></center>
+
+                                <center>
+                                    <table id="upperDeckTable" style="table-layout: fixed; margin-top: 20px;"></table>
+                                </center>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vline2"></div>
+                    <div class="legend">
+                        <div class=" mr-panel mr-fix-height">
+                            <div id="layout">
+                                <center><b>Seat Legend</b></center>
+                                <center>
+                                    <table class="chart table" style="width:auto;  margin-top: 20px; border-spacing: 5px;
+    border-collapse: separate;">
+                                        <colgroup>
+                                            <col width="120">
+                                            <col width="40">
+                                            <col width="40">
+                                            <col width="10">
+                                            <col width="40">
+                                            <col width="40">
+
+                                        </colgroup>
+                                        <tbody>
+                                            <tr>
+                                                <th></th>
+                                                <th>NAC</th>
+                                                <th style="border: none;"></th>
+                                                <th style="border: none;"></th>
+                                                <th>AC</th>
+                                                <th style="border: none;"></th>
+                                                <th style="border: none;"></th>
+                                            </tr>
+                                            <tr>
+                                                <td height="40">Seater</td>
+                                                <td class="seat seater" style="border:1px solid #48bb48;background-color:#90ee90;" data-details="1^1^0^0^0" data-seat="seaterNAC" id="seaterNAC" data-nomenu="yes"><br></td>
+                                                <td style="border: none;"></td>
+                                                <td style="border: none;"></td>
+                                                <td class="seat seater" style="border:1px solid rgb(255,0,0);background-color:#90ee90;" data-details="1^1^0^0^1" data-seat="seaterAC" id="seaterAC" data-nomenu="yes"><br></td>
+                                                <td style="border: none;"></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="40">Semi Sleeper</td>
+                                                <td class="seat seater" style="border:1px solid #48bb48;background-color:rgb(255, 255, 224);" data-details="1^1^0^1^0" data-seat="semiNAC" id="semiNAC" data-nomenu="yes"><br></td>
+                                                <td style="border: none;"></td>
+                                                <td style="border: none;"></td>
+
+                                                <td class="seat seater" style="border:1px solid rgb(255,0,0);background-color:rgb(255, 255, 224);" data-details="1^1^0^1^1" data-seat="semiAC" id="semiAC" data-nomenu="yes"><br></td>
+                                                <td style="border: none;"></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td height="80" rowspan="2">Sleeper</td>
+                                                <td class="seat sleeper-vert" style="border:1px solid #48bb48;background-color:#90ee90" data-details="2^1^0^0^0" data-seat="sleeperNAC" id="sleeperNAC" rowspan="2" data-nomenu="yes"><br></td>
+                                                <td style="border: none;"></td>
+                                                <td style="border: none;"></td>
+
+                                                <td class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:#90ee90" data-details="2^1^0^0^1" data-seat="sleeperAC" id="sleeperAC" rowspan="2" data-nomenu="yes"><br></td>
+                                                <td style="border: none;"></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td style="border: none;" height="40"></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="40">Sleeper H</td>
+                                                <td class="seat sleeper-vert" style="border:1px solid #48bb48;background-color:#90ee90" data-details="1^2^0^0^0" data-seat="sleeperHNAC" colspan="2" id="sleeperHNAC" data-nomenu="yes"><br></td>
+                                                <td style="border: none;"></td>
+                                                <td class="seat sleeper-vert" style="border:1px solid rgb(255,0,0);background-color:#90ee90" data-details="1^2^0^0^1" data-seat="sleeperHAC" colspan="2" id="sleeperHAC" data-nomenu="yes"><br></td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /********************************Create coach tab****************************************************/ -->
+            <div class="tabCreatCoach" style="display: none; ">
+                <div class="CoachListContainer">
+                    <div class="coach_filter">
+                        <div class="coach-status-filter input-box">
+                            <select class="chosen" id="CoachStatus">
+                                    <option value="">Show All</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>
+                        </div>
+                        <div class="vline"></div>
+                    </div>
+                    <button class="coach_new_btn btn1 btn-orange">CREATE NEW COACH</button>
+                    <table id="coach_list" class="display">
+                        <thead>
+                            <tr>
+                                <th>Sr</th>
+                                <th>Coach Name</th>
+                                <th>Created Data & Time</th>
+                                <th>Bus Type</th>
+                                <th>Bus Cat</th>
+                                <th>Standard Bus Type</th>
+                                <th>Capacity</th>
+                                <th>Created By Branch</th>
+                                <th>Created User</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="create_coach" style="display: none;">
+                    <div class="coach1">
+                        <div class="part1">
+                            <div class="scbox">
+                                <input type="checkbox" for="c1">
+                                <label for="c1">Show Whitelisted Charts</label>
+                            </div>
+                            <div class="scbox">
+                                <input type="checkbox" for="c1">
+                                <label for="c1">Show Self Created Charts</label>
+                            </div>
+                            <div>
+                                <button class="btn1 btn-orange" style="width: 56px; height: 40px;">GO</button>
+                            </div>
+                        </div>
+                        <div class="part2">
+                            <div class="form-group form-control chosen-container-align">
+                                <select class="chosen">
+                                    <option value="0">-select-</option>
+                                    <option value="1">--</option>
+                                </select>
+                                <label class="placeholder active-label">Select Chart</label>
+                            </div>
+                            <div class="form-group form-control chosen-container-align">
+                                <select class="chosen">
+                                    <option value="0">-select-</option>
+                                    <option value="1">--</option>
+                                </select>
+                                <label class="placeholder active-label">Bus Type</label>
+                            </div>
+                            <div class="form-group form-control chosen-container-align">
+                                <select class="chosen">
+                                    <option value="0">-select-</option>
+                                    <option value="1">--</option>
+                                </select>
+                                <label class="placeholder active-label">Bus Category</label>
+                            </div>
+                            <div class="form-group form-control chosen-container-align">
+                                <select class="chosen">
+                                    <option value="0">-select-</option>
+                                    <option value="0">--</option>
+                                </select>
+                                <label class="placeholder active-label">Standard Bus Type</label>
+                            </div>
+                            <div class="form-group col-md-5" style="margin-top: 10px;">
+                                <input id="coachBox" type="text" class="form-control">
+                                <label for="coachBox" class="placeholder">Coach Name</label>
+                            </div>
+                            <div class="save-can-btn col-md-9">
+                                <button id="canbtn" class="btn1 btn-new">Cancel</button>
+                                <button id="savebtn" class="btn1 btn-new" disabled>Save</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="coach2 ">
+                        <div class="display-chart"></div>
+                        <div class="para">Chart Will Display Here</div>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    <div class="layout-popup-wrapper" style="display: none;" onclick="closelayoutPopup(event); ">
+        <div class="layout-popup-content ">
+            <h1>I am here</h1>
+        </div>
+    </div>
+    <div id="dialog-deactivate" style="display: none; ">
+        <span class="dialog-deactivate-img "></span>
+        <p style="position: absolute; top: 90px; left: 50px; font-size: 18px; ">Do you want to remove?</p>
 
+    </div>
+    <div id="dialog-activate" style="display: none; ">
+        <span class="dialog-activate-img "></span>
+        <p style="position: absolute; top: 90px; left: 65px; font-size: 18px; ">Do you want to add?</p>
+    </div>
+    <!-- /****************************************************************************************************/ -->
 
     <!-- information popup -->
-    <div class="information-popup-wrapper" style="display: none;" onclick="closeInfoPopup(event);">
-        <div class="information-popup-content">
-            <div class="information-popup-header">
+    <div class="information-popup-wrapper " style="display: none; " onclick="closeInfoPopup(event); ">
+        <div class="information-popup-content ">
+            <div class="information-popup-header ">
                 Information
-                <div class="information-popup-close" onclick="hideInfoPopup(event);">
-                    <svg fill="#ffffff" width="20" height="20" viewBox="0 0 18 18">
-                        <path
-                            d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
-                        </path>
-                    </svg>
+                <div class="information-popup-close " onclick="hideInfoPopup(event); ">
+                    <svg fill="#ffffff " width="20 " height="20 " viewBox="0 0 18 18 ">
+<path
+    d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z ">
+</path>
+</svg>
                 </div>
             </div>
-            <div class="information-popup-body">
-                <div class="message">
-                    GPS configured at minimum rental. If you reduce further, an OTP will be send to
-                    9901851265
-                    for verification.
+            <div class="information-popup-body ">
+                <div class="message ">
+                    GPS configured at minimum rental. If you reduce further, an OTP will be send to 9901851265 for verification.
                 </div>
-                <div class="buttons">
-                    <button type="button" class="btnContinue" onclick="gpsContinue(event)">Continue</button>
-                    <button type="button" class="btnCancel" onclick="hideInfoPopup(event);">Cancel</button>
+                <div class="buttons ">
+                    <button type="button " class="btnContinue " onclick="gpsContinue(event) ">Continue</button>
+                    <button type="button " class="btnCancel " onclick="hideInfoPopup(event); ">Cancel</button>
                 </div>
             </div>
         </div>
     </div>
+
 
 
     <!-- OTP popup -->
-    <div class="otp-popup-wrapper" style="display: none;" onclick="closeOtpPopup(event);">
-        <div class="otp-popup-content">
-            <div class="otp-popup-header">
+    <div class="otp-popup-wrapper " style="display: none; " onclick="closeOtpPopup(event); ">
+        <div class="otp-popup-content ">
+            <div class="otp-popup-header ">
                 Submit OTP
-                <div class="otp-popup-close" onclick="hideOtpPopup(event);">
-                    <svg fill="#ffffff" width="20" height="20" viewBox="0 0 18 18">
-                        <path
-                            d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
-                        </path>
-                    </svg>
+                <div class="otp-popup-close " onclick="hideOtpPopup(event); ">
+                    <svg fill="#ffffff " width="20 " height="20 " viewBox="0 0 18 18 ">
+<path
+    d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z ">
+</path>
+</svg>
                 </div>
             </div>
-            <div class="otp-popup-body">
-                <div class="otp-input-wrap">
-                    <input type="text" name="" id="otp" value="" class="">
-                    <label class="txtInputLabel">Enter OTP</label>
+            <div class="otp-popup-body ">
+                <div class="otp-input-wrap ">
+                    <input type="text " name=" " id="otp " value=" " class=" ">
+                    <label class="txtInputLabel ">Enter OTP</label>
                 </div>
-                <div class="otp-input-wrap">
-                    <label class="otp-label">OTP has been sent to 9901851265</label>
+                <div class="otp-input-wrap ">
+                    <label class="otp-label ">OTP has been sent to 9901851265</label>
                 </div>
-                <div class="otp-input-wrap">
-                    <button type="button" class="btnSubmitOtp" onclick="submitOTP()">Submit OTP</button>
+                <div class="otp-input-wrap ">
+                    <button type="button " class="btnSubmitOtp " onclick="submitOTP() ">Submit OTP</button>
                 </div>
-                <div class="otp-input-wrap resend-otp">
-                    <label class="otp-label">Not Received Yet ? <span class="otp-resend">Resend</span></label>
+                <div class="otp-input-wrap resend-otp ">
+                    <label class="otp-label ">Not Received Yet ? <span class="otp-resend ">Resend</span></label>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Bus Picture Upload Error Popup -->
-    <div class="bus-picture-error-popup-wrapper" style="display: none;">
-        <div class="bus-picture-error-popup-content">
-            <div class="bus-picture-error-popup-header">
+    <div class="bus-picture-error-popup-wrapper " style="display: none; ">
+        <div class="bus-picture-error-popup-content ">
+            <div class="bus-picture-error-popup-header ">
                 Upload Error
             </div>
-            <div class="bus-picture-error-popup-body">
-                <label class="error-msg">File <span id="fileName"></span> could not be uploaded. Please try uploading it
-                    again.</label>
-                <button type="button" class="btnUpload" onclick="closeBusPictureErrorPopup(event)">Upload Again</button>
-                <label class="note-msg">Accepted formats are jpg. Maximum size allowed is 100 MB</label>
+            <div class="bus-picture-error-popup-body ">
+                <label class="error-msg ">File <span id="fileName "></span> could not be uploaded. Please try uploading it
+again.</label>
+                <button type="button " class="btnUpload " onclick="closeBusPictureErrorPopup(event) ">Upload Again</button>
+                <label class="note-msg ">Accepted formats are jpg. Maximum size allowed is 100 MB</label>
             </div>
         </div>
     </div>
 
 
     <!-- error popupbox -->
-    <div class="error-popup-wrapper" style="display:none;">
-        <div class="error-popup-content">
-            <div class="error-popup-body">
-                <div class="error-icon">
-                    <img src="/images/error.svg">
+    <div class="error-popup-wrapper " style="display:none; ">
+        <div class="error-popup-content ">
+            <div class="error-popup-body ">
+                <div class="error-icon ">
+                    <img src="/images/error.svg ">
                 </div>
-                <div class="error-message">
+                <div class="error-message ">
                     Please select vehicle usage to continue
                 </div>
-                <div class="error-action">
-                    <button type="button" class="btnOk" onclick="closeErrorPopup(event)">Take Me Back</button>
+                <div class="error-action ">
+                    <button type="button " class="btnOk " onclick="closeErrorPopup(event) ">Take Me Back</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- success popupbox -->
-    <div class="success-popup-wrapper" style="display:none;">
-        <div class="success-popup-content">
-            <div class="error-popup-body">
-                <div class="success-icon">
-                    <img src="/images/success.svg">
+    <div class="success-popup-wrapper " style="display:none; ">
+        <div class="success-popup-content ">
+            <div class="error-popup-body ">
+                <div class="success-icon ">
+                    <img src="/images/success.svg ">
                 </div>
-                <div class="success-message">
+                <div class="success-message ">
                     Detail Saved Successfully
                 </div>
-                <div class="success-action">
-                    <button type="button" class="btnOk" onclick="closeSuccessPopup(event)">OK</button>
+                <div class="success-action ">
+                    <button type="button " class="btnOk " onclick="closeSuccessPopup(event) ">OK</button>
                 </div>
             </div>
         </div>
@@ -3065,21 +3106,22 @@
 
 
 
-    <!-- <script src="./js/jquery-3.6.0.min.js"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="./chosen/chosen.jquery.min.js"></script>
-    <script src="./chosen/ImageSelect.jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    <!-- <script src="./js/jquery-3.6.0.min.js "></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js "></script>
+    <script src="./chosen/chosen.jquery.min.js "></script>
+    <script src="./chosen/ImageSelect.jquery.js "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js ">
     </script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js">
+    <script type="text/javascript " src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js ">
     </script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js">
-        </script>
-    <script type="text/javascript" charset="utf8"
-        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js ">
+    </script>
+    <script type="text/javascript " charset="utf8 " src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js "></script>
+    <script type="text/javascript " charset="utf8 " src="https://cdn.datatables.net/datetime/1.4.0/js/dataTables.dateTime.min.js "></script>
 
-    <script src="./js/common.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js "></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js "></script>
+    <script src="./js/common.js "></script>
 </body>
 
 </html>
