@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     /*******************function for creating chart layout************************** */
     GSInit();
 
@@ -9,7 +9,7 @@ $(document).ready(function() {
     }
 
     //*****************Floating label********************//
-    $(".form-group .form-control").blur(function() {
+    $(".form-group .form-control").blur(function () {
         if ($(this).val() != "") {
             $(this).siblings(".placeholder").addClass("active");
         } else {
@@ -19,7 +19,7 @@ $(document).ready(function() {
 
     /*********************datepicker*********************************/
     $(".datepicker1").datetimepicker({ format: "MM/YYYY", debug: false });
-    $(".datepicker1").on('blur', function() {
+    $(".datepicker1").on('blur', function () {
         if ($(this).val() != "") {
             $(this).siblings(".placeholder1").addClass("active");
         } else {
@@ -36,7 +36,7 @@ $(document).ready(function() {
     $('#mstBusNumberStatus').prop('disabled', true).trigger("chosen:updated");
 
     //for toggle tabs content
-    $(".header .tabs-list .tab").on("click", function() {
+    $(".header .tabs-list .tab").on("click", function () {
         var tabId = $(this).attr("id");
         //for manage active tab
         $(".header .tabs-list .tab").removeClass("active-tab");
@@ -59,7 +59,7 @@ $(document).ready(function() {
     });
 
     //for bus usage select handle
-    $(".busUsageBox").on("click", function() {
+    $(".busUsageBox").on("click", function () {
         $(".busUsageBox").find("input").parent("div").removeClass("activeBusUsage");
         $(this).find("input").prop("checked", true);
         $(this).find("input").parent("div").addClass("activeBusUsage");
@@ -115,33 +115,33 @@ $(document).ready(function() {
 
 
     //for bus usage select handle
-    $(".truckTypeBox").on("click", function() {
+    $(".truckTypeBox").on("click", function () {
         $(".truckTypeBox").find("input").parent("div").removeClass("activeTruckType");
         $(this).find("input").prop("checked", true);
         $(this).find("input").parent("div").addClass("activeTruckType");
     });
 
     //for rear body type select handle
-    $(".rearBodyTypeBox").on("click", function() {
+    $(".rearBodyTypeBox").on("click", function () {
         $(".rearBodyTypeBox").find("input").parent("div").removeClass("activeRearBodyType");
         $(this).find("input").prop("checked", true);
         $(this).find("input").parent("div").addClass("activeRearBodyType");
     });
 
     //for active chosen element
-    $('.chosen').on('chosen:showing_dropdown', function(event) {
+    $('.chosen').on('chosen:showing_dropdown', function (event) {
         $(event.target).parent("div").addClass("inputFocus");
         $(event.target).siblings("label").addClass("labelFocus");
     });
 
     //for inactive chosen element
-    $('.chosen').on('chosen:hiding_dropdown', function(event) {
+    $('.chosen').on('chosen:hiding_dropdown', function (event) {
         $(event.target).parent("div").removeClass("inputFocus");
         $(event.target).siblings("label").removeClass("labelFocus");
     });
 
     //for active textbox
-    $(".input-wrap input[type='text'],.input-wrap input[type='number']").on("focus", function(event) {
+    $(".input-wrap input[type='text'],.input-wrap input[type='number']").on("focus", function (event) {
         $(event.target).addClass("inputFocus");
         $(event.target).siblings("label").addClass("txtInputActiveLabel");
         $(event.target).siblings("label").removeClass("filled");
@@ -149,7 +149,7 @@ $(document).ready(function() {
 
 
     //for inactive textbox
-    $(".input-wrap input[type='text'],.input-wrap input[type='number']").on("blur", function(event) {
+    $(".input-wrap input[type='text'],.input-wrap input[type='number']").on("blur", function (event) {
         $(event.target).removeClass("inputFocus");
         if ($(event.target).val() == "" || $(event.target).val() == null) {
             $(event.target).siblings("label").removeClass("txtInputActiveLabel");
@@ -158,7 +158,7 @@ $(document).ready(function() {
         }
     });
 
-    $("input:radio[name='rdoBusNumber']").on("click", function() {
+    $("input:radio[name='rdoBusNumber']").on("click", function () {
         if ($(this).val() == "1") {
             $(".tabBusMaster .selBusNumber").show();
             $(".tabBusMaster .txtBusNumber").hide();
@@ -169,7 +169,7 @@ $(document).ready(function() {
         }
     });
 
-    $("input:radio[name='rdoMstBusNumber']").on("click", function() {
+    $("input:radio[name='rdoMstBusNumber']").on("click", function () {
         if ($(this).val() == "1") {
             $(".tabBusMaster .selMstBusNumber").show();
             $(".tabBusMaster .txtMstBusNumber").hide();
@@ -182,14 +182,14 @@ $(document).ready(function() {
 
 
     //for active textbox
-    $(".bus-info-input-wrap input[type='text']").on("focus", function(event) {
+    $(".bus-info-input-wrap input[type='text']").on("focus", function (event) {
         $(event.target).addClass("inputFocus");
         $(event.target).siblings("label").addClass("txtInputActiveLabel");
         $(event.target).siblings("label").removeClass("filled");
     });
 
     //for inactive textbox
-    $(".bus-info-input-wrap input[type='text']").on("blur", function(event) {
+    $(".bus-info-input-wrap input[type='text']").on("blur", function (event) {
         $(event.target).removeClass("inputFocus");
         if ($(event.target).val() == "" || $(event.target).val() == null) {
             $(event.target).siblings("label").removeClass("txtInputActiveLabel");
@@ -203,20 +203,20 @@ $(document).ready(function() {
 
 
     //save commercial button click
-    $("#btnSaveCommercial").on("click", function() {
+    $("#btnSaveCommercial").on("click", function () {
         $(".information-popup-wrapper").show();
     });
 
 
     //for active textbox
-    $(".gps-input-wrap input[type='text']").on("focus", function(event) {
+    $(".gps-input-wrap input[type='text']").on("focus", function (event) {
         $(event.target).addClass("inputFocus");
         $(event.target).siblings("label").addClass("txtInputActiveLabel");
         $(event.target).siblings("label").removeClass("filled");
     });
 
     //for inactive textbox
-    $(".gps-input-wrap input[type='text']").on("blur", function(event) {
+    $(".gps-input-wrap input[type='text']").on("blur", function (event) {
         $(event.target).removeClass("inputFocus");
         if ($(event.target).val() == "" || $(event.target).val() == null) {
             $(event.target).siblings("label").removeClass("txtInputActiveLabel");
@@ -226,7 +226,7 @@ $(document).ready(function() {
     });
 
     //Associate Bus Number/Enter New Data on option click
-    $("input:radio[name='rdoGPSFor']").on("click", function() {
+    $("input:radio[name='rdoGPSFor']").on("click", function () {
         if ($(this).val() == "1") {
             $(".tabGPS .associate-bus-no").show();
             $(".tabGPS .new-data").hide();
@@ -238,14 +238,14 @@ $(document).ready(function() {
 
 
     //for active textbox
-    $(".otp-input-wrap input[type='text']").on("focus", function(event) {
+    $(".otp-input-wrap input[type='text']").on("focus", function (event) {
         $(event.target).addClass("inputFocus");
         $(event.target).siblings("label").addClass("txtInputActiveLabel");
         $(event.target).siblings("label").removeClass("filled");
     });
 
     //for inactive textbox
-    $(".otp-input-wrap input[type='text']").on("blur", function(event) {
+    $(".otp-input-wrap input[type='text']").on("blur", function (event) {
         $(event.target).removeClass("inputFocus");
         if ($(event.target).val() == "" || $(event.target).val() == null) {
             $(event.target).siblings("label").removeClass("txtInputActiveLabel");
@@ -255,7 +255,7 @@ $(document).ready(function() {
     });
 
     //for bus amenities type select handle
-    $(".tabAmeType").on("click", function() {
+    $(".tabAmeType").on("click", function () {
         $(".tabAmeType").removeClass("active-ame-type");
         $(this).find("input").prop("checked", true);
         $(this).addClass("active-ame-type");
@@ -271,7 +271,7 @@ $(document).ready(function() {
 
     $('[data-toggle="tooltip"]').tooltip();
 
-    $(".general-ame-list-wrap #atbus-ame-checkall").on('click', function() {
+    $(".general-ame-list-wrap #atbus-ame-checkall").on('click', function () {
         if ($(this).is(":checked")) {
             $(".general-ame-list-wrap input[type='checkbox']").prop("checked", true);
             $(".general-ame-list-wrap #checkAll").text("Uncheck All");
@@ -282,7 +282,7 @@ $(document).ready(function() {
     });
 
 
-    $(".covid-ame-list-wrap #atbus-ame-checkall").on('click', function() {
+    $(".covid-ame-list-wrap #atbus-ame-checkall").on('click', function () {
         if ($(this).is(":checked")) {
             $(".covid-ame-list-wrap input[type='checkbox']").prop("checked", true);
             $(".covid-ame-list-wrap #checkAll").text("Uncheck All");
@@ -292,7 +292,7 @@ $(document).ready(function() {
         }
     });
 
-    $(".ame-in-bus-wrap #inbus-ame-checkall").on('click', function() {
+    $(".ame-in-bus-wrap #inbus-ame-checkall").on('click', function () {
         if ($(this).is(":checked")) {
             $(".ame-in-bus-wrap input[type='checkbox']").prop("checked", true);
             $(".ame-in-bus-wrap #checkAll").text("Uncheck All");
@@ -304,15 +304,15 @@ $(document).ready(function() {
 
 
     // Submit form data via Ajax
-    $("#busPictures").on('submit', function(e) {
+    $("#busPictures").on('submit', function (e) {
         e.preventDefault();
 
         var fileInputNo = $("#fileUploadFor").val();
 
         $.ajax({
-            xhr: function() {
+            xhr: function () {
                 var xhr = new window.XMLHttpRequest();
-                xhr.upload.addEventListener("progress", function(evt) {
+                xhr.upload.addEventListener("progress", function (evt) {
                     if (evt.lengthComputable) {
                         var percentComplete = ((evt.loaded / evt.total) * 100);
                         $("#picture-block-" + fileInputNo + " .progress-bar-box .probar-loading").css("width", percentComplete + "%");
@@ -327,12 +327,12 @@ $(document).ready(function() {
             contentType: false,
             cache: false,
             processData: false,
-            beforeSend: function() {
+            beforeSend: function () {
                 $("#picture-block-" + fileInputNo + " .browse-link").hide();
                 $("#picture-block-" + fileInputNo + " .progress-bar-box").show();
                 $("#picture-block-" + fileInputNo + " .progress-bar-box .probar-loading").css("width", "0%");
             },
-            success: function(response) {
+            success: function (response) {
                 if (response.status == 1) {
                     $('#busPictures')[0].reset();
                     $("#picture-block-" + fileInputNo + " .image-box").hide();
@@ -358,7 +358,7 @@ $(document).ready(function() {
 
 
     //for toggle tabs content
-    $(".vmBlock2 .tabs-list .tab").on("click", function() {
+    $(".vmBlock2 .tabs-list .tab").on("click", function () {
 
         var tabId = $(this).attr("id");
 
@@ -373,7 +373,7 @@ $(document).ready(function() {
     });
 
     //for toggle tabs content
-    $(".vmBlock3 .tabs-list .tab").on("click", function() {
+    $(".vmBlock3 .tabs-list .tab").on("click", function () {
 
         var tabId = $(this).attr("id");
 
@@ -387,7 +387,22 @@ $(document).ready(function() {
     });
 
 
+    //for active textbox
+    $(".divCreateLayoutFilter input[type='text']").on("focus", function (event) {
+        $(event.target).addClass("inputFocus");
+        $(event.target).siblings("label").addClass("txtInputActiveLabel");
+        $(event.target).siblings("label").removeClass("filled");
+    });
 
+    //for inactive textbox
+    $(".divCreateLayoutFilter input[type='text']").on("blur", function (event) {
+        $(event.target).removeClass("inputFocus");
+        if ($(event.target).val() == "" || $(event.target).val() == null) {
+            $(event.target).siblings("label").removeClass("txtInputActiveLabel");
+        } else {
+            $(event.target).siblings("label").addClass("filled");
+        }
+    });
 
 });
 
@@ -398,7 +413,7 @@ function showBrowseDialog(obj) {
     var browseBtnNo = $(obj).attr("id").replace("btnBrowse-", "");
     $("#fileBrowse-" + browseBtnNo).trigger("click");
 
-    $("#fileBrowse-" + browseBtnNo).unbind().bind("change", function() {
+    $("#fileBrowse-" + browseBtnNo).unbind().bind("change", function () {
         var fileName = $(this)[0].files[0].name;
         $("#txtBrowse-" + browseBtnNo).val(fileName);
     });
@@ -454,7 +469,7 @@ function showBusPictureSelectDailog(obj) {
     var fileInputNo = $(obj).parents(".bus-picture-block").attr("id").replace("picture-block-", "");
     $("#busPicture" + fileInputNo).trigger("click");
 
-    $("#busPicture" + fileInputNo).unbind().bind("change", function() {
+    $("#busPicture" + fileInputNo).unbind().bind("change", function () {
         $("#fileUploadFor").val(fileInputNo);
         $("#btnUploadPhoto").submit();
     });
@@ -482,14 +497,15 @@ function loadChartLayout() {
 
     let tablechartlayout = $('#chart_layout').DataTable({
         ajax: {
-            url: '../MasterBus/api/create-chart-layout.txt',
+            //url: '../MasterBus/api/create-chart-layout.txt',
+            url: './api/create-chart-layout.txt',
             dataSrc: 'data'
         },
         columns: [
             { data: 'Sr No' },
             {
                 data: 'Chart Name',
-                render: function(data, type, row, meta) {
+                render: function (data, type, row, meta) {
                     if (type === 'display' && data.length <= 25) {
                         return '<span class=\"eye_icon\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + data + '</span>';
                     } else {
@@ -506,13 +522,13 @@ function loadChartLayout() {
             { data: 'Semi Sleeper' },
             {
                 data: 'Self Created',
-                render: function(data, type, row, meta) {
+                render: function (data, type, row, meta) {
                     return '<input type="checkbox">';
                 },
             },
             {
                 data: 'Whitlisted',
-                render: function(data, type, row, meta) {
+                render: function (data, type, row, meta) {
                     return '<input type="checkbox" id="cbox" checked>';
 
                 },
@@ -555,19 +571,23 @@ function loadChartLayout() {
 
     });
 
-    $('#chart_layout tbody').on('click', '.eye_icon', function() {
+    $('#chart_layout tbody').on('click', '.eye_icon', function () {
         $(".layout-popup-wrapper").show();
     });
 
 
-    $('#gobtn').on('click', function() {
+    $('#gobtn').on('click', function () {
         $(".ChartListContainer").toggle();
     });
-    $('#filter_link').on('click', function() {
+    $('#filter_link').on('click', function () {
         $(".morefilter").toggle();
     });
 
-    $("#newbtn").on('click', function() {
+    $('#more_filters_link').on('click', function () {
+        $(".divCreateLayoutMoreFilter").toggle();
+    });
+
+    $("#newbtn").on('click', function () {
         $(".morefilter").css('display', 'none')
         $(".ChartListContainer").css('display', 'none')
         $(".flex-container").css('display', 'none')
@@ -577,17 +597,17 @@ function loadChartLayout() {
         $('#upperDeckTable').empty();
     });
 
-    $("#filterbtn").on('click', function() {
+    $("#filterbtn").on('click', function () {
         filterDateRange();
         tablechartlayout.draw();
     });
 
-    $("#resetbtn").on('click', function() {
+    $("#resetbtn").on('click', function () {
         $("#min").val("");
         $("#max").val("");
 
     })
-    $("#chart_layout tbody").on('click', '#cbox', function() {
+    $("#chart_layout tbody").on('click', '#cbox', function () {
         var checked = $(this).is(':checked');
         if (checked) {
             $("#dialog-activate").dialog({
@@ -602,16 +622,16 @@ function loadChartLayout() {
                 top: 240,
                 modal: true,
                 buttons: {
-                    Confirm: function() {
+                    Confirm: function () {
                         $("#cbox").prop("checked", true).attr('checked', 'checked');
                         $(this).dialog("close");
                     },
-                    Cancel: function() {
+                    Cancel: function () {
                         $("#cbox").prop("checked", false).removeAttr('checked');
                         $(this).dialog("close");
                     }
                 },
-                open: function(event) {
+                open: function (event) {
                     $('.ui-dialog-buttonpane').find('button:contains("Cancel")').css({ 'border-right': 'white', "border-bottom-right-radius": "10px" });
                     $('.ui-dialog-buttonpane').find('button:contains("Confirm")').css({ "border-bottom-left-radius": "10px" });
                     $('.ui-widget-overlay').css('background', 'black');
@@ -631,16 +651,16 @@ function loadChartLayout() {
                 top: 240,
                 modal: true,
                 buttons: {
-                    Confirm: function() {
+                    Confirm: function () {
                         $("#cbox").prop("checked", false).removeAttr('checked');
                         $(this).dialog("close");
                     },
-                    Cancel: function() {
+                    Cancel: function () {
                         $("#cbox").prop("checked", true).attr('checked', 'checked');
                         $(this).dialog("close");
                     }
                 },
-                open: function(event) {
+                open: function (event) {
                     $('.ui-dialog-buttonpane').find('button:contains("Cancel")').css({ 'border-right': 'white', "border-bottom-right-radius": "10px" });
                     $('.ui-dialog-buttonpane').find('button:contains("Confirm")').css({ "border-bottom-left-radius": "10px" });
                     $('.ui-widget-overlay').css('background', 'black');
@@ -648,6 +668,7 @@ function loadChartLayout() {
             });
         }
     });
+
     tablechartlayout.draw();
 }
 
@@ -659,7 +680,7 @@ function closelayoutPopup(event) {
 
 function filterDateRange() {
     $.fn.dataTable.ext.search.push(
-        function(settings, data, dataIndex) {
+        function (settings, data, dataIndex) {
             var fromdate = moment($("#min").val(), "MM/YYYY").format("YYYYMM")
             var todate = moment($("#max").val(), "MM/YYYY").format("YYYYMM")
             var date = moment(data[2], "DD/MM/YYYY hh:mm").format("YYYYMM")
@@ -673,7 +694,7 @@ function filterDateRange() {
 }
 
 function seatSelectBMCC() {
-    $('#seaterNAC').click(function() {
+    $('#seaterNAC').click(function () {
         strdata = $(this).attr("data-details");
         style = $(this).attr("style");
         $("#seaterNAC").css("border", "3px solid #48bb48");
@@ -687,7 +708,7 @@ function seatSelectBMCC() {
 
 
     });
-    $('#seaterAC').click(function() {
+    $('#seaterAC').click(function () {
         strdata = $(this).attr("data-details");
         style = $(this).attr("style");
         $("#seaterNAC").css("border", "1px solid #48bb48");
@@ -700,7 +721,7 @@ function seatSelectBMCC() {
         $("#sleeperHAC").css("border", "1px solid rgb(255,0,0)");
 
     });
-    $('#semiNAC').click(function() {
+    $('#semiNAC').click(function () {
         strdata = $(this).attr("data-details");
         style = $(this).attr("style");
         $("#seaterNAC").css("border", "1px solid #48bb48");
@@ -713,7 +734,7 @@ function seatSelectBMCC() {
         $("#sleeperHAC").css("border", "1px solid rgb(255,0,0)");
 
     });
-    $('#semiAC').click(function() {
+    $('#semiAC').click(function () {
         strdata = $(this).attr("data-details");
         style = $(this).attr("style");
         $("#seaterNAC").css("border", "1px solid #48bb48");
@@ -726,7 +747,7 @@ function seatSelectBMCC() {
         $("#sleeperHAC").css("border", "1px solid rgb(255,0,0)");
 
     });
-    $('#sleeperNAC').click(function() {
+    $('#sleeperNAC').click(function () {
         strdata = $(this).attr("data-details");
         style = $(this).attr("style");
         $("#seaterNAC").css("border", "1px solid #48bb48");
@@ -739,7 +760,7 @@ function seatSelectBMCC() {
         $("#sleeperHAC").css("border", "1px solid rgb(255,0,0)");
 
     });
-    $('#sleeperAC').click(function() {
+    $('#sleeperAC').click(function () {
         strdata = $(this).attr("data-details");
         style = $(this).attr("style");
         $("#seaterNAC").css("border", "1px solid #48bb48");
@@ -752,7 +773,7 @@ function seatSelectBMCC() {
         $("#sleeperHAC").css("border", "1px solid rgb(255,0,0)");
 
     });
-    $('#sleeperHNAC').click(function() {
+    $('#sleeperHNAC').click(function () {
         strdata = $(this).attr("data-details");
         style = $(this).attr("style");
         $("#seaterNAC").css("border", "1px solid #48bb48");
@@ -765,7 +786,7 @@ function seatSelectBMCC() {
         $("#sleeperHAC").css("border", "1px solid rgb(255,0,0)");
 
     });
-    $('#sleeperHAC').click(function() {
+    $('#sleeperHAC').click(function () {
         strdata = $(this).attr("data-details");
         style = $(this).attr("style");
         $("#seaterNAC").css("border", "1px solid #48bb48");
@@ -782,7 +803,7 @@ function seatSelectBMCC() {
 }
 
 function cancelBMCC() {
-    $('#btnCancelCC').click(function() {
+    $('#btnCancelCC').click(function () {
         $('.gen-deck').hide();
         $('.new-flex-container').hide();
         $('.flex-container').show();
@@ -790,7 +811,7 @@ function cancelBMCC() {
 }
 
 function generateBMCC() {
-    $('#btnGenerateCC').click(function() {
+    $('#btnGenerateCC').click(function () {
 
         $('#lowerDeckTable').empty();
         $('#upperDeckTable').empty();
@@ -822,7 +843,7 @@ function generateBMCC() {
 
         }
     });
-    $("#lowerDeckTable").on("click", "td", function(event) {
+    $("#lowerDeckTable").on("click", "td", function (event) {
         var col = $(this).parent().children().index($(this));
         var row = $(this).parent().parent().children().index($(this).parent());
         if ($(this).attr("data-details") == "1^1^1^0^0") {
@@ -886,7 +907,7 @@ function generateBMCC() {
             }
         }
     });
-    $("#upperDeckTable").on("click", "td", function(event) {
+    $("#upperDeckTable").on("click", "td", function (event) {
         var col = $(this).parent().children().index($(this));
         var row = $(this).parent().parent().children().index($(this).parent());
         if ($(this).attr("data-details") == "1^1^1^0^0") {
@@ -959,14 +980,15 @@ function loadCoachList() {
 
     var tableCoachList = $('#coach_list').DataTable({
         ajax: {
-            url: '../MasterBus/api/create-coach-layout.txt',
+            //url: '../MasterBus/api/create-coach-layout.txt',
+            url: './api/create-coach-layout.txt',
             dataSrc: 'data'
         },
         columns: [
             { data: 'Sr' },
             {
                 data: 'Coach Name',
-                render: function(data, type, row, meta) {
+                render: function (data, type, row, meta) {
 
                     return type === 'display' && data.length > 20 ?
                         '<span class=\"eye_icon\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="text-decoration: underline;" title="' + data + '">' + data.substr(0, 18) + '...</span>' :
@@ -977,7 +999,7 @@ function loadCoachList() {
             { data: 'Created Data & Time' },
             {
                 data: 'Bus Type',
-                render: function(data, type, row, meta) {
+                render: function (data, type, row, meta) {
                     return '<div id="busType-' + row.id + '"><div class="data">' + data + '</div><div class="input"><select id="myselectId-' + row.id + '"></select></div></div>';
 
                 }
@@ -987,7 +1009,7 @@ function loadCoachList() {
             { data: 'Capacity' },
             {
                 data: 'Created By Branch',
-                render: function(data, type, row, meta) {
+                render: function (data, type, row, meta) {
 
                     return type === 'display' && data.length > 18 ?
                         '<span style="text-decoration: underline;" title="' + data + '">' + data.substr(0, 15) + '...</span>' :
@@ -999,20 +1021,20 @@ function loadCoachList() {
             {
                 "className": 'dt-body-center',
                 data: 'Status',
-                render: function(data, type, row, meta) {
+                render: function (data, type, row, meta) {
                     return '<input type="checkbox">';
                 },
             },
 
             {
                 data: 'Action',
-                render: function(data, type, row, meta) {
+                render: function (data, type, row, meta) {
                     return '<div id="Action-' + row.id + '" style="display:flex;"><div class="editBtn"><a class=\"edit_link\"><span class=\"edit_icon\"></span>Edit</a></div><div class="saveBtn"><button type="button" class="btn1 btn-orange" style="height: 33px;">Save</button></div><div class="closeBtn"><button type="button" class="btn1 btn-new"  style="height: 33px;">Close</button></div><div>'
                 }
             },
         ],
         columnDefs: [
-            { orderable: false, "width": "1%", "targets": 0 },
+            { "width": "1%", "targets": 0, orderable: false },
             { "width": "17%", "targets": 1 },
             { "width": "15%", "targets": 2 },
             { "width": "7%", "targets": 3 },
@@ -1021,8 +1043,8 @@ function loadCoachList() {
             { "width": "7%", "targets": 6 },
             { "width": "15%", "targets": 7 },
             { "width": "10%", "targets": 8 },
-            { "className": 'dt-body-center', "width": "7%", "targets": 9 },
-            { "className": 'dt-body-center', orderable: false, "width": "7%", "targets": 10 }
+            { "width": "7%", "targets": 9, "className": 'dt-body-center' },
+            { "width": "7%", "targets": 10, "className": 'dt-body-center', orderable: false }
         ],
 
         paging: true,
@@ -1052,14 +1074,14 @@ function loadCoachList() {
 
     $("#coach_list_filter .dataTables_paginate").after($(".coach_new_btn"));
 
-    $('#CoachStatus').on('change', function(e) {
+    $('#CoachStatus').on('change', function (e) {
         tableCoachList.draw();
     });
 
-    $('#coach_list tbody').on('click', '.eye_icon', function() {
+    $('#coach_list tbody').on('click', '.eye_icon', function () {
         $(".layout-popup-wrapper").show();
     });
-    $('#coach_list tbody').on('click', '.edit_link', function() {
+    $('#coach_list tbody').on('click', '.edit_link', function () {
         $(" .input").hide()
         $(".saveBtn").hide()
         $(".closeBtn").hide()
@@ -1080,7 +1102,7 @@ function loadCoachList() {
         $("#busType-" + data_row.id + " .data").hide()
         $("#busType-" + data_row.id + " .input").show()
 
-        $.each(selectValues, function(val, text) {
+        $.each(selectValues, function (val, text) {
             $("#myselectId-" + data_row.id).append(
                 $('<option></option>').val(val).html(text)
             );
@@ -1088,7 +1110,7 @@ function loadCoachList() {
         $("#myselectId-" + data_row.id).chosen()
 
     });
-    $('#coach_list tbody').on('click', '.closeBtn', function() {
+    $('#coach_list tbody').on('click', '.closeBtn', function () {
         var data_row = tableCoachList.row($(this).parents('tr')).data();
         $("#busType-" + data_row.id + " .input").hide()
         $("#busType-" + data_row.id + " .data").show()
@@ -1096,7 +1118,7 @@ function loadCoachList() {
         $("#Action-" + data_row.id + " .closeBtn").hide()
         $("#Action-" + data_row.id + " .editBtn").show()
     });
-    $('#coach_list tbody').on('click', '.saveBtn', function() {
+    $('#coach_list tbody').on('click', '.saveBtn', function () {
         var data_row = tableCoachList.row($(this).parents('tr')).data();
         $("#Action-" + data_row.id + " .saveBtn").hide()
         $("#Action-" + data_row.id + " .closeBtn").hide()
@@ -1106,11 +1128,11 @@ function loadCoachList() {
     });
 
 
-    $('.coach_new_btn').on('click', function() {
+    $('.coach_new_btn').on('click', function () {
         $(".CoachListContainer").css('display', 'none')
         $('.create_coach').css('display', 'flex')
     });
-    $("#canbtn").on('click', function() {
+    $("#canbtn").on('click', function () {
         $(".CoachListContainer").css('display', 'block')
         $('.create_coach').css('display', 'none')
     })
@@ -1125,7 +1147,8 @@ function loadVehicleMasterList() {
 
     var tableVehicleList = $('#vehicle_list').DataTable({
         ajax: {
-            url: '../MasterBus/api/vehicle-master-data.txt',
+            //url: '../MasterBus/api/vehicle-master-data.txt',
+            url: './api/vehicle-master-data.txt',
             dataSrc: 'data'
         },
         columns: [
@@ -1138,7 +1161,7 @@ function loadVehicleMasterList() {
             { data: 'status' },
             {
                 data: 'action',
-                render: function(data, type, row, meta) {
+                render: function (data, type, row, meta) {
                     return "<a href=\"javascript:void(0)\"  class=\"edit_link\"><span class=\"edit_icon\"></span>Edit</a>"
                 }
             },
@@ -1153,7 +1176,7 @@ function loadVehicleMasterList() {
             { "width": "7%", "targets": 6 },
             { "width": "7%", "targets": 7 }
         ],
-        fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+        fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
             var index = iDisplayIndexFull + 1;
             $("td:first", nRow).html(index);
             return nRow;
@@ -1190,13 +1213,13 @@ function loadVehicleMasterList() {
     //for append button
     $(".dataTables_paginate").after($(".button_new"));
 
-    $('#vehicleStatus').on('change', function(e) {
+    $('#vehicleStatus').on('change', function (e) {
         //alert($(this).val());
         tableVehicleList.draw();
     });
 
     var statusIndex = 0;
-    $("#vehicle_list th").each(function(i) {
+    $("#vehicle_list th").each(function (i) {
         if ($(this).text() == "Status") {
             statusIndex = i;
             return false;
@@ -1204,7 +1227,7 @@ function loadVehicleMasterList() {
     });
 
     $.fn.dataTable.ext.search.push(
-        function(settings, data, dataIndex) {
+        function (settings, data, dataIndex) {
             if (settings.nTable.id == "vehicle_list") {
                 var selectedItem = $('#vehicleStatus').val();
                 var vStatus = data[statusIndex];
@@ -1218,7 +1241,7 @@ function loadVehicleMasterList() {
         }
     );
 
-    $('#vehicle_list tbody').on('click', '.edit_link', function() {
+    $('#vehicle_list tbody').on('click', '.edit_link', function () {
         var data_row = tableVehicleList.row($(this).parents('tr')).data();
         //console.log(data_row);
         alert("Edit Bus No.: " + data_row.bus_number + " & Id : " + data_row.id);
@@ -1239,7 +1262,8 @@ function loadVehicleGpsList() {
 
     var tableVehicleGpsList = $('#vehicle_gps_list').DataTable({
         ajax: {
-            url: '../MasterBus/api/vehicle-gps-data.txt',
+            //url: '../MasterBus/api/vehicle-gps-data.txt',
+            url: './api/vehicle-gps-data.txt',
             dataSrc: 'data'
         },
         columns: [
@@ -1248,7 +1272,7 @@ function loadVehicleGpsList() {
             { data: 'gps_vendor' },
             {
                 data: 'action',
-                render: function(data, type, row, meta) {
+                render: function (data, type, row, meta) {
                     return "<a href=\"javascript:void(0)\"  class=\"edit_link\"><span class=\"edit_icon\"></span>Edit</a>"
                 }
             },
@@ -1259,7 +1283,7 @@ function loadVehicleGpsList() {
             { "width": "55%", "targets": 2 },
             { "width": "10%", "targets": 3 },
         ],
-        fnRowCallback: function(nRow, aData, iDisplayIndex, iDisplayIndexFull) {
+        fnRowCallback: function (nRow, aData, iDisplayIndex, iDisplayIndexFull) {
             var index = iDisplayIndexFull + 1;
             $("td:first", nRow).html(index);
             return nRow;
@@ -1292,7 +1316,7 @@ function loadVehicleGpsList() {
     });
 
 
-    $('#vehicle_gps_list tbody').on('click', '.edit_link', function() {
+    $('#vehicle_gps_list tbody').on('click', '.edit_link', function () {
         var data_row = tableVehicleGpsList.row($(this).parents('tr')).data();
         //console.log(data_row);
         alert("Edit Bus No.: " + data_row.master_bus_number + " & Id : " + data_row.id);
@@ -1340,10 +1364,10 @@ function getAxleConfiguration() {
             type: "GET",
             async: true,
             data: { 'front': frontAxle, 'rear': rearAxle },
-            beforeSend: function() {
+            beforeSend: function () {
                 $(".axleConfiguration").html("Please wait while loading...");
             },
-            success: function(result) {
+            success: function (result) {
                 $(".axleConfiguration").html(result);
             }
         });
@@ -1373,12 +1397,12 @@ function addSpareTyre() {
 }
 
 
-function toggleEditBusNoInput(){
-    if(!$(".selBusNumber .inputEditBusNumber").is(":visible")){
+function toggleEditBusNoInput() {
+    if (!$(".selBusNumber .inputEditBusNumber").is(":visible")) {
         $(".selBusNumber .inputEditBusNumber").show();
         $(".selBusNumber .inputBusNumber").hide();
         $(".inputEditBusNumber #txtEditBusNumber").focus();
-    }else{
+    } else {
         $(".selBusNumber .inputEditBusNumber").hide();
         $(".selBusNumber .inputBusNumber").show();
     }
